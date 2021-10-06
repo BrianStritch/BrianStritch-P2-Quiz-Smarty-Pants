@@ -1,7 +1,56 @@
+/* colors used rgba(216, 38, 216, 0.685) pink in entry area */
+/* blue in entry area #7878d0*/
+
+
+
+
 *, *::before, *::after{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entry-zone{
+    min-width: 380px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/images/quizz-entry-bg.JPG);
+    background-size: 100vw 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entry, .rules{    
+    padding: 13px 38px;
+    background-color: 	hsl(185,94%,72%);
+    margin-top: 65vh;
+    box-shadow: 0 8px 13px 0px rgb(216 38 216 / 67%); 
+    font-size: 16px;
+    color: black;
+}
+.entry{
+    margin-right: 20vw;
+    background-color: 	rgba(216, 38, 216, 0.685);
+    color: white;
+}
+button{
+    border-radius: 5px;
+    outline: none;
+    
+   
+}
+@media screen and (max-width:600px){
+    .entry-zone{
+        background-size: 134vw 99vh;
+    }
+    .entry {
+        margin-right: 12vw;
+        margin-left: 20vw;
+    }   
+    
 }
