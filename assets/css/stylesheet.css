@@ -15,6 +15,12 @@ body{
     justify-content: center;
     align-items: center;
 }
+.hide{
+    display: none;
+}
+
+/* styling for entry screen */
+
 .entry-zone{
     min-width: 380px;
     width: 100vw;
@@ -32,18 +38,82 @@ body{
     box-shadow: 0 8px 13px 0px rgb(216 38 216 / 67%); 
     font-size: 16px;
     color: black;
+    border-radius: 27px/35px;
+    outline: none; 
 }
 .entry{
     margin-right: 20vw;
-    background-color: 	rgba(216, 38, 216, 0.685);
+    background-color: rgba(216, 38, 216, 0.685);
     color: white;
 }
-button{
-    border-radius: 5px;
-    outline: none;
-    
-   
+
+/* game selectors page styling */
+
+.game-selector{
+    background: url(/assets/images/light-bulb.JPG) no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
+
+.choose-game{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 50px;
+    color: red;
+}
+
+.selectors-outer{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.selectors{
+    display: inline-flex;
+    justify-content: space-around;
+    width: 25vw;
+    height: 50vh;
+    background-color: turquoise;
+    align-items: flex-end;
+    border-radius: 60px;
+    margin: 50px 50px 0px 50px;
+    overflow: hidden;
+    min-width: 300px;
+}
+.card img{
+    display: flex;
+    width: 25vw;
+    height: 51vh;
+    border-radius: 30px;
+    min-width: 300px;
+}
+.selector-btn{    
+    padding: 13px 38px;
+    background-color: 	white;    
+    box-shadow: 0 8px 13px 0px rgba(199, 160, 32, 0.685); 
+    font-size: 28px;
+    color: black;
+    border-radius: 27px/35px;
+    outline: none;
+    margin-left: 7vw;
+    margin-top: 10px;
+    max-width: 250px;  
+    background: #000000d1; 
+    color: white;
+}
+#peppa{
+    color:rgba(216, 38, 216, 0.685)
+}
+
+
+
+
+
+
+
 @media screen and (max-width:600px){
     .entry-zone{
         background-size: 134vw 99vh;
