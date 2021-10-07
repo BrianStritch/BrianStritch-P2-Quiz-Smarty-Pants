@@ -9,8 +9,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: greenyellow;
+body{    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +18,7 @@ body{
     display: none;
 }
 
-/* styling for entry screen */
+/******************************* styling for entry screen ***************************************/
 
 .entry-zone{
     min-width: 380px;
@@ -35,7 +34,7 @@ body{
     padding: 13px 38px;
     background-color: 	hsl(185,94%,72%);
     margin-top: 65vh;
-    box-shadow: 0 8px 13px 0px rgb(216 38 216 / 67%); 
+    box-shadow: 0 8px 13px 0px rgb(216, 38, 216, 67%); 
     font-size: 16px;
     color: black;
     border-radius: 27px/35px;
@@ -47,7 +46,7 @@ body{
     color: white;
 }
 
-/* game selectors page styling */
+/******************************** game selectors page styling *******************************/
 
 .game-selector{
     background: url(/assets/images/light-bulb.JPG) no-repeat center center;
@@ -108,7 +107,103 @@ body{
     color:rgba(216, 38, 216, 0.685)
 }
 
+/***************************** peppa pig game styling *******************************/
 
+.peppa-game{
+    background: url(/assets/images/peppa-game-bg.jpg)  no-repeat center center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.peppa-game-container{     
+    margin: -5rem 5rem 0 5rem;
+    background-color: rgba(38, 142, 216, 53%);
+    border-radius: 30px;
+    border: 1px solid rgba(65, 38, 216);
+}
+.peppa-questions{
+    padding: 3vh;
+    margin: 7vh auto;
+    width: 75%;
+    height: 15vh;
+    background-color: rgba(51, 95, 200, 75%);
+    border-radius: 20px;
+    padding-left: 5%;
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    
+}
+.pep-btn{
+    width: 40%;
+    height:15%;
+    padding: 2% 5%;
+    margin: 0 20px 15px 37px;    
+    background-color: rgba(255, 98, 255, 81%);    
+    box-shadow: 0 8px 13px 0px rgb(216, 38, 216, 67%); 
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 27px/35px;
+    outline: none; 
+    
+}
+.peppa-correct{
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    padding: 20px;
+    background-color: rgba(38, 142, 216, 80%);
+    border: 1px solid rgba(65, 38, 216);
+    border-radius: 20px;    
+    font-size: 28px;
+    color: #ffffff;
+
+}
+.peppa-incorrect{
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    padding: 20px;
+    background-color: rgba(38, 142, 216, 80%);
+    border: 1px solid rgba(65, 38, 216);
+    border-radius: 20px;    
+    font-size: 28px;
+    color: #ffffff;
+}
+/* peppa end score page */
+.peppa-end-outer{
+    background: url(/assets/images/peppa-end-bg.jpeg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pep-restart,.pep-leave {
+    width: 40%;
+    height:15%;
+    padding: 2% 5%;
+    margin: 0 9px 27px 37px;    
+    background-color: rgba(255, 98, 255, 81%);    
+    box-shadow: 0 8px 13px 0px rgb(216, 38, 216, 67%); 
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 27px/35px;
+    outline: none; 
+    min-width: 130px;
+
+}
+.peppa-end{ 
+    margin: 0rem 5rem 0 5rem;
+    background-color: rgba(38, 142, 216, 53%);
+    border-radius: 30px;
+    border: 1px solid rgba(65, 38, 216);
+
+}
 
 
 
@@ -122,5 +217,36 @@ body{
         margin-right: 12vw;
         margin-left: 20vw;
     }   
-    
+    .peppa-game{
+        background-size: 150vw 100vh;
+        width: 100vw;
+        height: 100vh;
+    }
+    .peppa-game-container{
+        min-width: 90%;   
+    }
+    .peppa-questions{
+        font-size: 25px;
+        width: 90%;
+    }
+    .pep-btn{
+        font-size: 15px;
+        margin: 2vw 27vw;
+    }
+    .peppa-correct, .peppa-incorrect{
+        font-size: 10px;
+        padding: 20px;
+    }
+    .peppa-end{
+        background-size: 150vw 100vh;
+        width: 83vw;
+        height: 90vh;
+        min-width: 200px;
+        text-align: center;
+        
+    }
+    .pep-end-btn{
+        font-size: 15px;
+        width: 90%;
+    }
 }

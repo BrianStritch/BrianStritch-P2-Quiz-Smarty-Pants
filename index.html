@@ -9,15 +9,15 @@
 </head>
 <body>
     <div class="game-container">
-        <!-- game entry zone -->
+        <!-- *****************************game entry zone *****************************************-->
         <div class="outer-entry-zone hide">
             <div class="entry-zone ">
                 <button class="entry">Enter</button>
                 <button class="rules">Rules</button>
             </div>
         </div>
-        <!-- game selector section -->
-        <div class="game-selector">
+        <!-- **************************game selector section **********************************-->
+        <div class="game-selector hide">
             <div class="choose-game">CHOOSE YOUR GAME</div>
             <div class="selectors-outer">
                 <div class="selectors">
@@ -41,13 +41,69 @@
             <div class="selectors-outer">
                 <div class="selectors">
                     <div class="music-img card ">
-                        
+                        <img src="assets/images/musical-notes.jpg" alt="Musical game selector image">
                     </div>                
                 </div>
                 <button id="music" class="selector-btn">MUSIC</button> 
             </div>           
         </div>
-        <!-- peppa pig game -->
+        <!--*********************** peppa pig game ******************************-->
+        <div class="peppa-outer-container ">
+            <div id="peppa-game-outer" class="hide">
+                <div class="peppa-game">
+                    <div class="peppa-game-container">
+                        <div class="peppa-questions">Question goes here</div>
+                        <button id="peppa-answer1" class="pep-btn">Answer 1</button>
+                        <button id="peppa-answer2" class="pep-btn">Answer 2</button>
+                        <button id="peppa-answer3" class="pep-btn">Answer 3</button>
+                        <button id="peppa-answer4" class="pep-btn">Answer 4</button>
+                    </div>
+                    <div class="peppa-correct">Correct answers : <span>0</span></div>
+                    <div class="peppa-incorrect">Incorrect answers : <span>0</span></div> 
+                </div>
+            </div>
+            <div id="peppa-end-section" class=" hide">
+                <div class="peppa-end-outer" >
+                    <div class="peppa-end">
+                        <div class="peppa-end-container">
+                            <div id="peepa-praise" class="peppa-questions pep-end-btn">WELL DONE!</div>
+                            <div id="peppa-score" class="peppa-questions pep-end-btn">YOU SCORED 0 OUT OF 0 QUESTIONS</div>
+                        </div>
+                        <button id="peppa-restart" class="pep-restart">TRY AGAIN</button>
+                        <button id="peppa-quit" class="pep-leave">LEAVE</button>
+                    </div>
+                </div>                
+            </div>            
+        </div>
+        <!-- ***************** LOVE HATE GAME *****************************-->
+        <div id="love-hate-game">
+            <div id="peppa-game-outer" class="">
+                <div class="peppa-game">
+                    <div class="peppa-game-container">
+                        <div class="peppa-questions">Question goes here</div>
+                        <button id="peppa-answer1" class="pep-btn">Answer 1</button>
+                        <button id="peppa-answer2" class="pep-btn">Answer 2</button>
+                        <button id="peppa-answer3" class="pep-btn">Answer 3</button>
+                        <button id="peppa-answer4" class="pep-btn">Answer 4</button>
+                    </div>
+                    <div class="peppa-correct">Correct answers : <span>0</span></div>
+                    <div class="peppa-incorrect">Incorrect answers : <span>0</span></div> 
+                </div>
+            </div>
+            <div id="peppa-end-section" class=" ">
+                <div class="peppa-end-outer" >
+                    <div class="peppa-end">
+                        <div class="peppa-end-container">
+                            <div id="peepa-praise" class="peppa-questions pep-end-btn">WELL DONE!</div>
+                            <div id="peppa-score" class="peppa-questions pep-end-btn">YOU SCORED 0 OUT OF 0 QUESTIONS</div>
+                        </div>
+                        <button id="peppa-restart" class="pep-restart">TRY AGAIN</button>
+                        <button id="peppa-quit" class="pep-leave">LEAVE</button>
+                    </div>
+                </div>                
+            </div>  
+        </div>
+
     </div>
     <script src="assets/js/script.js"></script>
 </body>
