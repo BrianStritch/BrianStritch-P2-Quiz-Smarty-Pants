@@ -8,7 +8,7 @@
     <title>Smarty pants</title>
 </head>
 <body>
-    <div class="game-container">
+    <main class="game-container">
         <!-- *****************************game entry zone *****************************************-->
         <div class="outer-entry-zone hide">
             <div class="entry-zone ">
@@ -41,7 +41,7 @@
             <div class="selectors-outer">
                 <div class="selectors">
                     <div class="music-img card ">
-                        <img src="assets/images/musical-notes.jpg" alt="Musical game selector image">
+                        <img src="assets/images/music.jpg" alt="Musical game selector image">
                     </div>                
                 </div>
                 <button id="music" class="selector-btn">MUSIC</button> 
@@ -77,34 +77,61 @@
         </div>
         <!-- ***************** LOVE HATE GAME *****************************-->
         <div id="love-hate-game">
-            <div id="peppa-game-outer" class="">
-                <div class="peppa-game">
-                    <div class="peppa-game-container">
-                        <div class="peppa-questions">Question goes here</div>
-                        <button id="peppa-answer1" class="pep-btn">Answer 1</button>
-                        <button id="peppa-answer2" class="pep-btn">Answer 2</button>
-                        <button id="peppa-answer3" class="pep-btn">Answer 3</button>
-                        <button id="peppa-answer4" class="pep-btn">Answer 4</button>
+            <div id="love-game-outer" class="hide">
+                <div class="love-game">
+                    <div class="love-game-container">
+                        <div class="love-questions">Question goes here</div>
+                        <button id="love-answer1" class="love-btn">Answer 1</button>
+                        <button id="love-answer2" class="love-btn">Answer 2</button>
+                        <button id="love-answer3" class="love-btn">Answer 3</button>
+                        <button id="love-answer4" class="love-btn">Answer 4</button>
                     </div>
-                    <div class="peppa-correct">Correct answers : <span>0</span></div>
-                    <div class="peppa-incorrect">Incorrect answers : <span>0</span></div> 
+                    <div class="love-correct">Correct answers : <span>0</span></div>
+                    <div class="love-incorrect">Incorrect answers : <span>0</span></div> 
                 </div>
             </div>
-            <div id="peppa-end-section" class=" ">
-                <div class="peppa-end-outer" >
-                    <div class="peppa-end">
-                        <div class="peppa-end-container">
-                            <div id="peepa-praise" class="peppa-questions pep-end-btn">WELL DONE!</div>
-                            <div id="peppa-score" class="peppa-questions pep-end-btn">YOU SCORED 0 OUT OF 0 QUESTIONS</div>
+            <div id="love-end-section" class="hide">
+                <div class="love-end-outer" >
+                    <div class="love-end">
+                        <div class="love-end-container">
+                            <div id="love-praise" class=" love-end-praise">CONGRATULATIONS!</div>
+                            <div id="love-score" class=" love-end-score">YOU SCORED 0 OUT OF 0 QUESTIONS</div>
                         </div>
-                        <button id="peppa-restart" class="pep-restart">TRY AGAIN</button>
-                        <button id="peppa-quit" class="pep-leave">LEAVE</button>
+                        <button id="love-restart" class="love-restart">TRY AGAIN</button>
+                        <button id="love-quit" class="love-leave">LEAVE</button>
+                    </div>
+                </div>                
+            </div>  
+            <!-- ***************** Music GAME *****************************-->
+        <div id="music-game">
+            <div id="music-game-outer" class="hide">
+                <div class="music">
+                    <div class="music-container">
+                        <div class="music-questions">Question goes here</div>
+                        <button id="music-answer1" class="music-btn">Answer 1</button>
+                        <button id="music-answer2" class="music-btn">Answer 2</button>
+                        <button id="music-answer3" class="music-btn">Answer 3</button>
+                        <button id="music-answer4" class="music-btn">Answer 4</button>
+                    </div>
+                    <div class="music-correct">Correct answers : <span>0</span></div>
+                    <div class="music-incorrect">Incorrect answers : <span>0</span></div> 
+                </div>
+            </div>
+            <div id="music-end-section" class="">
+                <div class="music-end-outer" >
+                    <div class="music-end">
+                        <div class="music-end-container">
+                            <div id="music-praise" class=" music-end-praise">CONGRATULATIONS!</div>
+                            <div id="music-score" class=" music-end-score">YOU SCORED 0 OUT OF 0 QUESTIONS</div>
+                        </div>
+                        <button id="music-restart-btn" class="music-restart">TRY AGAIN</button>
+                        <button id="music-quit-btn" class="music-leave">LEAVE</button>
                     </div>
                 </div>                
             </div>  
         </div>
 
-    </div>
+    </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

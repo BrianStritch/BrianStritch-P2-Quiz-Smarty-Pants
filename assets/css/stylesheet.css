@@ -204,6 +204,236 @@ body{
     border: 1px solid rgba(65, 38, 216);
 
 }
+/* love/hate game styling*/
+.love-game{
+    background: url(/assets/images/Love-hate-questions-bg.jpg)  no-repeat center center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.love-game-container{
+    margin: -5rem 5rem 0 5rem;
+    background-color: rgba(0, 0, 0, 82%);
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 100%);
+}
+.love-questions{
+    padding: 3vh;
+    margin: 7vh auto;
+    width: 75%;
+    height: 15vh;
+    background-color: rgba(1, 2, 2, 65%);
+    border: 1px solid white;
+    border-radius: 20px;
+    padding-left: 5%;
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+}
+.love-btn{
+    width: 40%;
+    height:15%;
+    padding: 2% 5%;
+    margin: 0 20px 15px 37px;    
+    background-color: rgba(17,17,17,100%);    
+    box-shadow: 0 8px 13px 0px  rgba(199, 160, 32, 28%); 
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 27px/35px;
+    outline: none; 
+    
+}
+.love-correct{
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    padding: 20px;
+    background-color: rgba(1, 2, 2, 65%);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;    
+    font-size: 28px;
+    color: #ffffff;
+
+}
+.love-incorrect{
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    padding: 20px;
+    background-color: rgba(1, 2, 2, 65%);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;    
+    font-size: 28px;
+    color: #ffffff;
+}
+/* love/hate end score page */
+.love-end-outer{
+    background: url(/assets/images/love-hate-img.JPG);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.love-end-praise, .love-end-score{
+    padding: 3vh 5vw;
+    margin: 7vh 5vw;   
+    height: 15vh;
+    background-color: rgba(1, 2, 2, 65%);
+    border: 1px solid white;
+    border-radius: 20px;
+    padding-left: 5%;
+    
+    color: #ffffff;
+    text-align: center;
+}
+.love-end-praise{
+    font-size: 50px;
+} 
+.love-end-score{
+    font-size: 27px;
+}
+.love-restart,.love-leave {
+    width: 40%;
+    height:15%;
+    padding: 2% 5%;
+    margin: 0 9px 27px 37px;    
+    background-color: rgba(0, 0, 0, 82%);    
+    box-shadow: 0 8px 13px 0px rgba(199, 160, 32, 28%); 
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 27px/35px;
+    outline: none; 
+    min-width: 130px;
+}
+.love-end{ 
+    margin: 0rem 5rem 0 5rem;
+    background-color: rgba(0, 0, 0, 82%);
+    border-radius: 30px;
+    border: 1px solid white;  
+}
+/* *********************************** music game **************************************/
+.music{
+    background: url(/assets/images/music-bg.jpg)  no-repeat center center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.music-container{
+    margin: -5rem 5rem 0 5rem;
+    background-color: rgba(0, 0, 0, 100%);
+    border-radius: 30px;
+    border: 1px solid rgba(250, 82, 11, 51%);
+}
+.music-questions{
+    padding: 3vh;
+    margin: 7vh auto;
+    width: 75%;
+    height: 15vh;
+    background-color: rgb(163, 199, 252);
+    border: 1px solid white;
+    border-radius: 20px;
+    padding-left: 5%;
+    font-size: 28px;
+    color: #000000;
+    text-align: center;
+}
+.music-btn{
+    width: 40%;
+    height:15%;
+    padding: 2% 5%;
+    margin: 0 20px 15px 37px;    
+    background-color: rgb(37, 172, 155);    
+    box-shadow: 0 8px 13px 0px  rgba(199, 160, 32, 28%); 
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 27px/35px;
+    outline: none; 
+    
+}
+.music-correct{
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
+    padding: 20px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;    
+    font-size: 28px;
+    color: rgba(250, 82, 11, 51%);
+
+}
+.music-incorrect{
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;    
+    font-size: 28px;
+    color: rgba(250, 82, 11, 51%);
+}
+/* love/hate end score page */
+.music-end-outer{
+    background: url(/assets/images/music-end.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.music-end-praise, .music-end-score{
+    padding: 3vh 5vw;
+    margin: 7vh 5vw;   
+    height: 15vh;
+    background-color: rgb(163, 199, 252);
+    border: 1px solid white;
+    border-radius: 20px;
+    padding-left: 5%;    
+    color: #000000;
+    text-align: center;
+}
+.music-end-praise{
+    font-size: 50px;
+} 
+.music-end-score{
+    font-size: 27px;
+}
+.music-restart,.music-leave {
+    width: 40%;
+    height:15%;
+    padding: 2% 5%;
+    margin: 0 9px 27px 37px;    
+    background-color: rgb(255, 12, 73);    
+    box-shadow: 0 8px 13px 0px rgba(255, 12, 73, 60%); 
+    font-size: 28px;
+    color: #ffffff;
+    border-radius: 27px/35px;
+    outline: none; 
+    min-width: 130px;
+}
+.music-end{ 
+    margin: 0rem 5rem 0 5rem;
+    background-color: rgba(0, 0, 0, 82%);
+    border-radius: 30px;
+    border: 1px solid white;  
+}
+
+
+
+
+
+
+
 
 
 
@@ -217,36 +447,49 @@ body{
         margin-right: 12vw;
         margin-left: 20vw;
     }   
-    .peppa-game{
+    .peppa-game, .love-game, .music{
         background-size: 150vw 100vh;
         width: 100vw;
         height: 100vh;
     }
-    .peppa-game-container{
+    .peppa-game-container, .love-game-container, .music-container{
         min-width: 90%;   
     }
-    .peppa-questions{
+    .peppa-questions, .love-questions, .music-questions{
         font-size: 25px;
         width: 90%;
     }
-    .pep-btn{
+    .pep-btn, .love-btn, .music-btn{
         font-size: 15px;
         margin: 2vw 27vw;
     }
-    .peppa-correct, .peppa-incorrect{
+    .peppa-correct, .peppa-incorrect, .love-correct, .love-incorrect, .music-correct, .music-incorrect{
         font-size: 10px;
         padding: 20px;
     }
-    .peppa-end{
+    .peppa-end, .love-end, .music-end{
         background-size: 150vw 100vh;
         width: 83vw;
-        height: 90vh;
-        min-width: 200px;
-        text-align: center;
-        
+        height: 90vh;        
+        text-align: center;        
     }
-    .pep-end-btn{
+    .peppa-end{
+        min-width: 200px;
+    } 
+    .love-end, .music-end{
+        min-width: 280px;
+    }
+    .pep-end-btn, .love-end-btn, .music-restart, .music-leave{
         font-size: 15px;
         width: 90%;
+    }
+    .love-end-praise, .music-end-praise {
+        font-size: 20px;        
+    }
+    .love-end-score, .music-end-score{
+        font-size: 15px;
+    }
+    .love-restart, .love-leave, .music-restart, .music-leave{
+        width: auto;
     }
 }
