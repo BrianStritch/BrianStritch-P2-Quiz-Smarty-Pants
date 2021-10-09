@@ -10,23 +10,33 @@
 <body>
     <main class="game-container">
         <!-- *****************************game entry zone *****************************************-->
-        <div class="outer-entry-zone hide">
+        <div id="outer-zone" class="outer-entry-zone ">
             <div class="entry-zone ">
                 <button id="enter" class="entry">Enter</button>
-                <button id="rules" class="rules">Rules</button>
+                <button id="rules-btn" class="rules">Rules</button>
+            </div>
+            <div id="rules-screen" class="rules-list hide">
+                <p>GAME RULES: <br>
+                    1. Answer all the questions to win the quizz. <br>
+                    2. Beat the timer to anser the questions. <br>
+                    3. Have Fun <br>
+                    4. No Googling answers <br>
+                    <button id='rules-close' >Close</button>
+
+                </p>
             </div>
         </div>
         <!-- **************************game selector section **********************************-->
-        <div class="game-selector hide">
+        <div id="selection-screen" class="game-selector hide">
             <div class="choose-game">CHOOSE YOUR GAME</div>
             <div class="selectors-outer">
                 <div class="selectors">
-                    <div class="peppa-img card ">
+                    <div class="peppa-img card " >
                         <img src="assets/images/peppa-selector.jpeg" 
                         alt="Peppa pig game selector image">
                     </div>                                
                 </div>
-                <button id="peppa" class="selector-btn">PEPPA PIG</button> 
+                <button id="peppa" class="selector-btn" data-type="peppa-pig">PEPPA PIG</button> 
             </div>
 
             <div class="selectors-outer">
@@ -35,7 +45,7 @@
                         <img src="assets/images/love-hate-img.JPG" alt="Love hate game selector image">
                     </div>                               
                 </div>
-                <button id="love-hate" class="selector-btn">LOVE HATE</button>
+                <button id="love-hate" class="selector-btn" data-type="love-hate">LOVE HATE</button>
             </div>
 
             <div class="selectors-outer">
@@ -44,12 +54,12 @@
                         <img src="assets/images/music.jpg" alt="Musical game selector image">
                     </div>                
                 </div>
-                <button id="music" class="selector-btn">MUSIC</button> 
+                <button id="music" class="selector-btn" data-type="music-quiz">MUSIC</button> 
             </div>           
         </div>
         <!--*********************** peppa pig game ******************************-->
         <div class="peppa-outer-container ">
-            <div id="peppa-game-outer" class="hide">
+            <div id="peppa-game-outer" class="hide" >
                 <div class="peppa-game">
                     <div class="peppa-game-container">
                         <div class="peppa-questions">Question goes here</div>
@@ -77,7 +87,7 @@
         </div>
         <!-- ***************** LOVE HATE GAME *****************************-->
         <div id="love-hate-game">
-            <div id="love-game-outer" class="hide">
+            <div id="love-game-outer" class="hide" >
                 <div class="love-game">
                     <div class="love-game-container">
                         <div class="love-questions">Question goes here</div>
@@ -104,7 +114,7 @@
             </div>  
             <!-- ***************** Music GAME *****************************-->
         <div id="music-game">
-            <div id="music-game-outer" class="hide">
+            <div id="music-game-outer" class="hide" >
                 <div class="music">
                     <div class="music-container">
                         <div class="music-questions">Question goes here</div>

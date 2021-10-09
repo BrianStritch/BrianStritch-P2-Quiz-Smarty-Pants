@@ -45,6 +45,16 @@ body{
     background-color: rgba(216, 38, 216, 0.685);
     color: white;
 }
+.rules-list{
+    width: 25vw;
+    background-color: rgba(1, 2, 2, 65%);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    position: absolute;
+    top: 60vh;
+    left: 60vw;
+}
 
 /******************************** game selectors page styling *******************************/
 
