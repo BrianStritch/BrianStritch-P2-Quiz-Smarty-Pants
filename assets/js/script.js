@@ -14,17 +14,11 @@ rulesExit.addEventListener('click', exitRules);
 
 /* selector screen */
 let selectionScreen = document.getElementById('selection-screen');
-// let peppaSelector = document.getElementById('peppa');
-// peppaSelector.addEventListener('click', startPeppaGame);
-
-// let loveHateSelector = document.getElementById('love-hate');
-// loveHateSelector.addEventListener('click', startLoveHate);
-
     
 let peppaGameOuter = document.getElementById('peppa-game-outer');
 let loveGameOuter = document.getElementById('love-game-outer');
 let musicGameOuter = document.getElementById('music-game-outer');
-/* love maths script */
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName('button');
 
@@ -44,23 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 startMusic()
                 }
         })
-    }    
+    }   
 })
-
-
- 
-
-/* peppa pig game */
-
-
-/* love hate game */
-
-
-
-
-
-
-
 
 /* functions for outer entry screen and rules list */
 function enterSelection(){
@@ -74,12 +53,54 @@ function exitRules(){
     rulesList.classList.add('hide');
 }
 
+
+/* peppa pig game */
 /* functions for peppa pig game */
 function startPeppaGame(){
     
 
 }
 
+let peppaQuestions = [
+    {
+        question: 'who is peppas brother',
+        answers:[
+            {text: 'Michael', correct:false},
+            {text: 'John', correct:false},
+            {text: 'Paddy', correct:false},
+            {text: 'George', correct:true},
+        ]
+    },
+    {
+        question: 'who is peppas brother 2',
+        answers:[
+            {text: 'Michael', correct:false},
+            {text: 'John', correct:false},
+            {text: 'Paddy', correct:false},
+            {text: 'George', correct:true},
+        ]
+    },
+    {
+        question: 'who is peppas brother 3',
+        answers:[
+            {text: 'Michael', correct:false},
+            {text: 'John', correct:false},
+            {text: 'Paddy', correct:false},
+            {text: 'George', correct:true},
+        ]
+    },
+    {
+        question: 'who is peppas brother 4',
+        answers:[
+            {text: 'Michael', correct:false},
+            {text: 'John', correct:false},
+            {text: 'Paddy', correct:false},
+            {text: 'George', correct:true},
+        ]
+    },
+]
+
+/* love hate game */
 /* functions for love/hate game */
 function startLoveHate(){
     
@@ -91,6 +112,3 @@ function startMusic(){
 
 
 }
-
-
-
