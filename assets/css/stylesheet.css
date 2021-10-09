@@ -117,6 +117,15 @@ body{
     color:rgba(216, 38, 216, 0.685)
 }
 
+/* *************************** communal game styling *********************************/
+.correct{
+    background-color: rgb(27, 202, 4);
+    color: white;
+}
+.incorrect{
+    background-color: red;
+    color: white;
+}
 /***************************** peppa pig game styling *******************************/
 
 .peppa-game{
