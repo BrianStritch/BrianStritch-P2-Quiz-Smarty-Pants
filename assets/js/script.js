@@ -56,9 +56,15 @@ function exitRules(){
 
 /* peppa pig game */
 /* functions for peppa pig game */
+let 
 function startPeppaGame(){
     
 
+}
+
+function currentQuestion(){
+    let newQuestion = peppaQuestions(Math.floor(Math.random()));
+    
 }
 
 let peppaQuestions = [
