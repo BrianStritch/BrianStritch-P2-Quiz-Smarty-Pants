@@ -98,13 +98,58 @@ function startGame(){
     shuffledQuestions = questions.sort(() => Math.floor() * 4);
     currentQuestionIndex = 0;
     setNextQuestion();
+    peppaAnswerButtons.classList.remove('hide');
 
 }
 function setNextQuestion(){
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
+function showQuestion(question){
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('pep-btn');        
+        if (answer.correct){
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+    });
+}
 
+function resetState(){
+    nextButton.classList.add('hide');
+    while(answerButtonsElement.firstChild){
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+}
+
+function selectAnswer(e){
+    let selectedButton = e.target;    
+    let correct = selectedButton.dataset.correct;
+    setStatusClass(selectedButton, correct);
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if(shuffledQuestions.length > currentQuestionIndex + 1){
+        nextButton.classList.remove('hide');
+    } else {
+        startButton.innerText = 'Restart';
+        startButton.classList.remove('hide');
+    }
+    if(selectedButton = correct){
+        setTimeout(hideAnswerButtons , 500);        
+        incrementCorrectScore(); 
+        questionElement.innerText = 'Thats right, well done!'        
+
+    } else {        
+        incrementIncorrectScore(); 
+        setTimeout(hideAnswerButtons , 500);         
+        questionElement.innerText = 'Sorry thats not right.'              
+    }
+}
 
 
 
