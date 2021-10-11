@@ -1,8 +1,8 @@
 /* outer entry zone */
 let outerZone = document.getElementById('outer-zone')
 
-let startButton = document.getElementById('enter');
-startButton.addEventListener('click', enterSelection);
+let startBtn = document.getElementById('enter');
+startBtn.addEventListener('click', enterSelection);
 
 let rulesBtn = document.getElementById('rules-btn');
 rulesBtn.addEventListener('click', rules);
@@ -54,58 +54,57 @@ function exitRules(){
     rulesList.classList.add('hide');
 }
 
+/* ****************** game screens ********************************/
+let startButton = document.getElementById('start-button');
+startButton.addEventListener('click', gameChoice)
+let nextButton = document.getElementById('next-button');
+let peppaContainer = document.getElementById('peppa-game-container');
+let shuffledQuestions;
+let currentQuestions;
+let pepQuestion = document.getElementById('pep-questions');
+let peppaAnswerButtons = document.getElementById('answerButtonsPep');
 
 /* peppa pig game */
 /* functions for peppa pig game */
-let usedQuestions = [];
-let peppaQuestion = document.getElementById('pep-questions');
-let button1 = document.getElementById('peppa-answer1');
-let button2 = document.getElementById('peppa-answer2');
-let button3 = document.getElementById('peppa-answer3');
-let button4 = document.getElementById('peppa-answer4');
-let answerButtonsDiv = document.getElementById('answerButtonsPep');
-button1.addEventListener('click', nextQuestion);
-button2.addEventListener('click', nextQuestion);
-button3.addEventListener('click', nextQuestion);
-button4.addEventListener('click', checkAnswer);
 
-
+function gameChoice(){
+    let choices = document.getElementsByClassName('start-btn-choice');
+    for (let choice of choices){
+        choice.addEventListener('click', function() {
+            if (this.getAttribute('data-type') === 'peppa'){
+                questions = peppaQuestions;
+                console.log(questions[0]);
+                startGame();
+            } else if (this.getAttribute('data-type') === 'love'){
+                questions = loveQuestions;
+                console.log(questions[0]);
+                startGame();
+            } else if (this.getAttribute('data-type') === 'music'){
+                console.log('music choice');
+                questions = musicQuestions;
+                console.log(questions[0]);
+                startGame();
+                }
+        })
+    }  
+}
 
 
 function startPeppaGame(){
-    let num = Math.floor(Math.random() * 4);
-    var quest = peppaQuestions[num];
-
-
-        peppaQuestion.innerText = quest.question;
-        button1.innerText = quest.answers[0].text;
-        button2.innerText = quest.answers[1].text;
-        button3.innerText = quest.answers[2].text;
-        button4.innerText = quest.answers[3].text;
-        usedQuestions.push(num);
-        console.log(usedQuestions);
+    
 }
 
 function nextQuestion(){
-    let num = Math.floor(Math.random() * 4);
-    var quest = peppaQuestions[num];
-    if (usedQuestions.includes(num) === false ){
-        peppaQuestion.innerText = quest.question;
-        button1.innerText = quest.answers[0].text;
-        button2.innerText = quest.answers[1].text;
-        button3.innerText = quest.answers[2].text;
-        button4.innerText = quest.answers[3].text;
-        usedQuestions.push(num);
-        console.log(usedQuestions);
+    
         
-    } else if (usedQuestions.length < 4) {
-        nextQuestion();
-        console.log(usedQuestions);
-    }else {
-        console.log('end of game')
-        peppaGameOuter.classList.add('hide');
-        peppaGameEnd.classList.remove('hide');
-    }   
+    // } else if (usedQuestions.length < 4) {
+    //     nextQuestion();
+    //     console.log(usedQuestions);
+    // }else {
+    //     console.log('end of game')
+    //     peppaGameOuter.classList.add('hide');
+    //     peppaGameEnd.classList.remove('hide');
+    // }   
 }
 
 function checkAnswer(){
@@ -124,8 +123,7 @@ let peppaQuestions = [
             {text: 'John', correct:false},
             {text: 'Paddy', correct:false},
             {text: 'George', correct:true},
-        ],
-        correct:'George', 
+        ],        
     },
     {
         question: 'who is peppas brother 2',
@@ -152,6 +150,44 @@ let peppaQuestions = [
             {text: 'peter', correct:false},
             {text: 'eileen', correct:false},
             {text: 'alan', correct:true},
+        ]
+    },
+]
+let loveQuestions = [
+    {
+        question: 'this is love',
+        answers:[
+            {text: 'y', correct:false},
+            {text: 'y', correct:false},
+            {text: 'y', correct:false},
+            {text: 'y', correct:true},
+        ],        
+    },
+    {
+        question: 'who is peppas brother 2',
+        answers:[
+            {text: 'h', correct:false},
+            {text: 'h', correct:false},
+            {text: 'h', correct:false},
+            {text: 'h', correct:true},
+        ]
+    },
+    {
+        question: 'who is peppas brother 3',
+        answers:[
+            {text: 'h', correct:false},
+            {text: 'fh', correct:false},
+            {text: 'nh', correct:false},
+            {text: 'h', correct:true},
+        ]
+    },
+    {
+        question: 'who is peppas brother 4',
+        answers:[
+            {text: 'r', correct:false},
+            {text: 'r', correct:false},
+            {text: 'r', correct:false},
+            {text: 'r', correct:true},
         ]
     },
 ]
