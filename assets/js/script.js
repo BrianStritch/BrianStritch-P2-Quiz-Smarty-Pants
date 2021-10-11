@@ -150,6 +150,10 @@ function selectAnswer(e){
         questionElement.innerText = 'Sorry thats not right.'              
     }
 }
+function hideAnswerButtons(){
+    let pepBtn = document.getElementById('answerButtonsPep')
+    pepBtn.classList.add('hide');
+}
 
 
 
