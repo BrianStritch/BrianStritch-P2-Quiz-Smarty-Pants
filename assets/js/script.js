@@ -58,6 +58,10 @@ function exitRules(){
 let startButton = document.getElementById('start-button');
 startButton.addEventListener('click', gameChoice)
 let nextButton = document.getElementById('next-button');
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+})
 let peppaContainer = document.getElementById('peppa-game-container');
 let shuffledQuestions;
 let currentQuestions;
@@ -88,6 +92,20 @@ function gameChoice(){
         })
     }  
 }
+
+function startGame(){    
+    startButton.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.floor() * 4);
+    currentQuestionIndex = 0;
+    setNextQuestion();
+
+}
+function setNextQuestion(){
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
+}
+
+
 
 
 function startPeppaGame(){
