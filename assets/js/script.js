@@ -169,7 +169,16 @@ function clearStatusClass(element){
     element.classList.remove('incorrect');
 }
 
-
+function incrementCorrectScore(){
+    let oldScores = parseInt(document.getElementById('correct-score').innerText);
+    document.getElementById('correct-score').innerText = ++oldScores;
+    
+}
+function incrementIncorrectScore(){
+    let oldScore = parseInt(document.getElementById('incorrect-score').innerText);
+    document.getElementById('incorrect-score').innerText = ++oldScore;
+    
+}
 
 
 
@@ -292,8 +301,3 @@ function startMusic(){
 
 }
 
-
-function incrementScore(){
-    let oldScore = parseInt(document.getElementById('correct-score').innerText);
-    document.getElementById('correct-score').innerText = ++oldScore;
-}
