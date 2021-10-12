@@ -119,11 +119,11 @@ body{
 
 /* *************************** communal game styling *********************************/
 
-.pep-btn.correct{
+.ans-btn-all.correct,.pep-btn.correct{
     background-color: rgb(27, 202, 4);
     color: white;
 }
-.pep-btn.incorrect{
+.ans-btn-all.incorrect,.pep-btn.incorrect{
     background-color: red;
     color: white;
 }
@@ -157,7 +157,7 @@ body{
     text-align: center;
     
 }
-.pep-btn{
+.peppa-game-container button{
     width: 40%;
     height:15%;
     padding: 2% 5%;
@@ -253,7 +253,7 @@ body{
     color: #ffffff;
     text-align: center;
 }
-.love-btn{
+.love-game-container button{
     width: 40%;
     height:15%;
     padding: 2% 5%;
@@ -365,7 +365,7 @@ body{
     color: #000000;
     text-align: center;
 }
-.music-btn{
+.music-container button{
     width: 40%;
     height:15%;
     padding: 2% 5%;

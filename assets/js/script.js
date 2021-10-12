@@ -55,18 +55,20 @@ function exitRules(){
 }
 
 /* ****************** game screens ********************************/
-let startButton = document.getElementById('start-button');
-startButton.addEventListener('click', gameChoice)
-let nextButton = document.getElementById('next-button');
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-})
+let startButtonPeppa = document.getElementById('start-button-peppa');
+startButtonPeppa.addEventListener('click', gameChoice);
+
+let nextButtonPeppa = document.getElementById('next-button');
+nextButtonPeppa.addEventListener('click', nextButton)
 let peppaContainer = document.getElementById('peppa-game-container');
 let shuffledQuestions;
-let currentQuestions;
+let currentQuestionIndex;
+
+
 let pepQuestion = document.getElementById('pep-questions');
-let peppaAnswerButtons = document.getElementById('answerButtonsPep');
+let answerButtonsElement = document.getElementById('answerButtonsPep');
+let allAnswerButtons = document.getElementsByClassName('ans-btn-all')
+
 
 /* peppa pig game */
 /* functions for peppa pig game */
@@ -76,7 +78,7 @@ function gameChoice(){
     for (let choice of choices){
         choice.addEventListener('click', function() {
             if (this.getAttribute('data-type') === 'peppa'){
-                questions = peppaQuestions;
+                questions = peppaQuestions;                                
                 console.log(questions[0]);
                 startGame();
             } else if (this.getAttribute('data-type') === 'love'){
@@ -94,33 +96,36 @@ function gameChoice(){
 }
 
 function startGame(){    
-    startButton.classList.add('hide');
+    startButtonPeppa.classList.add('hide');
     shuffledQuestions = questions.sort(() => Math.floor() * 4);
     currentQuestionIndex = 0;
     setNextQuestion();
-    peppaAnswerButtons.classList.remove('hide');
-
 }
-function setNextQuestion(){
+function nextButton(){
+    showAnswerButtons();
+    currentQuestionIndex++;
+    setNextQuestion();
+}
+function setNextQuestion(){    
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 function showQuestion(question){
-    questionElement.innerText = question.question;
+    pepQuestion.innerText = question.question;
     question.answers.forEach(answer => {
         let button = document.createElement('button');
         button.innerText = answer.text;
-        button.classList.add('pep-btn');        
+        button.classList.add('pep-btn');            
         if (answer.correct){
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
+        answerButtonsElement.appendChild(button)
     });
 }
 
-function resetState(){
-    nextButton.classList.add('hide');
+function resetState(){    
+    nextButtonPeppa.classList.add('hide');
     while(answerButtonsElement.firstChild){
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
@@ -134,25 +139,30 @@ function selectAnswer(e){
         setStatusClass(button, button.dataset.correct)
     })
     if(shuffledQuestions.length > currentQuestionIndex + 1){
-        nextButton.classList.remove('hide');
+        nextButtonPeppa.classList.remove('hide');
     } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
+        peppaGameEnd.classList.remove('hide');
+        peppaGameOuter.classList.add('hide');
     }
     if(selectedButton = correct){
         setTimeout(hideAnswerButtons , 500);        
         incrementCorrectScore(); 
-        questionElement.innerText = 'Thats right, well done!'        
+        pepQuestion.innerText = 'Thats right, well done!'        
 
     } else {        
         incrementIncorrectScore(); 
         setTimeout(hideAnswerButtons , 500);         
-        questionElement.innerText = 'Sorry thats not right.'              
+        pepQuestion.innerText = 'Sorry thats not right.'              
     }
 }
+
 function hideAnswerButtons(){
     let pepBtn = document.getElementById('answerButtonsPep')
     pepBtn.classList.add('hide');
+}
+function showAnswerButtons(){
+    let pepBtn = document.getElementById('answerButtonsPep')
+    pepBtn.classList.remove('hide'); 
 }
 function setStatusClass(element, correct){
     clearStatusClass(element);
@@ -172,13 +182,12 @@ function clearStatusClass(element){
 function incrementCorrectScore(){
     let oldScores = parseInt(document.getElementById('correct-score').innerText);
     document.getElementById('correct-score').innerText = ++oldScores;
-    
 }
 function incrementIncorrectScore(){
     let oldScore = parseInt(document.getElementById('incorrect-score').innerText);
     document.getElementById('incorrect-score').innerText = ++oldScore;
-    
 }
+
 
 
 
@@ -256,14 +265,14 @@ let loveQuestions = [
             {text: 'y', correct:false},
             {text: 'y', correct:false},
             {text: 'y', correct:false},
-            {text: 'y', correct:true},
+            {text: 'y', correct:false},
         ],        
     },
     {
         question: 'who is peppas brother 2',
         answers:[
-            {text: 'h', correct:false},
-            {text: 'h', correct:false},
+            {text: 'h', correct:true},
+            {text: 'h', correct:true},
             {text: 'h', correct:false},
             {text: 'h', correct:true},
         ]
@@ -291,7 +300,6 @@ let loveQuestions = [
 /* love hate game */
 /* functions for love/hate game */
 function startLoveHate(){
-    
     
 }
 /* functions for music game */
