@@ -138,7 +138,9 @@ body{
     align-items: center;
     justify-content: center;
 }
-.peppa-game-container{     
+.peppa-game-container{ 
+    width: inherit;
+    max-width: 60vw;    
     margin: -5rem 5rem 0 5rem;
     background-color: rgba(38, 142, 216, 53%);
     border-radius: 30px;
@@ -148,7 +150,7 @@ body{
     padding: 3vh;
     margin: 7vh auto;
     width: 75%;
-    height: 15vh;
+    /* height: 15vh; */
     background-color: rgba(51, 95, 200, 75%);
     border-radius: 20px;
     padding-left: 5%;
@@ -218,6 +220,7 @@ body{
 
 }
 .peppa-end{ 
+    width: 60vw;
     margin: 0rem 5rem 0 5rem;
     background-color: rgba(38, 142, 216, 53%);
     border-radius: 30px;
@@ -479,7 +482,7 @@ body{
         font-size: 25px;
         width: 90%;
     }
-    .pep-btn, .love-btn, .music-btn{
+    .peppa-game-container button, .love-btn, .music-btn{
         font-size: 15px;
         margin: 2vw 27vw;
     }
