@@ -55,9 +55,16 @@ function exitRules(){
 }
 
 /* ****************** game screens ********************************/
+
+
+let shuffledQuestions;
+let currentQuestionIndex;
+let usedQuestions = [];
+
+
 /**************peppa pig ************ */
 let startButtonPeppa = document.getElementById('start-button-peppa');
-startButtonPeppa.addEventListener('click', gameChoice);
+startButtonPeppa.addEventListener('click', startGame);
 
 let peppaRestart = document.getElementById('peppa-restart')
 peppaRestart.addEventListener('click', restartPeppaGame);
@@ -70,58 +77,41 @@ nextButtonPeppa.addEventListener('click', nextButton)
 
 let peppaContainer = document.getElementById('peppa-game-container');
 
-
-
-
-let shuffledQuestions;
-let currentQuestionIndex;
-let usedQuestions = [];
-
-
 let pepQuestion = document.getElementById('pep-questions');
 let answerButtonsElement = document.getElementById('answerButtonsPep');
 
 
-/* Love hate game */
 
-let loveStartButton = document.getElementById('love-start-button');
-loveStartButton.addEventListener('click', gameChoice);
-
-let loveRestart = document.getElementById('love-restart');
-loveRestart.addEventListener('click', restartLoveGame); 
-
-let loveNextButton = document.getElementById('love-next-button');
-nextButtonPeppa.addEventListener('click', nextButton)
 
 /* functions for peppa pig game */
 
 
 
 
-function gameChoice(){
-    let choices = document.getElementsByClassName('start-btn-choice');
-    for (let choice of choices){
-        choice.addEventListener('click', function() {
-            if (this.getAttribute('data-type') === 'peppa'){
-                questions = peppaQuestions; 
-                startGame();
-            } else if (this.getAttribute('data-type') === 'love'){
-                questions = loveQuestions;
-                console.log(questions[0]);
-                startGame();
-            } else if (this.getAttribute('data-type') === 'music'){
-                console.log('music choice');
-                questions = musicQuestions;
-                console.log(questions[0]);
-                startGame();
-                }
-        })
-    }  
-}
+// function gameChoice(){
+//     let choices = document.getElementsByClassName('start-btn-choice');
+//     for (let choice of choices){
+//         choice.addEventListener('click', function() {
+//             if (this.getAttribute('data-type') === 'peppa'){
+//                 questions = peppaQuestions; 
+//                 startGame();
+//             } else if (this.getAttribute('data-type') === 'love'){
+//                 // questions = loveQuestions;
+//                 console.log(questions[0]);
+//                 // startLoveGame();
+//             } else if (this.getAttribute('data-type') === 'music'){
+//                 console.log('music choice');
+//                 questions = musicQuestions;
+//                 console.log(questions[0]);
+//                 startMusicGame();
+//                 }
+//         })
+//     }  
+// }
 
 function startGame(){    
     startButtonPeppa.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.floor() * 31);
+    shuffledQuestions = peppaQuestions.sort(() => Math.floor() * 31);
     currentQuestionIndex = 0;
     setNextQuestion();
 }
@@ -219,9 +209,6 @@ function incrementIncorrectScore(){
     document.getElementById('incorrect-score').innerText = ++oldScore;
 }
 
-
-
-
 function endScoreMessage(){
     let endScore = document.getElementById('peppa-score')
     let endResult = parseInt(document.getElementById('correct-score').innerText);
@@ -229,8 +216,6 @@ function endScoreMessage(){
     
 
 }
-
-
 
 function restartPeppaGame(){
     document.getElementById('correct-score').innerText = 0;
@@ -248,25 +233,7 @@ function exitGame(){
     peppaGameOuter.classList.add('hide');
 
 }
-    
-        
-    // } else if (usedQuestions.length < 10) {
-    //     nextQuestion();
-    //     console.log(usedQuestions);
-    // }else {
-    //     console.log('end of game')
-    //     peppaGameOuter.classList.add('hide');
-    //     peppaGameEnd.classList.remove('hide');
-    // }   
-
-
-function checkAnswer(){
-
-}
-
-
-
-
+ 
 
 let peppaQuestions = [
     {
@@ -584,14 +551,158 @@ let peppaQuestions = [
     }
 ]
 
+/* *************************************** love hate game ****************************************/
+/* Love hate game */
+
+let loveStartButton = document.getElementById('love-start-button');
+loveStartButton.addEventListener('click', startLoveGame);
+
+let loveRestart = document.getElementById('love-restart');
+loveRestart.addEventListener('click', restartLoveGame); 
+
+let loveNextButton = document.getElementById('love-next-button');
+nextButtonPeppa.addEventListener('click', nextButton)
+
+let lovequitBtn = document.getElementById('love-quit')
+lovequitBtn.addEventListener('click', exitGame);
+
+let nextButtonlove = document.getElementById('next-button-love');
+nextButtonlove.addEventListener('click', nextButton)
+
+let loveContainer = document.getElementById('love-game-container');
+
+let loveQuestion = document.getElementById('love-questions');
+let answerButtonsLove = document.getElementById('answerButtonsLove');
+
+
+let shuffledLoveQuestions;
+let currentLoveQuestionIndex;
+let usedLoveQuestions = [];
 
 
 
 
 
+function startLoveGame(){    
+    loveStartButton.classList.add('hide');
+    shuffledLoveQuestions = loveQuestions.sort(() => Math.floor() * 31);
+    currentLoveQuestionIndex = 0;
+    setNextLoveQuestion();
+}
+function nextButtonLove(){
+    showLoveAnswerButtons();
+    currentLoveQuestionIndex++;
+    setNextLoveQuestion();
+}
+function setNextLoveQuestion(){    
+    resetState()
+    showLoveQuestion(shuffledloveQuestions[currentLoveQuestionIndex]);
+}
+/**
+ * 
+ * i need to rearrange the question array call in the below functions. 
+ */
+function showLoveQuestion(loveQuestion){
+    loveQuestion.innerText = loveQuestion.question;
+    message = loveQuestion.message;
+    console.log(message);    
+    loveQuestion.answers.forEach(answer => {
+        let button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('pep-btn');            
+        if (answer.correct){
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectLoveAnswer);
+        answerButtonsLove.appendChild(button)
+    });
+}
 
+function resetLoveState(){    
+    nextButtonLove.classList.add('hide');
+    while(answerButtonsLove.firstChild){
+        answerButtonsLove.removeChild(answerButtonsLove.firstChild)
+    }
+}
 
+function selectLoveAnswer(e){
+    let selectedloveButton = e.target;    
+    let correct = selectedloveButton.dataset.correct;
+    setLoveStatusClass(selectedLoveButton, correct);
+    Array.from(answerButtonslove.children).forEach(button => {   
+        setStatusClass(button, button.dataset.correct)
+    })
+    if(usedQuestions.length < 9){  
+        nextButtonPeppa.classList.remove('hide');
+        usedQuestions.push('1')
+        console.log(usedQuestions);
+    } else{
+        peppaGameEnd.classList.remove('hide');
+        peppaGameOuter.classList.add('hide');
+        usedQuestions = [];
+        endScoreMessage();
+    }
+    if(selectedButton = correct){
+        setTimeout(hideAnswerButtons , 500);        
+        incrementCorrectScore(); 
+        pepQuestion.innerText = message; 
+            
 
+    } else {        
+        incrementIncorrectScore(); 
+        setTimeout(hideAnswerButtons , 500);         
+        pepQuestion.innerText = message;              
+    }
+}
+
+function hideLoveAnswerButtons(){
+    let loveBtn = document.getElementById('answerButtonsLove')
+    loveBtn.classList.add('hide');
+}
+function showLoveAnswerButtons(){
+    let loveBtn = document.getElementById('answerButtonsLove')
+    loveBtn.classList.remove('hide'); 
+}
+function setLoveStatusClass(element, correct){
+    clearStatusClass(element);
+    if (correct){
+        element.classList.add('correct');
+
+    } else {
+        element.classList.add('incorrect');
+
+    }
+}
+function clearLoveStatusClass(element){
+    element.classList.remove('correct');
+    element.classList.remove('incorrect');
+}
+
+function incrementLoveCorrectScore(){
+    let oldScoresLove = parseInt(document.getElementById('correct-love-score').innerText);
+    document.getElementById('correct-love-score').innerText = ++oldScoresLove;
+}
+function incrementLoveIncorrectScore(){
+    let oldScoreLove = parseInt(document.getElementById('incorrect-love-score').innerText);
+    document.getElementById('incorrect-love-score').innerText = ++oldScoreLove;
+}
+
+function loveendScoreMessage(){
+    let loveEndScore = document.getElementById('love-score')
+    let loveEndResult = parseInt(document.getElementById('correct-love-score').innerText);
+    loveEndScore.innerText = `Well done you scored ${loveEndResult} out of 10`
+    
+
+}
+
+function restartLoveGame(){
+    document.getElementById('correct-love-score').innerText = 0;
+    document.getElementById('incorrect-love-score').innerText = 0; 
+    usedQuestions = []; 
+    loveGameEnd.classList.add('hide');
+    loveGameOuter.classList.remove('hide');   
+    nextButton();
+}
 
 let loveQuestions = [
     {
