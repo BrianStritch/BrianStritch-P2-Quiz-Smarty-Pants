@@ -24,7 +24,7 @@ body{
     min-width: 380px;
     width: 100vw;
     height: 100vh;
-    background-image: url(/assets/images/quizz-entry-bg.JPG);
+    background: url(/assets/images/quizz-entry-bg.JPG);
     background-size: 100vw 100vh;
     display: flex;
     justify-content: center;
@@ -243,7 +243,7 @@ body{
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 100%);
 }
-.love-questions{
+.loves-questions{
     padding: 3vh;
     margin: 7vh auto;
     width: 75%;
