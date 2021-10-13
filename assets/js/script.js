@@ -556,8 +556,6 @@ let usedLoveQuestions = [];
 
 
 /****************** love hate game functions *************** */
-
-
 function startLoveGame(){    
     loveStartButton.classList.add('hide');
     shuffledLoveQuestions = shuffle(loveQuestions)
@@ -565,39 +563,6 @@ function startLoveGame(){
     currentLoveQuestionIndex = 0;
     setNextLoveQuestion();
 }
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function nextButtonLove(){
     showLoveAnswerButtons();
     currentLoveQuestionIndex++;
@@ -607,7 +572,6 @@ function setNextLoveQuestion(){
     resetLoveState()
     showLoveQuestion(shuffledLoveQuestions[currentLoveQuestionIndex]);
 }
-
 function showLoveQuestion(question){
     loveQuestion.innerText = question.question;
     console.log(question.question);
@@ -624,14 +588,12 @@ function showLoveQuestion(question){
         answerButtonsLove.appendChild(btn)
     });
 }
-
 function resetLoveState(){    
     loveNextButton.classList.add('hide');
     while(answerButtonsLove.firstChild){
         answerButtonsLove.removeChild(answerButtonsLove.firstChild)
     }
 }
-
 function selectLoveAnswer(e){
     let selectedLoveButton = e.target;    
     let correct = selectedLoveButton.dataset.correct;
@@ -661,7 +623,6 @@ function selectLoveAnswer(e){
         loveQuestion.innerText = message;              
     }
 }
-
 function hideLoveAnswerButtons(){
     let loveBtn = document.getElementById('answerButtonsLove')
     loveBtn.classList.add('hide');
@@ -684,7 +645,6 @@ function clearLoveStatusClass(element){
     element.classList.remove('correct');
     element.classList.remove('incorrect');
 }
-
 function incrementLoveCorrectScore(){
     let oldScoresLove = parseInt(document.getElementById('correct-love-score').innerText);
     document.getElementById('correct-love-score').innerText = ++oldScoresLove;
@@ -693,13 +653,11 @@ function incrementLoveIncorrectScore(){
     let oldScoreLove = parseInt(document.getElementById('incorrect-love-score').innerText);
     document.getElementById('incorrect-love-score').innerText = ++oldScoreLove;
 }
-
 function loveEndScoreMessage(){
     let loveEndScore = document.getElementById('love-score')
     let loveEndResult = parseInt(document.getElementById('correct-love-score').innerText);
     loveEndScore.innerText = `Well done you scored ${loveEndResult} out of 10`
 }
-
 function restartLoveGame(){
     document.getElementById('correct-love-score').innerText = 0;
     document.getElementById('incorrect-love-score').innerText = 0; 
@@ -709,7 +667,6 @@ function restartLoveGame(){
     loveGameOuter.classList.remove('hide');   
     nextButtonLove();
 }
-
 let loveQuestions = [
     {
         question: 'How many seasons of Love/Hate is there in total?',
@@ -1027,15 +984,460 @@ let loveQuestions = [
 
 ]
 
-/* love hate game */
-/* functions for love/hate game */
-function startLoveHate(){
-    
-}
+/* ************************ Music game **************************************/
+
 /* functions for music game */
-function startMusic(){
-    
+let loveStartButton = document.getElementById('love-start-button');
+loveStartButton.addEventListener('click', startLoveGame);
+
+let loveRestart = document.getElementById('love-restart');
+loveRestart.addEventListener('click', restartLoveGame); 
+
+let loveNextButton = document.getElementById('love-next-button');
+loveNextButton.addEventListener('click', nextButtonLove)
+
+let lovequitBtn = document.getElementById('love-quit')
+lovequitBtn.addEventListener('click', exitGame);
+
+let loveContainer = document.getElementById('love-game-container');
+
+let loveQuestion = document.getElementById('love-question');
+let answerButtonsLove = document.getElementById('answerButtonsLove');
+
+let loveGameEnd = document.getElementById('love-end-section');
 
 
-}
+let shuffledLoveQuestions;
+let currentLoveQuestionIndex;
+let usedLoveQuestions = [];
+
+
+/****************** love hate game functions *************** */
+// function startLoveGame(){    
+//     loveStartButton.classList.add('hide');
+//     shuffledLoveQuestions = shuffle(loveQuestions)
+//     console.log(shuffledLoveQuestions)
+//     currentLoveQuestionIndex = 0;
+//     setNextLoveQuestion();
+// }
+// function nextButtonLove(){
+//     showLoveAnswerButtons();
+//     currentLoveQuestionIndex++;
+//     setNextLoveQuestion();
+// }
+// function setNextLoveQuestion(){    
+//     resetLoveState()
+//     showLoveQuestion(shuffledLoveQuestions[currentLoveQuestionIndex]);
+// }
+// function showLoveQuestion(question){
+//     loveQuestion.innerText = question.question;
+//     console.log(question.question);
+//     message = question.message;
+//     console.log(message);    
+//     question.answers.forEach(answer => {
+//         let btn = document.createElement('button');
+//         btn.innerText = answer.text;
+//         btn.classList.add('pep-btn');            
+//         if (answer.correct){
+//             btn.dataset.correct = answer.correct
+//         }
+//         btn.addEventListener('click', selectLoveAnswer);
+//         answerButtonsLove.appendChild(btn)
+//     });
+// }
+// function resetLoveState(){    
+//     loveNextButton.classList.add('hide');
+//     while(answerButtonsLove.firstChild){
+//         answerButtonsLove.removeChild(answerButtonsLove.firstChild)
+//     }
+// }
+// function selectLoveAnswer(e){
+//     let selectedLoveButton = e.target;    
+//     let correct = selectedLoveButton.dataset.correct;
+//     setLoveStatusClass(selectedLoveButton, correct);
+//     Array.from(answerButtonsLove.children).forEach(button => {   
+//         setLoveStatusClass(button, button.dataset.correct)
+//     })
+//     if(usedLoveQuestions.length < 9){  
+//         loveNextButton.classList.remove('hide');
+//         usedLoveQuestions.push('1')
+//         console.log(usedLoveQuestions);
+//     } else{
+//         loveGameEnd.classList.remove('hide');
+//         loveGameOuter.classList.add('hide');
+//         usedLoveQuestions = [];
+//         loveEndScoreMessage();
+//     }
+//     if(selectedButton = correct){
+//         setTimeout(hideLoveAnswerButtons , 500);        
+//         incrementLoveCorrectScore(); 
+//         loveQuestion.innerText = message; 
+            
+
+//     } else {        
+//         incrementLoveIncorrectScore(); 
+//         setTimeout(hideLoveAnswerButtons , 500);         
+//         loveQuestion.innerText = message;              
+//     }
+// }
+// function hideLoveAnswerButtons(){
+//     let loveBtn = document.getElementById('answerButtonsLove')
+//     loveBtn.classList.add('hide');
+// }
+// function showLoveAnswerButtons(){
+//     let loveBtn = document.getElementById('answerButtonsLove')
+//     loveBtn.classList.remove('hide'); 
+// }
+// function setLoveStatusClass(element, correct){
+//     clearStatusClass(element);
+//     if (correct){
+//         element.classList.add('correct');
+
+//     } else {
+//         element.classList.add('incorrect');
+
+//     }
+// }
+// function clearLoveStatusClass(element){
+//     element.classList.remove('correct');
+//     element.classList.remove('incorrect');
+// }
+// function incrementLoveCorrectScore(){
+//     let oldScoresLove = parseInt(document.getElementById('correct-love-score').innerText);
+//     document.getElementById('correct-love-score').innerText = ++oldScoresLove;
+// }
+// function incrementLoveIncorrectScore(){
+//     let oldScoreLove = parseInt(document.getElementById('incorrect-love-score').innerText);
+//     document.getElementById('incorrect-love-score').innerText = ++oldScoreLove;
+// }
+// function loveEndScoreMessage(){
+//     let loveEndScore = document.getElementById('love-score')
+//     let loveEndResult = parseInt(document.getElementById('correct-love-score').innerText);
+//     loveEndScore.innerText = `Well done you scored ${loveEndResult} out of 10`
+// }
+// function restartLoveGame(){
+//     document.getElementById('correct-love-score').innerText = 0;
+//     document.getElementById('incorrect-love-score').innerText = 0; 
+//     currentQuestionIndex = shuffle(loveQuestions);
+//     usedLoveQuestions = []; 
+//     loveGameEnd.classList.add('hide');
+//     loveGameOuter.classList.remove('hide');   
+//     nextButtonLove();
+// }
+// let loveQuestions = [
+//     {
+//         question: 'How many seasons of Love/Hate is there in total?',
+//         answers:[
+//             {text: 'Six', correct:false},
+//             {text: 'Two', correct:false},
+//             {text: 'Four', correct:false},
+//             {text: 'Five', correct:true},
+//         ],
+//         message: 'There were five seasons in total',       
+//     },
+//     {
+//         question: "Which charachter learns how to use a gun by watching a YouTube tutorial?",
+//         answers:[
+//             {text: 'Darren', correct:false},
+//             {text: 'Lizzie', correct:false},
+//             {text: 'Nidge', correct:true},
+//             {text: 'Warren', correct:false},
+//         ],
+//         message:"Nidge learned how to use a gun by watching a YouTube tutorial in the very first episode",
+//     },
+//     {
+//         question: "Who killed Darren's brother robbie?",
+//         answers:[
+//             {text: 'Tommy', correct:false},
+//             {text: 'Hughie', correct:true},
+//             {text: 'John Boy', correct:false},
+//             {text: 'Dano', correct:false},
+//         ],
+//         message:"Hughie killed Robbie on his way home from his prison release.",
+//     },
+//     {
+//         question: "Who gets married in season one?",
+//         answers:[
+//             {text: 'Darren and Rosie', correct:false},
+//             {text: 'John Boy and Debbie', correct:false},
+//             {text: 'Nidge and Trish', correct:true},
+//             {text: 'Tommy and Siobhan', correct:false},
+//         ],
+//         message:"It was Nidge and Trish that got married in season one.",
+//     },
+//     {
+//         question: "Who is Siobhans Uncle?",
+//         answers:[
+//             {text: 'Nidge', correct:true},
+//             {text: 'John Boy', correct:false},
+//             {text: 'Elmo', correct:false},
+//             {text: 'Fran', correct:false},
+//         ],
+//         message:"Nidge was Siobhan's Uncle.",
+//     },
+//     {
+//         question: "Who's house did John Boy order nidge to firebomb?",
+//         answers:[
+//             {text: 'Detective Moynihan\'s', correct:false},
+//             {text: 'Frans', correct:true},
+//             {text: 'Ado\'s', correct:false},
+//             {text: 'Lizzie\'s', correct:false},
+//         ],
+//         message:"John Boy ordered Nidge to firebomb Fran's house in season 2",
+//     },
+//     {
+//         question: "What season was Darren Shot Dead?",
+//         answers:[
+//             {text: 'Season 3', correct:true},
+//             {text: 'Season 4', correct:false},
+//             {text: 'Season 2', correct:false},
+//             {text: 'Season 5', correct:false},
+//         ],
+//         message:"Darren was shot dead by Lizzie in season 3",
+
+//     },
+//     {
+//         question: 'What fizzy drink does Tommy tell DI Moynihan he would like?',
+//         answers:[
+//             {text: '7 up', correct:false},
+//             {text: 'Coca Cola', correct:false},
+//             {text: 'Orange', correct:true},
+//             {text: 'Lucozade', correct:false},
+//         ],
+//         message:"Tommy asked DI Moynihan for fizzy Orange",        
+//     },
+//     {
+//         question: "What is the name of the cat killer?",
+//         answers:[
+//             {text: 'Dano', correct:true},
+//             {text: 'Wayne', correct:true},
+//             {text: 'Ado', correct:false},
+//             {text: 'Terrence', correct:true},
+//         ],
+//         message:"It was Wayne that shot the cat with a machine gun",
+//     },
+//     {
+//         question: "What is the dodgy middle-class professional Andrews job?",
+//         answers:[
+//             {text: 'Doctor', correct:false},
+//             {text: 'Mechanic', correct:false},
+//             {text: 'Nurse', correct:false},
+//             {text: 'Dentist', correct:true},
+//         ],
+//         message:"Andrew was the dodgy dentist that got caught up in the knocking shop",
+//     },
+//     {
+//         question: 'What catchy saying was Fran best known for?',
+//         answers:[
+//             {text: 'Scarlet for ye!', correct:false},
+//             {text: 'Deadly', correct:false},
+//             {text: 'Sound pal', correct:false},
+//             {text: 'Coola Boola', correct:true},
+//         ],
+//         message:"Frans best known saying was Coola Boola ",
+//     },
+//     {
+//         question: "What is Nidge's first name?",
+//         answers:[
+//             {text: 'Ned', correct:false},
+//             {text: 'Niall', correct:false},
+//             {text: 'Nigel', correct:true},
+//             {text: 'Noel', correct:false},
+//         ],
+//         message:"Nidges first name was Nigel",
+//     },
+//     {
+//         question: "Which legendary musician played John Boy's Father?",
+//         answers:[
+//             {text: 'Christy Moore', correct:true},
+//             {text: 'Damien Dempsey', correct:false},
+//             {text: 'Finbar Furey', correct:false},
+//             {text: 'Ronnie Drew', correct:false},
+//         ],
+//         message:"It was Finbarr Furey who played John Boys father.",
+
+//     },
+//     {
+//         question: "What was Frans favourite drink",
+//         answers:[
+//             {text: 'Carlsberg', correct:false},
+//             {text: 'Vodka', correct:false},
+//             {text: 'Jamesons', correct:false},
+//             {text: 'Poitin', correct:true},
+//         ],
+//         message:"Poitin was Fran's favourite drink",
+//     },
+//     {
+//         question: "Which Boyzone member had a cameo in season 4",
+//         answers:[
+//             {text: 'Keith Duffy', correct:true},
+//             {text: 'Ronan Keating', correct:false},
+//             {text: 'Shane Lynch', correct:false},
+//             {text: 'Stephen Gately', correct:false},
+//         ],
+//         message:"Keith Duffy was the boyzone meber with the cameo appearance.",
+//     },
+//     {
+//         question: "Who plants git loughmans finger bone in Nidge's bathroom?",
+//         answers:[
+//             {text: 'Patrick', correct:false},
+//             {text: 'Siobhan', correct:true},
+//             {text: 'Di Moynihan', correct:false},
+//             {text: 'Tommy', correct:false},
+//         ],
+//         message:"Siobhan planted the finger in Nidge's bathroom in season 5.",
+//     },
+//     {
+//         question: "Who is looking out the window as Nidge is being shot in the final scenes?",
+//         answers:[
+//             {text: 'Darren', correct:false},
+//             {text: 'Ado', correct:false},
+//             {text: 'Wayne', correct:false},
+//             {text: 'Warren', correct:true},
+//         ],
+//         message:"Warren watched as his father was shot dead in the garden.",
+//     },
+//     {
+//         question: "Who knocked frans teeth out?",
+//         answers:[
+//             {text: 'Nidge', correct:false},
+//             {text: 'Tommy', correct:false},
+//             {text: 'Ado', correct:false},
+//             {text: 'Noely', correct:true},
+//         ],
+//         message:"Noely knocked out frans teeth when they were in prison.",
+//     },
+//     {
+//         question: "Who killed Darren?",
+//         answers:[
+//             {text: 'Hughie', correct:false},
+//             {text: 'Wayne', correct:false},
+//             {text: 'Lizzie', correct:true},
+//             {text: 'John Boy', correct:false},
+//         ],
+//         message:"Lizzie killed darren as revenge for killing her brother.",
+//     },
+//     {
+//         question: "Who had an affair with Frans wife?",
+//         answers:[
+//             {text: 'Nidge', correct:true},
+//             {text: 'Carl', correct:false},
+//             {text: 'Ado', correct:false},
+//             {text: 'Elmo', correct:false},
+//         ],
+//         message:"It was Nidge who had the affair with Frans wife.",
+//     },
+//     {
+//         question: "Which organisation was Git Loughman affiliated with?",
+//         answers:[
+//             {text: 'UDA', correct:false},
+//             {text: 'INLA', correct:false},
+//             {text: 'UVF', correct:false},
+//             {text: 'IRA', correct:true},
+//         ],
+//         message:"Git Loughman was a decorated member of the IRA.",
+//     },
+//     {
+//         question: "Who disposed of Git Loughmans Body?",
+//         answers:[
+//             {text: 'Fran', correct:true},
+//             {text: 'John Boy', correct:false},
+//             {text: 'Nidge', correct:false},
+//             {text: 'Wayne', correct:false},
+//         ],
+//         message:"It was fran who burned then buried the remains of Git Loughman.",
+
+//     },
+//     {
+//         question: "Who killed the Dentist Andrew?",
+//         answers:[
+//             {text: 'Nidge', correct:false},
+//             {text: 'Fran', correct:true},
+//             {text: 'Carl', correct:false},
+//             {text: 'Ado', correct:false},
+//         ],
+//         message:"Fran killed the dentist in a fit of rage without Nidge's consent.",
+//     },
+//     {
+//         question: 'What did Fran keep in his fridge for safe keeping?',
+//         answers:[
+//             {text: 'A gun', correct:false},
+//             {text: 'Money', correct:false},
+//             {text: 'A wedding ring', correct:false},
+//             {text: 'Gits finger', correct:true},
+//         ],
+//         message:"Fran kept Git Loughmans finger in the fridge as a souvenir. ",
+//     },
+//     {
+//         question: "Who had an affair with Dano Loughmans wife?",
+//         answers:[
+//             {text: 'Nidge', correct:false},
+//             {text: 'Ado', correct:false},
+//             {text: 'Fran', correct:false},
+//             {text: 'Tommy', correct:true},
+//         ],
+//         message:"Tommy had the affair with Dano Loughmans wife. ",
+//     },
+//     {
+//         question: "Who killed Nidge?",
+//         answers:[
+//             {text: 'Patrick', correct:true},
+//             {text: 'Carl', correct:false},
+//             {text: 'Ado', correct:false},
+//             {text: 'Elmo', correct:false},
+//         ],
+//         message:"Patrick killed Nidge in retaliation for his son.",
+//     },
+//     {
+//         question: "Who dug up Noely's Mother?",
+//         answers:[
+//             {text: 'Nidge', correct:false},
+//             {text: 'John Boy', correct:false},
+//             {text: 'Fran', correct:true},
+//             {text: 'Darren', correct:false},
+//         ],
+//         message:"Fran was the one who dug up Noely's Mothers grave.",
+//     },
+//     {
+//         question: "What animals was Fran known to breed?",
+//         answers:[
+//             {text: 'Dogs', correct:true},
+//             {text: 'Cats', correct:false},
+//             {text: 'Horses', correct:false},
+//             {text: 'Pigeons', correct:false},
+//         ],
+//         message:"Fran was a known fighting dog breeder and trainer.",
+//     },
+//     {
+//         question: "Who made the pipebombs used by Nidge on Frans house?",
+//         answers:[
+//             {text: 'Darren', correct:false},
+//             {text: 'Patrick', correct:true},
+//             {text: 'Ado', correct:false},
+//             {text: 'Elmo', correct:false},
+//         ],
+//         message:"Partick made the pipe bomb that was used on frans house.",
+//     },
+//     {
+//         question: 'What did nidges runners have printed on the back?',
+//         answers:[
+//             {text: 'The Boss', correct:false},
+//             {text: 'El Chapo', correct:false},
+//             {text: 'King Kong', correct:false},
+//             {text: 'King Nidge', correct:true},
+//         ],
+//         message:"In the very last episode Trish gave nidge a custom pair of runner with King Nidge printed on the back. ",
+//     },
+//     {
+//         question: "Who gave Tommy the beating that left him brain damaged?",
+//         answers:[
+//             {text: 'Patrick', correct:false},
+//             {text: 'Ado', correct:false},
+//             {text: 'Fran', correct:false},
+//             {text: 'Nidge', correct:true},
+//         ],
+//         message:"Nidge was the one who beat Tommy for sleeping with Dano's wife. ",
+//     }
+
+// ]
 
