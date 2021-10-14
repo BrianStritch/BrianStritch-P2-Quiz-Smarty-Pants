@@ -987,29 +987,29 @@ let loveQuestions = [
 /* ************************ Music game **************************************/
 
 /* functions for music game */
-let loveStartButton = document.getElementById('love-start-button');
-loveStartButton.addEventListener('click', startLoveGame);
+// let loveStartButton = document.getElementById('love-start-button');
+// loveStartButton.addEventListener('click', startLoveGame);
 
-let loveRestart = document.getElementById('love-restart');
-loveRestart.addEventListener('click', restartLoveGame); 
+// let loveRestart = document.getElementById('love-restart');
+// loveRestart.addEventListener('click', restartLoveGame); 
 
-let loveNextButton = document.getElementById('love-next-button');
-loveNextButton.addEventListener('click', nextButtonLove)
+// let loveNextButton = document.getElementById('love-next-button');
+// loveNextButton.addEventListener('click', nextButtonLove)
 
-let lovequitBtn = document.getElementById('love-quit')
-lovequitBtn.addEventListener('click', exitGame);
+// let lovequitBtn = document.getElementById('love-quit')
+// lovequitBtn.addEventListener('click', exitGame);
 
-let loveContainer = document.getElementById('love-game-container');
+// let loveContainer = document.getElementById('love-game-container');
 
-let loveQuestion = document.getElementById('love-question');
-let answerButtonsLove = document.getElementById('answerButtonsLove');
+// let loveQuestion = document.getElementById('love-question');
+// let answerButtonsLove = document.getElementById('answerButtonsLove');
 
-let loveGameEnd = document.getElementById('love-end-section');
+// let loveGameEnd = document.getElementById('love-end-section');
 
 
-let shuffledLoveQuestions;
-let currentLoveQuestionIndex;
-let usedLoveQuestions = [];
+// let shuffledLoveQuestions;
+// let currentLoveQuestionIndex;
+// let usedLoveQuestions = [];
 
 
 /****************** love hate game functions *************** */
