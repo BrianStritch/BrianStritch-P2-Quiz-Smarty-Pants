@@ -74,10 +74,10 @@ let oldScores;
 /* ********** peppa pig variables ****************/
 
 let startButtonPeppa = document.getElementById('start-button-peppa');
-startButtonPeppa.addEventListener('click', startGame);
+startButtonPeppa.addEventListener('click', startNewGame);
 
 let peppaRestart = document.getElementById('peppa-restart')
-peppaRestart.addEventListener('click', restartPeppaGame);
+peppaRestart.addEventListener('click', restartGame);
 
 let peppaquitBtn = document.getElementById('peppa-quit')
 peppaquitBtn.addEventListener('click', exitGame);
@@ -96,10 +96,10 @@ let pepBtn = document.getElementById('answerButtonsPep')
 
 /* *********************************** Love Hate variables ************************************/
 let loveStartButton = document.getElementById('love-start-button');
-loveStartButton.addEventListener('click', startLoveGame);
+loveStartButton.addEventListener('click', startNewGame);
 
 let loveRestart = document.getElementById('love-restart');
-loveRestart.addEventListener('click', restartLoveGame); 
+loveRestart.addEventListener('click', restartGame); 
 
 let loveNextButton = document.getElementById('love-next-button');
 loveNextButton.addEventListener('click', nextButtonLove)
@@ -133,7 +133,7 @@ let loveGameEnd = document.getElementById('love-end-section');
 // new question format *************************************************************************
 
 document.addEventListener("DOMContentLoaded", function() {
-    let buttons = document.getElementsByTagName('button');
+    let buttons = document.getElementsByClassName('selector-btn');
 
     for (let button of buttons){
         button.addEventListener('click', function() {
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 loveGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
                 startNewGame('love-game');
-            } else if (this.getAttribute('data-type') === 'music-quiz'){
+            } else if (this.getAttribute('data-type') === 'music-game'){
                 musicGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
                 startNewGame('music-game');
@@ -155,7 +155,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }   
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByClassName('start-button');
 
+    for (let button of buttons){
+        button.addEventListener('click', function() {
+            if (this.getAttribute('data-type') === 'peppa-pig'){
+                startNewGame('peppa-game');
+                console.log(this.getAttribute);
+
+            } else if (this.getAttribute('data-type') === 'love-hate'){
+                startNewGame('love-game');
+                console.log(this.getAttribute);
+            } else if (this.getAttribute('data-type') === 'music-game'){
+                startNewGame('music-game');
+                console.log(this.getAttribute);
+                }
+        })
+    }   
+})
 
 
 function startNewGame(x){
@@ -163,7 +181,7 @@ function startNewGame(x){
         startButtonPeppa.classList.add('hide');
         shuffledQuestions = shuffle(peppaQuestions);
         currentQuestionIndex = 0;
-        setNextQuestion('peppa');
+        setNextQuestion();
         gameTypeSelected = 'Peppa';
         selectedQuestionArea = pepQuestion;
     } else if(x === 'love-game'){
@@ -188,6 +206,9 @@ function startNewGame(x){
 
 function setNextQuestion(){    
     resetState()
+    // if(gameTypeSelected === 'peppa'){
+    //     showQuestion(shuffle(peppaQuestions)[currentQuestionIndex])
+    // }
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 function showQuestion(question){    

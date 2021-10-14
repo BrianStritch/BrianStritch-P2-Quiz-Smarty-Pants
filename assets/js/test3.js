@@ -116,7 +116,7 @@ let peppaGameEnd = document.getElementById('peppa-end-section');
 let pepBtn = document.getElementById('answerButtonsPep')
 /* functions for peppa pig game */
 
-testing these functions in new format **************************************************************************
+// testing these functions in new format **************************************************************************
 
 
 // function startGame(){    
@@ -182,53 +182,53 @@ testing these functions in new format ******************************************
 //         pepQuestion.innerText = message;              
 //     }
 // }
-function hideAnswerButtons(){
-    // let pepBtn = document.getElementById('answerButtonsPep')
-    pepBtn.classList.add('hide');
-}
-function showAnswerButtons(){
-    // let pepBtn = document.getElementById('answerButtonsPep')
-    pepBtn.classList.remove('hide'); 
-}
-function setStatusClass(element, correct){
-    clearStatusClass(element);
-    if (correct){
-        element.classList.add('correct');
-    } else {
-        element.classList.add('incorrect');
-    }
-}
-function clearStatusClass(element){
-    element.classList.remove('correct');
-    element.classList.remove('incorrect');
-}
-function incrementCorrectScore(){
-    let oldScores = parseInt(document.getElementById('correct-score').innerText);
-    document.getElementById('correct-score').innerText = ++oldScores;
-}
-function incrementIncorrectScore(){
-    let oldScore = parseInt(document.getElementById('incorrect-score').innerText);
-    document.getElementById('incorrect-score').innerText = ++oldScore;
-}
-function endScoreMessage(){
-    let endScore = document.getElementById('peppa-score')
-    let endResult = parseInt(document.getElementById('correct-score').innerText);
-    endScore.innerText = `Well done you scored ${endResult} out of 10`
+// function hideAnswerButtons(){
+//     // let pepBtn = document.getElementById('answerButtonsPep')
+//     pepBtn.classList.add('hide');
+// }
+// function showAnswerButtons(){
+//     // let pepBtn = document.getElementById('answerButtonsPep')
+//     pepBtn.classList.remove('hide'); 
+// }
+// function setStatusClass(element, correct){
+//     clearStatusClass(element);
+//     if (correct){
+//         element.classList.add('correct');
+//     } else {
+//         element.classList.add('incorrect');
+//     }
+// }
+// function clearStatusClass(element){
+//     element.classList.remove('correct');
+//     element.classList.remove('incorrect');
+// }
+// function incrementCorrectScore(){
+//     let oldScores = parseInt(document.getElementById('correct-score').innerText);
+//     document.getElementById('correct-score').innerText = ++oldScores;
+// }
+// function incrementIncorrectScore(){
+//     let oldScore = parseInt(document.getElementById('incorrect-score').innerText);
+//     document.getElementById('incorrect-score').innerText = ++oldScore;
+// }
+// function endScoreMessage(){
+//     let endScore = document.getElementById('peppa-score')
+//     let endResult = parseInt(document.getElementById('correct-score').innerText);
+//     endScore.innerText = `Well done you scored ${endResult} out of 10`
     
 
-}
-function restartPeppaGame(){
-    document.getElementById('correct-score').innerText = 0;
-    document.getElementById('incorrect-score').innerText = 0; 
-    usedQuestions = []; 
-    peppaGameEnd.classList.add('hide');
-    peppaGameOuter.classList.remove('hide');   
-    nextButton();
-}
+// }
+// function restartPeppaGame(){
+//     document.getElementById('correct-score').innerText = 0;
+//     document.getElementById('incorrect-score').innerText = 0; 
+//     usedQuestions = []; 
+//     peppaGameEnd.classList.add('hide');
+//     peppaGameOuter.classList.remove('hide');   
+//     nextButton();
+// }
 
 
 
-new question format *************************************************************************
+// new question format *************************************************************************
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName('button');
@@ -285,8 +285,8 @@ function startNewGame(x){
 
 }
 
-function setNextQuestion(x){    
-    resetState(x)
+function setNextQuestion(){    
+    resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 function showQuestion(question){    
@@ -314,23 +314,23 @@ function showQuestion(question){
         }
     }); 
 }
-function nextButton(x){                      // need to set the parameter or arguement in this line in other functions
-    showAnswerButtons(x);
+function nextButton(){                      
+    showAnswerButtons();
     currentQuestionIndex++;
-    setNextQuestion(x);          
+    setNextQuestion();          
 }
-function resetState(x){
-    if(x === 'peppa'){
+function resetState(){
+    if(gameTypeSelected === 'peppa'){
         nextButtonPeppa.classList.add('hide');
         while(answerButtonsElement.firstChild){
             answerButtonsElement.removeChild(answerButtonsElement.firstChild)
         }    
-    } else if(x === 'love'){
+    } else if(gameTypeSelected === 'love'){
         loveNextButton.classList.add('hide');
         while(answerButtonsLove.firstChild){
             answerButtonsLove.removeChild(answerButtonsLove.firstChild)
         }
-    } else if(x === 'music'){
+    } else if(gameTypeSelected === 'music'){
         musicNextButton.classList.add('hide');
         while(answerButtonsLove.firstChild){
             answerButtonsMusic.removeChild(answerButtonsMusic.firstChild)
@@ -395,7 +395,6 @@ function hideAnswerButtons(){
     }    
 }
 function showAnswerButtons(){
-    // let pepBtn = document.getElementById('answerButtonsPep')
     if(gameTypeSelected === 'peppa'){
         answerButtonsPeppa.classList.remove('hide'); 
      } else if(gameTypeSelected === 'love'){
@@ -403,11 +402,89 @@ function showAnswerButtons(){
      } else if(gameTypeSelected === 'music'){
          answerButtonsMusic.classList.remove('hide'); 
      }  
+} 
+function setStatusClass(element, correct){
+    clearStatusClass(element);
+    if (correct){
+        element.classList.add('correct');
+    } else {
+        element.classList.add('incorrect');
+    }
 }
- 
+function clearStatusClass(element){
+    element.classList.remove('correct');
+    element.classList.remove('incorrect');
+}
+function incrementCorrectScore(){    
+    if(gameTypeSelected === 'peppa'){
+        let oldScores = parseInt(document.getElementById('correct-score').innerText);
+        document.getElementById('correct-score').innerText = ++oldScores;
+    }else if(gameTypeSelected === 'love'){
+        let oldScores = parseInt(document.getElementById('correct-love-score').innerText);
+        document.getElementById('correct-love-score').innerText = ++oldScores;
+    }else if(gameTypeSelected === 'music'){
+        let oldScores = parseInt(document.getElementById('correct-music-score').innerText);
+        document.getElementById('correct-music-score').innerText = ++oldScores;
+    }
+    
+}
 
+let oldScore;
+let oldScores;
 
+function incrementIncorrectScore(){
+    if(gameTypeSelected === 'peppa'){
+        oldScore = parseInt(document.getElementById('incorrect-score').innerText);
+        document.getElementById('incorrect-score').innerText = ++oldScore;  
+    }else if(gameTypeSelected === 'love'){
+        oldScore = parseInt(document.getElementById('incorrect-love-score').innerText);
+        document.getElementById('incorrect-love-score').innerText = ++oldScore;  
+    }else if(gameTypeSelected === 'music'){
+        oldScore = parseInt(document.getElementById('incorrect-music-score').innerText);
+        document.getElementById('incorrect-music-score').innerText = ++oldScore;  
+    }    
+}
 
+let endScore;
+let endResult;
 
+function endScoreMessage(){
+    if(gameTypeSelected === 'peppa'){
+        endScore = document.getElementById('peppa-score')
+        endResult = parseInt(document.getElementById('correct-score').innerText);
+        endScore.innerText = `Well done you scored ${endResult} out of 10`
+    }else if(gameTypeSelected === 'love'){
+        endScore = document.getElementById('love-score')
+        endResult = parseInt(document.getElementById('correct-love-score').innerText);
+        endScore.innerText = `Well done you scored ${endResult} out of 10`
+    }else if(gameTypeSelected === 'music'){
+        endScore = document.getElementById('music-score')
+        endResult = parseInt(document.getElementById('correct-music-score').innerText);
+        endScore.innerText = `Well done you scored ${endResult} out of 10`
+    }
+}
+
+function restartGame(){
+    if(gameTypeSelected === 'peppa'){
+        document.getElementById('correct-score').innerText = 0;
+        document.getElementById('incorrect-score').innerText = 0;         
+        peppaGameEnd.classList.add('hide');
+        peppaGameOuter.classList.remove('hide'); 
+    }else if(gameTypeSelected === 'love'){
+        document.getElementById('correct-love-score').innerText = 0;
+        document.getElementById('incorrect-love-score').innerText = 0;         
+        loveGameEnd.classList.add('hide');
+        loveGameOuter.classList.remove('hide'); 
+    }else if(gameTypeSelected === 'music'){
+        document.getElementById('correct-music-score').innerText = 0;
+        document.getElementById('incorrect-music-score').innerText = 0;         
+        musicGameEnd.classList.add('hide');
+        musicGameOuter.classList.remove('hide'); 
+    }
+    selectedQuestion = 'none-selected'
+    gameTypeSelected = 'none-selected'
+    usedQuestions = [];
+    nextButton(); 
+}
 
 

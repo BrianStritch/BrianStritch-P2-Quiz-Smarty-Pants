@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 loveGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
                 startLoveHate();
-            } else if (this.getAttribute('data-type') === 'music-quiz'){
+            } else if (this.getAttribute('data-type') === 'music-game'){
                 musicGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
                 startMusic()
@@ -127,7 +127,7 @@ function showQuestion(question){
     question.answers.forEach(answer => {
         let button = document.createElement('button');
         button.innerText = answer.text;
-        // button.classList.add('pep-btn');            
+        button.classList.add('pep-btn');            
         if (answer.correct){
             button.dataset.correct = answer.correct
         }
@@ -580,7 +580,7 @@ function showLoveQuestion(question){
     question.answers.forEach(answer => {
         let btn = document.createElement('button');
         btn.innerText = answer.text;
-        // btn.classList.add('pep-btn');            
+        btn.classList.add('pep-btn');            
         if (answer.correct){
             btn.dataset.correct = answer.correct
         }
