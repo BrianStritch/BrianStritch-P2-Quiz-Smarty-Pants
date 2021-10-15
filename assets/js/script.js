@@ -25,15 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons){
         button.addEventListener('click', function() {
-            if (this.getAttribute('data-type') === 'peppa-pig'){
+            if (this.getAttribute('data-type') === 'peppa-pig-selector'){
                 peppaGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
 
-            } else if (this.getAttribute('data-type') === 'love-hate'){
+            } else if (this.getAttribute('data-type') === 'love-hate-selector'){
                 loveGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
                 startLoveHate();
-            } else if (this.getAttribute('data-type') === 'music-game'){
+            } else if (this.getAttribute('data-type') === 'music-game-selector'){
                 musicGameOuter.classList.remove('hide');
                 selectionScreen.classList.add('hide');
                 startMusic()
@@ -142,8 +142,10 @@ function resetState(){
     }
 }
 function selectAnswer(e){
-    let selectedButton = e.target;    
+    let selectedButton = e.target; 
+    console.log('what is sb' + selectedButton);   
     let correct = selectedButton.dataset.correct;
+    console.log('correct =' + correct);
     setStatusClass(selectedButton, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
