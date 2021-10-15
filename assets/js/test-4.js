@@ -98,7 +98,7 @@ let pepBtn = document.getElementById('answerButtonsPep')
 
 /* *********************************** Love Hate variables ************************************/
 let loveStartButton = document.getElementById('love-start-button');
-loveStartButton.addEventListener('click', startNewGame);
+// loveStartButton.addEventListener('click', startNewGame);
 
 let loveRestart = document.getElementById('love-restart');
 loveRestart.addEventListener('click', restartGame); 
@@ -169,9 +169,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 
 
             } else if (this.getAttribute('data-type') === 'love-hate'){
+                gameTypeSelected = 'love-game';
                 startNewGame(gameTypeSelected);
                 // console.log(this.getAttribute);
             } else if (this.getAttribute('data-type') === 'music-game'){
+                gameTypeSelected = 'music-game';
                 startNewGame(gameTypeSelected);
                 // console.log(this.getAttribute);
                 }
@@ -195,14 +197,16 @@ function startNewGame(gameTypeSelected){
 
         
     } else if(gameTypeSelected == 'love-game'){
-        startButtonPeppa.classList.add('hide');
+        gameTypeSelectionForIfStatements = 'love';
+        loveStartButton.classList.add('hide');
         shuffledQuestions = shuffle(loveQuestions);        
         currentQuestionIndex = 0;
         setNextQuestion('love');
         gameTypeSelectionForIfStatements = 'love';
         selectedQuestionArea = loveQuestion;
     } else if(gameTypeSelected == 'music-game'){
-        startButtonPeppa.classList.add('hide');
+        gameTypeSelectionForIfStatements = 'music';
+        musicStartButton.classList.add('hide');
         shuffledQuestions = shuffle(musicQuestions);
         currentQuestionIndex = 0;
         setNextQuestion('music');
@@ -235,7 +239,7 @@ function showQuestion(question){
         // console.log('got inside pep if');            
         document.getElementById('pep-questions').innerText = question.question;        
     } else if(gameTypeSelectionForIfStatements === 'love'){            
-        document.getElementById('love-questions').innerText = question.question;      
+        document.getElementById('love-question').innerText = question.question;      
     } else if(gameTypeSelectionForIfStatements === 'music'){            
         document.getElementById('music-questions').innerText = question.question;  
     }  
@@ -342,7 +346,7 @@ function selectAnswer(e){
         if (gameTypeSelectionForIfStatements === 'peppa'){            
             document.getElementById('pep-questions').innerText = message;
         } else if(gameTypeSelectionForIfStatements === 'love'){            
-            document.getElementById('love-questions').innerText = message;     
+            document.getElementById('love-question').innerText = message;     
         } else if(gameTypeSelectionForIfStatements === 'music'){            
             document.getElementById('music-questions').innerText = message; 
         }       
