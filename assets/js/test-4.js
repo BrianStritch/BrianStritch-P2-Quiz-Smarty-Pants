@@ -98,37 +98,30 @@ let pepBtn = document.getElementById('answerButtonsPep')
 
 /* *********************************** Love Hate variables ************************************/
 let loveStartButton = document.getElementById('love-start-button');
-// loveStartButton.addEventListener('click', startNewGame);
-
 let loveRestart = document.getElementById('love-restart');
-loveRestart.addEventListener('click', restartGame); 
-
+loveRestart.addEventListener('click', restartGame);
 let loveNextButton = document.getElementById('love-next-button');
-loveNextButton.addEventListener('click', nextButton)
-
-let lovequitBtn = document.getElementById('love-quit')
+loveNextButton.addEventListener('click', nextButton);
+let lovequitBtn = document.getElementById('love-quit');
 lovequitBtn.addEventListener('click', exitGame);
-
 let loveContainer = document.getElementById('love-game-container');
-
 let loveQuestion = document.getElementById('love-question');
 let answerButtonsLove = document.getElementById('answerButtonsLove');
-
 let loveGameEnd = document.getElementById('love-end-section');
 
+/* ********************************** music game variables *****************************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
+let musicStartButton = document.getElementById('music-start-button');
+let musicRestart = document.getElementById('music-restart');
+musicRestart.addEventListener('click', restartGame);
+let musicNextButton = document.getElementById('music-next-button');
+musicNextButton.addEventListener('click', nextButton);
+let musicquitBtn = document.getElementById('music-quit');
+musicquitBtn.addEventListener('click', exitGame);
+let musicContainer = document.getElementById('music-game-container');
+let musicQuestion = document.getElementById('music-questions');
+let answerButtonsMusic = document.getElementById('answer-Buttons-music');
+let musicGameEnd = document.getElementById('music-end-section');
 
 
 
@@ -163,17 +156,18 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons){
         button.addEventListener('click', function() {
             if (this.getAttribute('data-type') === 'peppa-pig'){                
-                gameTypeSelected = 'peppa-pig';
-                // console.log("gametype = " + gameTypeSelected);
-                startNewGame(gameTypeSelected);
-                
+                gameTypeSelected = 'peppa-pig';                
+                startNewGame(gameTypeSelected);                
 
-            } else if (this.getAttribute('data-type') === 'love-hate'){
+            } else if (this.getAttribute('data-type') === 'love-hate'){                
                 gameTypeSelected = 'love-game';
+                
                 startNewGame(gameTypeSelected);
                 // console.log(this.getAttribute);
+
             } else if (this.getAttribute('data-type') === 'music-game'){
                 gameTypeSelected = 'music-game';
+                console.log("gametype = " + gameTypeSelected); // prints 'music-game'
                 startNewGame(gameTypeSelected);
                 // console.log(this.getAttribute);
                 }
@@ -183,35 +177,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function startNewGame(gameTypeSelected){
-    console.log(gameTypeSelected);
+    console.log('gametypeselected = ' + gameTypeSelected);        // console.log for test prints music-game
     if(gameTypeSelected === 'peppa-pig'){ 
-        gameTypeSelectionForIfStatements = 'peppa';       
-        // console.log('this is inside the first if statement')
+        gameTypeSelectionForIfStatements = 'peppa';
         startButtonPeppa.classList.add('hide');
-        // console.log('tets 1 = ' + gameTypeSelectionForIfStatements);
         selectedQuestionArea = document.getElementById('pep-questions');
         shuffledQuestions = shuffle(peppaQuestions);
         currentQuestionIndex = 0;
         setNextQuestion();
-        // console.log('end line of startnewgame');
 
-        
     } else if(gameTypeSelected == 'love-game'){
         gameTypeSelectionForIfStatements = 'love';
         loveStartButton.classList.add('hide');
+        // console.log('tets 1 = ' + gameTypeSelectionForIfStatements);
         shuffledQuestions = shuffle(loveQuestions);        
         currentQuestionIndex = 0;
         setNextQuestion('love');
         gameTypeSelectionForIfStatements = 'love';
         selectedQuestionArea = loveQuestion;
+        // console.log('end line of startnewgame');
+
     } else if(gameTypeSelected == 'music-game'){
         gameTypeSelectionForIfStatements = 'music';
         musicStartButton.classList.add('hide');
+        console.log('gametypefor if = ' + gameTypeSelectionForIfStatements);         // console.log for test
         shuffledQuestions = shuffle(musicQuestions);
+        console.log('this is after shuffled questions');   //getting to here !!!!!!!!!!!!!!!!
         currentQuestionIndex = 0;
         setNextQuestion('music');
-        gameTypeSelectionForIfStatements = 'music';
+        console.log('this is after setnextquestion in the startnewgame function');       
         selectedQuestionArea = musicQuestion;
+        console.log('this is the end of the startnewgame function');
+
     } else {
         console.log('unknown game type selected')
     }
@@ -219,28 +216,28 @@ function startNewGame(gameTypeSelected){
 }
 
 function setNextQuestion(){ 
-    // console.log('got here setnxtq')   
+    console.log('got here setnxtq')   
     resetState()
-    // console.log('3')
+    console.log('after reset state')
     // if(gameTypeSelected === 'peppa'){
     //     showQuestion(shuffle(peppaQuestions)[currentQuestionIndex])
     // }
     showQuestion(shuffledQuestions[currentQuestionIndex]);
-    // console.log('4')
+    console.log('end of set next question function')
 }
 function showQuestion(question){ 
     // console.log('got here shw q');
-    // console.log('question =' + question.question);   
+    console.log('question =' + question.question);   
     // selectedQuestionArea.innerText = question.question;
     // document.getElementById(currentSelection).innerText = question.question;
     message = question.message; 
     // console.log('test = ' + gameTypeSelectionForIfStatements);
-    if (gameTypeSelectionForIfStatements === 'peppa'){
-        // console.log('got inside pep if');            
+    if (gameTypeSelectionForIfStatements === 'peppa'){                    
         document.getElementById('pep-questions').innerText = question.question;        
     } else if(gameTypeSelectionForIfStatements === 'love'){            
         document.getElementById('love-question').innerText = question.question;      
-    } else if(gameTypeSelectionForIfStatements === 'music'){            
+    } else if(gameTypeSelectionForIfStatements === 'music'){ 
+        console.log('got inside showquestion music if');           
         document.getElementById('music-questions').innerText = question.question;  
     }  
     message = question.message;     
@@ -248,60 +245,93 @@ function showQuestion(question){
         let button = document.createElement('button');
         button.innerText = answer.text;
         button.classList.add('answer-btn');
-               
+        console.log('this is the tester for game type' + gameTypeSelectionForIfStatements)       
         // if statement to set dataset to button to correct          
         if (answer.correct){
             button.dataset.correct = answer.correct
+            console.log('button dataset =' + button.dataset.correct);
         }
         // if statement to add event listener and append button to document
         if (gameTypeSelectionForIfStatements === 'peppa'){            
             button.addEventListener('click', selectAnswer);
             answerButtonsElement.appendChild(button) 
-        } else if(gameTypeSelectionForIfStatements === 'love'){            
+        } else if(gameTypeSelectionForIfStatements === 'love'){ 
+            console.log('this is the test where it appends button');            
             button.addEventListener('click', selectAnswer);
             answerButtonsLove.appendChild(button)        
-        } else if(gameTypeSelectionForIfStatements === 'music'){            
+        } else if(gameTypeSelectionForIfStatements === 'music'){ 
+            console.log('this is the test where it appends button');           
             button.addEventListener('click', selectAnswer);
             answerButtonsMusic.appendChild(button)  
         }
-    }); 
+    });
+    console.log('this is the end of the showquestion function')  
 }
 function nextButton(){                      
     showAnswerButtons();
     currentQuestionIndex++;
-    setNextQuestion();          
+    setNextQuestion(); 
+    console.log('this is the end of the nextButton function')         
 }
 function resetState(){
+    console.log('inside reset state ');
+    console.log('gameTypeSelectionForIfStatements inside reset state =' + gameTypeSelectionForIfStatements);
     if(gameTypeSelectionForIfStatements === 'peppa'){
         nextButtonPeppa.classList.add('hide');
         while(answerButtonsElement.firstChild){
-            answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }    
     } else if(gameTypeSelectionForIfStatements === 'love'){
         loveNextButton.classList.add('hide');
+        console.log( 'answerButtonsLove.firstChild = ' + answerButtonsLove.firstChild);
         while(answerButtonsLove.firstChild){
-            answerButtonsLove.removeChild(answerButtonsLove.firstChild)
+            console.log('inside elseif and befre answerbuttons.firstchild');
+            answerButtonsLove.removeChild(answerButtonsLove.firstChild);
+            console.log('after answerbuttons.firstchild in elseif');
         }
     } else if(gameTypeSelectionForIfStatements === 'music'){
+        console.log('inside reset state else if = music');
         musicNextButton.classList.add('hide');
-        while(answerButtonsLove.firstChild){
-            answerButtonsMusic.removeChild(answerButtonsMusic.firstChild)
+        console.log('after button hide')
+        console.log('test before while ');          
+        while(answerButtonsMusic.firstChild){
+            console.log('inside elseif and befre answerbuttons.firstchild');
+            answerButtonsMusic.removeChild(answerButtonsMusic.firstChild);
+            console.log('after answerbuttons.firstchild in elseif');
         }
-    }    
+    };
+    console.log('this is the end of the resetState function')     
 }
 function selectAnswer(e){
-    console.log('inside select answer');
+    // console.log('inside select answer');
     // let selectedButton = e.target; 
+    console.log('inside selectAnswer');
     let selectedButton = e.target; 
-    console.log('what is sb' + selectedButton);   
+    console.log('what is sb' + selectedButton.dataset);   
     let correct = selectedButton.dataset.correct;
     
     console.log('correct =' + correct);
     setStatusClass(selectedButton, correct);
-    Array.from(answerButtonsElement.children).forEach(button => {
-        console.log('inside array.from answer buttons');
+    if (gameTypeSelectionForIfStatements === 'peppa'){
+        Array.from(answerButtonsElement.children).forEach(button => {
+        // console.log('inside array.from answer buttons');
         setStatusClass(button, button.dataset.correct);
-    });
+        // console.log('this is after setstatusclass ');
+    });              
+    } else if(gameTypeSelectionForIfStatements === 'love'){
+        Array.from(answerButtonsLove.children).forEach(button => {
+            console.log('inside array.from answer buttons');
+            setStatusClass(button, button.dataset.correct);
+            console.log('this is after setstatusclass ');
+        });                   
+    } else if(gameTypeSelectionForIfStatements === 'music'){
+        Array.from(answerButtonsMusic.children).forEach(button => {
+            console.log('inside array.from answer buttons');
+            setStatusClass(button, button.dataset.correct);
+            console.log('this is after setstatusclass ');
+        });  
+    }; 
+    
     console.log('inside select answer 2');
     if(usedQuestions.length < 9){ 
         console.log('inside select answer 2.1'); 
@@ -330,38 +360,43 @@ function selectAnswer(e){
         endScoreMessage();
     }
     console.log('before selected btn = correct');
-    if(correct == 'true'){
-        
-        console.log('selected btn = correct');            
-        // document.getElementById('questions-list').button.forEach(button => {
-        //     console.log('inside for each');
-        //     let btn = document.getElementsByClassName('answer-btn');    
-        //     btn.removeEventListener('click', selectAnswer);
-        // });
-        console.log('after 4 each'); 
+    if(correct == 'true'){        
+        // console.log('selected btn = correct' + correct);        
         setTimeout(hideAnswerButtons , 500);
         console.log('after timeout');        
         incrementCorrectScore(); 
         console.log('increment score'); 
-        if (gameTypeSelectionForIfStatements === 'peppa'){            
-            document.getElementById('pep-questions').innerText = message;
-        } else if(gameTypeSelectionForIfStatements === 'love'){            
-            document.getElementById('love-question').innerText = message;     
-        } else if(gameTypeSelectionForIfStatements === 'music'){            
-            document.getElementById('music-questions').innerText = message; 
-        }       
-           
+       
     
     } else {
-        selectedQuestionArea.button.forEach(button => {
-            let btn = document.getElementsByClassName('answer-btn');    
-            btn.removeEventListener('click', selectLoveAnswer);
-        });        
-        incrementIncorrectScore(); 
-        setTimeout(hideAnswerButtons , 500);         
-        selectedQuestion.innerText = message;              
-    }
+        console.log('inside else statement for wrong answers');
+        if (gameTypeSelectionForIfStatements === 'peppa'){ 
+            // console.log('inside if statement in else satement for wrong answers');
+            // console.log('type = ' + gameTypeSelectionForIfStatements); 
+            incrementIncorrectScore(); 
+            setTimeout(hideAnswerButtons , 500);
+
+        } else if(gameTypeSelectionForIfStatements === 'love'){ 
+            incrementIncorrectScore(); 
+            setTimeout(hideAnswerButtons , 500);         
+            selectedQuestion.innerText = message;
+
+        } else if(gameTypeSelectionForIfStatements === 'music'){ 
+            incrementIncorrectScore(); 
+            setTimeout(hideAnswerButtons , 500);         
+            selectedQuestion.innerText = message; 
+        }
+    if (gameTypeSelectionForIfStatements === 'peppa'){            
+            document.getElementById('pep-questions').innerText = message;
+    } else if(gameTypeSelectionForIfStatements === 'love'){            
+            document.getElementById('love-question').innerText = message;     
+    } else if(gameTypeSelectionForIfStatements === 'music'){            
+            document.getElementById('music-questions').innerText = message; 
+        }    
+    };
+    console.log('this is the end of the selectanswer function') 
 }
+
 function hideAnswerButtons(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
         answerButtonsElement.classList.add('hide'); 
@@ -369,7 +404,8 @@ function hideAnswerButtons(){
         answerButtonsLove.classList.add('hide'); 
     } else if(gameTypeSelectionForIfStatements === 'music'){
         answerButtonsMusic.classList.add('hide'); 
-    }    
+    }
+    console.log('this is the end of the hideAnswerButton function')     
 }
 function showAnswerButtons(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
@@ -378,7 +414,8 @@ function showAnswerButtons(){
          answerButtonsLove.classList.remove('hide'); 
      } else if(gameTypeSelectionForIfStatements === 'music'){
          answerButtonsMusic.classList.remove('hide'); 
-     }  
+     }
+     console.log('this is the end of the showAnswerButton function')   
 } 
 function setStatusClass(element, correct){
     clearStatusClass(element);
@@ -386,11 +423,13 @@ function setStatusClass(element, correct){
         element.classList.add('correct');
     } else {
         element.classList.add('incorrect');
-    }
+    };
+    console.log('this is the end of the setStatusClass function') 
 }
 function clearStatusClass(element){
     element.classList.remove('correct');
     element.classList.remove('incorrect');
+    console.log('this is the end of the clearstatusclass function') 
 }
 function incrementCorrectScore(){    
     if(gameTypeSelectionForIfStatements === 'peppa'){
@@ -883,10 +922,10 @@ let loveQuestions = [
     {
         question: "What is the name of the cat killer?",
         answers:[
-            {text: 'Dano', correct:true},
+            {text: 'Dano', correct:false},
             {text: 'Wayne', correct:true},
             {text: 'Ado', correct:false},
-            {text: 'Terrence', correct:true},
+            {text: 'Terrence', correct:false},
         ],
         message:"It was Wayne that shot the cat with a machine gun",
     },
@@ -923,9 +962,9 @@ let loveQuestions = [
     {
         question: "Which legendary musician played John Boy's Father?",
         answers:[
-            {text: 'Christy Moore', correct:true},
+            {text: 'Christy Moore', correct:false},
             {text: 'Damien Dempsey', correct:false},
-            {text: 'Finbar Furey', correct:false},
+            {text: 'Finbar Furey', correct:true},
             {text: 'Ronnie Drew', correct:false},
         ],
         message:"It was Finbarr Furey who played John Boys father.",

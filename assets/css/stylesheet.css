@@ -119,11 +119,11 @@ body{
 
 /* *************************** communal game styling *********************************/
 
-.ans-btn-all.correct,.pep-btn.correct{
+.answer-btn.correct,.pep-btn.correct{
     background-color: rgb(27, 202, 4);
     color: white;
 }
-.ans-btn-all.incorrect,.pep-btn.incorrect{
+.answer-btn.incorrect,.pep-btn.incorrect{
     background-color: red;
     color: white;
 }
@@ -355,7 +355,7 @@ body{
     border-radius: 30px;
     border: 1px solid rgba(250, 82, 11, 51%);
 }
-.music-questions{
+.music-question{
     padding: 3vh;
     margin: 7vh auto;
     width: 75%;
@@ -478,7 +478,7 @@ body{
     .peppa-game-container, .love-game-container, .music-container{
         min-width: 90%;   
     }
-    .peppa-questions, .love-questions, .music-questions{
+    .peppa-questions, .love-questions, .music-question{
         font-size: 25px;
         width: 90%;
     }
