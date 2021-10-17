@@ -41,7 +41,7 @@ p{
     min-width: 380px;
     width: 100vw;
     height: 100vh;
-    background: url(/assets/images/quizz-entry-bg-n.jpeg) no-repeat center center;
+    background: url(../images/quizz-entry-bg-n.jpeg) no-repeat center center;
     background-size: 100vw 100vh;
     display: flex;
     justify-content: center;
@@ -125,7 +125,7 @@ p{
 /******************************** game selectors page styling *******************************/
 
 .game-selector{
-    background: url(/assets/images/light-bulb.JPG) no-repeat center center;
+    background: url(../images/light-bulb.JPG) no-repeat center center;
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -204,7 +204,7 @@ p{
 /***************************** peppa pig game styling *******************************/
 
 .peppa-game{
-    background: url(/assets/images/peppa-game-bg.jpg) no-repeat center center;
+    background: url(../images/peppa-game-bg.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -271,7 +271,7 @@ p{
 }
 /* peppa end score page */
 .peppa-end-outer{
-    background: url(/assets/images/peppa-end-bg.jpeg) no-repeat center center;
+    background: url(../images/peppa-end-bg.jpeg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -303,7 +303,7 @@ p{
 }
 /* love/hate game styling*/
 .love-game{
-    background: url(/assets/images/Love-hate-questions-bg.jpg) no-repeat center center;
+    background: url(../images/Love-hate-questions-bg.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -370,7 +370,7 @@ p{
 }
 /* love/hate end score page */
 .love-end-outer{
-    background: url(/assets/images/love-hate-img.JPG) no-repeat center center;
+    background: url(../images/love-hate-img.JPG) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -417,7 +417,7 @@ p{
 }
 /* *********************************** music game **************************************/
 .music{
-    background: url(/assets/images/music-bg.jpg) no-repeat center center;
+    background: url(../images/music-bg.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -484,7 +484,7 @@ p{
 }
 /* love/hate end score page */
 .music-end-outer{
-    background: url(/assets/images/music-end.jpg) no-repeat center center;
+    background: url(../images/music-end.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
