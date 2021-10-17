@@ -1,6 +1,4 @@
-/* colors used rgba(216, 38, 216, 0.685) pink in entry area */
-/* blue in entry area #7878d0*/
-
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap');
 
 
 
@@ -13,18 +11,25 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family:Montserrat;
 }
 .hide{
     display: none;
 }
-
+h1, .quest{
+    font-family: Bangers , sans-serif;
+    font-size: 30px;
+}
+p{
+    font-family: Montserrat;
+}
 /******************************* styling for entry screen ***************************************/
 
 .entry-zone{
     min-width: 380px;
     width: 100vw;
     height: 100vh;
-    background: url(/assets/images/quizz-entry-bg.JPG);
+    background: url(/assets/images/quizz-entry-bg.JPG) no-repeat center center;
     background-size: 100vw 100vh;
     display: flex;
     justify-content: center;
@@ -33,17 +38,28 @@ body{
 .entry, .rules{    
     padding: 13px 38px;
     background-color: 	hsl(185,94%,72%);
-    margin-top: 65vh;
+    margin: 66vh 0 0 0;
     box-shadow: 0 8px 13px 0px rgb(216, 38, 216, 67%); 
     font-size: 16px;
     color: black;
-    border-radius: 27px/35px;
+    border-radius: 90px/35px;
     outline: none; 
 }
 .entry{
     margin-right: 20vw;
     background-color: rgba(216, 38, 216, 0.685);
-    color: white;
+    color: hsl(185,94%,72%);
+}
+.entry:hover{
+    background-color: hsl(185,94%,72%);
+    color: black;
+    box-shadow: 0 8px 13px 0px hsl(185,94%,72%);
+    cursor: pointer;
+}
+.rules:hover{
+    background-color: rgba(216, 38, 216, 0.685);
+    color: 	hsl(185,94%,72%);
+    cursor: pointer;
 }
 .rules-list{
     width: 25vw;
@@ -55,7 +71,45 @@ body{
     top: 60vh;
     left: 60vw;
 }
-
+/******************************** rules modal ***********************************************/
+/* taken from w3schools */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    color: hsl(185,94%,72%);
+    background-color: rgba(216, 38, 216, 0.685);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 /******************************** game selectors page styling *******************************/
 
 .game-selector{
@@ -68,16 +122,22 @@ body{
 }
 
 .choose-game{
-    text-align: center;
-    padding-top: 100px;
-    font-size: 50px;
-    color: red;
+    width: 40%;
+    text-align: center;    
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: #000000d1;
+    border-radius: 90px / 35px;
+    color: yellow;
 }
 
 .selectors-outer{
     display: inline-flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 30vw;
+    min-width: fit-content;
 }
 
 .selectors{
@@ -116,7 +176,9 @@ body{
 #peppa{
     color:rgba(216, 38, 216, 0.685)
 }
-
+#music{
+    color:yellow;
+}
 /* *************************** communal game styling *********************************/
 
 .answer-btn.correct,.pep-btn.correct{
@@ -130,7 +192,7 @@ body{
 /***************************** peppa pig game styling *******************************/
 
 .peppa-game{
-    background: url(/assets/images/peppa-game-bg.jpg)  no-repeat center center;
+    background: url(/assets/images/peppa-game-bg.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -197,7 +259,7 @@ body{
 }
 /* peppa end score page */
 .peppa-end-outer{
-    background: url(/assets/images/peppa-end-bg.jpeg);
+    background: url(/assets/images/peppa-end-bg.jpeg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -229,7 +291,7 @@ body{
 }
 /* love/hate game styling*/
 .love-game{
-    background: url(/assets/images/Love-hate-questions-bg.jpg)  no-repeat center center;
+    background: url(/assets/images/Love-hate-questions-bg.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -238,6 +300,8 @@ body{
     justify-content: center;
 }
 .love-game-container{
+    width: inherit;
+    max-width: 60vw;
     margin: -5rem 5rem 0 5rem;
     background-color: rgba(0, 0, 0, 82%);
     border-radius: 30px;
@@ -247,7 +311,7 @@ body{
     padding: 3vh;
     margin: 7vh auto;
     width: 75%;
-    height: 15vh;
+    
     background-color: rgba(1, 2, 2, 65%);
     border: 1px solid white;
     border-radius: 20px;
@@ -294,7 +358,7 @@ body{
 }
 /* love/hate end score page */
 .love-end-outer{
-    background: url(/assets/images/love-hate-img.JPG);
+    background: url(/assets/images/love-hate-img.JPG) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -341,7 +405,7 @@ body{
 }
 /* *********************************** music game **************************************/
 .music{
-    background: url(/assets/images/music-bg.jpg)  no-repeat center center;
+    background: url(/assets/images/music-bg.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -350,6 +414,8 @@ body{
     justify-content: center;
 }
 .music-container{
+    width: inherit;
+    max-width: 60vw;
     margin: -5rem 5rem 0 5rem;
     background-color: rgba(0, 0, 0, 100%);
     border-radius: 30px;
@@ -406,7 +472,7 @@ body{
 }
 /* love/hate end score page */
 .music-end-outer{
-    background: url(/assets/images/music-end.jpg);
+    background: url(/assets/images/music-end.jpg) no-repeat center center;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -463,13 +529,59 @@ body{
 
 
 @media screen and (max-width:600px){
+    p{
+        font-size: 10px;        
+    }
+    .modal-content{
+        width: 60%;
+    }
     .entry-zone{
         background-size: 134vw 99vh;
     }
     .entry {
         margin-right: 12vw;
         margin-left: 20vw;
-    }   
+    } 
+    .entry, .rules {
+        padding: 6px 20px;
+        margin: 69vh 0vw 0 2vw;
+        border-radius: 90px / 35px;
+    }
+    h1, .quest{
+        font-size:30px;
+    }
+    .game-selector{
+        width:100%;
+        height:100%;
+        background: black;
+
+    }
+    .selectors{
+        width: 190px;
+        height: 190px;
+        box-shadow:10px 0px 21px 8px #ffeb3b69;
+    }
+    .selectors-outer{
+        margin: 0 auto 20px auto;
+    }
+    .selector-btn{
+        margin: 8px auto 0 auto;
+    } 
+    .choose-game{
+        width: 250px;
+        font-size: 20px;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: #000000d1;
+        border-radius: 90px / 35px;
+        color: orangered;
+        box-shadow: 10px 0px 21px 8px #ffeb3b69;
+    }
+    
+    .card, .card img{
+        width:100%;
+        height: 100%;
+    } 
     .peppa-game, .love-game, .music{
         background-size: 150vw 100vh;
         width: 100vw;
@@ -478,11 +590,11 @@ body{
     .peppa-game-container, .love-game-container, .music-container{
         min-width: 90%;   
     }
-    .peppa-questions, .love-questions, .music-question{
-        font-size: 25px;
+    .peppa-questions, .loves-questions, .music-question{
+        font-size: 20px;
         width: 90%;
     }
-    .peppa-game-container button, .love-btn, .music-btn{
+    .peppa-game-container button, .love-game-container button, .music-container button{
         font-size: 15px;
         margin: 2vw 27vw;
     }

@@ -13,22 +13,27 @@
         <div id="outer-zone" class="outer-entry-zone">
             <div class="entry-zone ">
                 <button id="enter" class="entry ">Enter</button>
-                <button id="rules-btn" class="rules ">Rules</button>
+                <button id="rules-btn" class="rules hide">Rules</button>
+                <button id="myBtn" class="rules">Rules</button>
+                <div id="myModal" class="modal">
+                                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>GAME RULES: <br>
+                            1. Answer all the questions to win the quizz. <br>
+                            2. No googling the answers <br>
+                            3. Have Fun <br>                                            
+                    </div>
+                </div>
             </div>
+                    <button id='rules-close' class="hide">Close</button>
             <div id="rules-screen" class="rules-list hide">
-                <p>GAME RULES: <br>
-                    1. Answer all the questions to win the quizz. <br>
-                    2. Beat the timer to anser the questions. <br>
-                    3. Have Fun <br>
-                    4. No Googling answers <br>
-                    <button id='rules-close' >Close</button>
-
                 </p>
             </div>
         </div>
         <!-- **************************game selector section **********************************-->
         <div id="selection-screen" class="game-selector hide">
-            <div class="choose-game">CHOOSE YOUR GAME</div>
+            <div class="choose-game"><h1>CHOOSE YOUR GAME</h1></div>
             <div class="selectors-outer">
                 <div class="selectors">
                     <div class="peppa-img card " >
@@ -36,7 +41,7 @@
                         alt="Peppa pig game selector image">
                     </div>                                
                 </div>
-                <button id="peppa" class="selector-btn" data-type="peppa-pig-selector">PEPPA PIG</button> 
+                <button id="peppa" class="selector-btn" data-type="peppa-pig-selector"><h1>PEPPA PIG</h1></button> 
             </div>
 
             <div class="selectors-outer">
@@ -45,7 +50,7 @@
                         <img src="assets/images/love-hate-img.JPG" alt="Love hate game selector image">
                     </div>                               
                 </div>
-                <button id="love-hate" class="selector-btn" data-type="love-hate-selector">LOVE HATE</button>
+                <button id="love-hate" class="selector-btn" data-type="love-hate-selector"><h1>LOVE HATE</h1></button>
             </div>
 
             <div class="selectors-outer">
@@ -54,7 +59,7 @@
                         <img src="assets/images/music.jpg" alt="Musical game selector image">
                     </div>                
                 </div>
-                <button id="music" class="selector-btn" data-type="music-game-selector">MUSIC</button> 
+                <button id="music" class="selector-btn " data-type="music-game-selector"><h1>MUSIC</h1></button> 
             </div>           
         </div>
         <!--*********************** peppa pig game ******************************-->
@@ -62,7 +67,7 @@
             <div id="peppa-game-outer" class="hide" >
                 <div class="peppa-game">
                     <div class="peppa-game-container">
-                        <div id="pep-questions" class="peppa-questions">Welcome to the greatest Peppa Pig Quiz</div>
+                        <div id="pep-questions" class="peppa-questions quest">Welcome to the greatest Peppa Pig Quiz</div>
                         <div id="answerButtonsPep" class="questions-list" data-type="peppa">                            
                         </div>
                         <button id="start-button-peppa" class="start-button pep-btn start-btn-choice" data-type="peppa-pig" >start</button>
@@ -90,7 +95,7 @@
             <div id="love-game-outer" class="hide" >
                 <div class="love-game">
                     <div class="love-game-container">
-                        <div id="love-question" class="loves-questions">How much do you remember about Love Hate</div>
+                        <div id="love-question" class="loves-questions quest">How much do you remember about Love Hate</div>
                         <div id="answerButtonsLove" class="questions-list" data-type="love">                            
                         </div>
                         <button id="love-start-button" class="start-button love-btn start-btn-choice" data-type="love-hate" >start</button>
@@ -118,7 +123,7 @@
             <div id="music-game-outer" class="hide" >
                 <div class="music">
                     <div class="music-container">
-                        <div id="music-questions" class="music-question">Test your Musical Trivia knoledge</div>
+                        <div id="music-questions" class="music-question quest">Test your Musical Trivia knoledge</div>
                         <div id="answer-Buttons-music" class="questions-list" data-type="music">                            
                         </div>
                         <button id="music-start-button" class=" start-button music-btn start-btn-choice" data-type="music-game" >start</button>

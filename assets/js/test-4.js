@@ -1,5 +1,3 @@
-
-
 /* outer entry zone */
 let outerZone = document.getElementById('outer-zone')
 
@@ -22,29 +20,6 @@ let peppaGameOuter = document.getElementById('peppa-game-outer');
 let loveGameOuter = document.getElementById('love-game-outer');
 let musicGameOuter = document.getElementById('music-game-outer');
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     let buttons = document.getElementsByTagName('button');
-
-//     for (let button of buttons){
-//         button.addEventListener('click', function() {
-//             if (this.getAttribute('data-type') === 'peppa-pig'){
-//                 peppaGameOuter.classList.remove('hide');
-//                 selectionScreen.classList.add('hide');
-//                 startNewGame('peppa-pig')
-
-//             } else if (this.getAttribute('data-type') === 'love-hate'){
-//                 loveGameOuter.classList.remove('hide');
-//                 selectionScreen.classList.add('hide');
-//                 startNewGame('love-hate');
-//             } else if (this.getAttribute('data-type') === 'music-quiz'){
-//                 musicGameOuter.classList.remove('hide');
-//                 selectionScreen.classList.add('hide');
-//                 startNewGame('music')
-//                 }
-//         })
-//     }   
-// })
-
 /* functions for outer entry screen and rules list */
 function enterSelection(){
     outerZone.classList.add('hide');
@@ -56,10 +31,34 @@ function rules(){
 function exitRules(){
     rulesList.classList.add('hide');
 }
+// Get the modal
+var modal = document.getElementById("myModal");
 
-/* ****************** game screens ********************************/
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+/* ****************** variables for game screens ********************************/
+
+/* common variables */
 let shuffledQuestions;
 let currentQuestionIndex;
 let usedQuestions = [];
@@ -73,27 +72,19 @@ let gameTypeSelectionForIfStatements;
 
 
 
-/* ********** peppa pig variables ****************/
+/* ********** peppa pig game variables ****************/
 
 let startButtonPeppa = document.getElementById('start-button-peppa');
-// startButtonPeppa.addEventListener('click', startNewGame );
-
-let peppaRestart = document.getElementById('peppa-restart')
+let peppaRestart = document.getElementById('peppa-restart');
 peppaRestart.addEventListener('click', restartGame);
-
 let peppaquitBtn = document.getElementById('peppa-quit')
 peppaquitBtn.addEventListener('click', exitGame);
-
 let nextButtonPeppa = document.getElementById('next-button-peppa');
-nextButtonPeppa.addEventListener('click', nextButton)
-
+nextButtonPeppa.addEventListener('click', nextButton);
 let peppaContainer = document.getElementById('peppa-game-container');
-
 let pepQuestion = document.getElementById('pep-questions');
 let answerButtonsElement = document.getElementById('answerButtonsPep');
-
 let peppaGameEnd = document.getElementById('peppa-end-section');
-
 let pepBtn = document.getElementById('answerButtonsPep')
 
 /* *********************************** Love Hate variables ************************************/
@@ -261,45 +252,54 @@ function showQuestion(question){
     });
     console.log('this is the end of the showquestion function')  
 }
+/**
+ * function to execute when next button is pressed in game, which calls on the functions of show answerButtons to remove hide
+ * class, increments currentQuestionIndex, and calls the setNextQuestion function to continue the game.
+ *
+ */
 function nextButton(){                      
     showAnswerButtons();
     currentQuestionIndex++;
-    setNextQuestion(); 
-    console.log('this is the end of the nextButton function')         
+    setNextQuestion();         
 }
+
+/**
+ * function to remove the button elements created in the showQuestion function, and removes the hide class from
+ * the next button so the user can click the next button to continue the game.
+ */
 function resetState(){
-    console.log('inside reset state ');
-    console.log('gameTypeSelectionForIfStatements inside reset state =' + gameTypeSelectionForIfStatements);
+
     if(gameTypeSelectionForIfStatements === 'peppa'){
         nextButtonPeppa.classList.add('hide');
         while(answerButtonsElement.firstChild){
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-        }    
+        }  
+
     } else if(gameTypeSelectionForIfStatements === 'love'){
         loveNextButton.classList.add('hide');
-        console.log( 'answerButtonsLove.firstChild = ' + answerButtonsLove.firstChild);
         while(answerButtonsLove.firstChild){
-            console.log('inside elseif and befre answerbuttons.firstchild');
             answerButtonsLove.removeChild(answerButtonsLove.firstChild);
-            console.log('after answerbuttons.firstchild in elseif');
         }
+
     } else if(gameTypeSelectionForIfStatements === 'music'){
-        console.log('inside reset state else if = music');
-        musicNextButton.classList.add('hide');
-        console.log('after button hide')
-        console.log('test before while ');          
+        musicNextButton.classList.add('hide');          
         while(answerButtonsMusic.firstChild){
-            console.log('inside elseif and befre answerbuttons.firstchild');
             answerButtonsMusic.removeChild(answerButtonsMusic.firstChild);
-            console.log('after answerbuttons.firstchild in elseif');
         }
-    };
-    console.log('this is the end of the resetState function')     
+    };    
 }
+
+/**
+ * 
+ * function to execute when the user selects an answer by clicking the desired button, and function will check the status of the 
+ * answer to check if it is correct and sets the relevant class and actions in motion depending on the result.
+ */
 function selectAnswer(e){
     let selectedButton = e.target;   
     let correct = selectedButton.dataset.correct;
-    // add class disable to buttons to stop incorrectly incrementing answes when pressed multiple times
+    /* this is to add class disable to buttons after the user has selected their desired answer
+    to stop incorrectly incrementing answers when buttons are pressed after the answer is selected,
+     so as to stop incorrectly incrementing score */
     let buttons = document.getElementsByClassName('answer-btn');
         for (let button of buttons){
                 button.removeEventListener('click', selectAnswer);
@@ -319,7 +319,7 @@ function selectAnswer(e){
             setStatusClass(button, button.dataset.correct);
         });  
     }; 
-    
+    /* if statement to end game depending on number of questions asked or to continue asking questions */
     if(usedQuestions.length < 9){ 
         if (gameTypeSelectionForIfStatements === 'peppa'){
             nextButtonPeppa.classList.remove('hide');
@@ -347,7 +347,8 @@ function selectAnswer(e){
         usedQuestions = [];
         endScoreMessage();
     }
-    
+    /* if statement to hide answer buttons, increment scores and show educational
+     message relating to question following timeout */
     if(correct == 'true'){  
         setTimeout(hideAnswerButtons , 2500);               
         incrementCorrectScore();          
@@ -373,7 +374,7 @@ function selectAnswer(e){
     };
     
 }
-
+/* function to hide answer buttons when called */
 function hideAnswerButtons(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
         answerButtonsElement.classList.add('hide'); 
@@ -383,6 +384,7 @@ function hideAnswerButtons(){
         answerButtonsMusic.classList.add('hide'); 
     };     
 }
+/* function to show answer buttons when called */
 function showAnswerButtons(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
         answerButtonsElement.classList.remove('hide'); 
@@ -392,6 +394,7 @@ function showAnswerButtons(){
          answerButtonsMusic.classList.remove('hide'); 
      };  
 } 
+/* function to add classlist of correct and incorrect to button elements created in showquestion depending on truth result */
 function setStatusClass(element, correct){
     clearStatusClass(element);
     if (correct){
@@ -400,10 +403,12 @@ function setStatusClass(element, correct){
         element.classList.add('incorrect');
     }; 
 }
+/* function to clear classlists of correc and incorrect to button elements created in showQuestion function */
 function clearStatusClass(element){
     element.classList.remove('correct');
     element.classList.remove('incorrect');
 }
+/* function to increment correct scores when called */
 function incrementCorrectScore(){    
     if(gameTypeSelectionForIfStatements === 'peppa'){
         let oldScores = parseInt(document.getElementById('correct-score').innerText);
@@ -417,7 +422,7 @@ function incrementCorrectScore(){
     }
     
 }
-
+/* function to increment incorrect scores when called */
 function incrementIncorrectScore(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
         oldScore = parseInt(document.getElementById('incorrect-score').innerText);
@@ -430,7 +435,7 @@ function incrementIncorrectScore(){
         document.getElementById('incorrect-music-score').innerText = ++oldScore;  
     }    
 }
-
+/* function to display message at end of game displaying the users score out of 10 */
 function endScoreMessage(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
         endScore = document.getElementById('peppa-score')
@@ -446,7 +451,7 @@ function endScoreMessage(){
         endScore.innerText = `Well done you scored ${endResult} out of 10`
     }
 }
-
+/* function to restart game after game has finnished by the user clicking the try again button */
 function restartGame(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
         document.getElementById('correct-score').innerText = 0;
@@ -467,12 +472,13 @@ function restartGame(){
         musicGameOuter.classList.remove('hide');
         musicNextButton.classList.add('hide'); 
     }
-    selectedQuestion = 'none-selected'
-    gameTypeSelected = 'none-selected'
+    selectedQuestion = undefined;
+    gameTypeSelected = undefined;
     usedQuestions = [];
     nextButton(); 
 }
 
+/* function to shuffle questions from an array and return random question depending on which array was passed to it */
 // code below taken from stack overflow question 
 //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
@@ -485,7 +491,7 @@ function shuffle(array) {
     }  
     return array;
 }
-
+/* function to exit game to beggining entry screen when called */
 function exitGame(){
     outerZone.classList.remove('hide');
     selectionScreen.classList.add('hide');
