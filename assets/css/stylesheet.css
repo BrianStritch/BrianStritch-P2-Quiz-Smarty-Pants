@@ -16,7 +16,7 @@ body{
 .hide{
     display: none;
 }
-h1, .quest{
+.choice, .quest{
     font-family: Bangers , sans-serif;
     font-size: 30px;
 }
