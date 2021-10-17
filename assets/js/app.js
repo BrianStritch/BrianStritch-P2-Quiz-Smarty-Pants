@@ -1,5 +1,5 @@
 /* outer entry zone */
-let outerZone = document.getElementById('outer-zone')
+let outerZone = document.getElementById('outer-zone');
 
 let startBtn = document.getElementById('enter');
 startBtn.addEventListener('click', enterSelection);
@@ -43,19 +43,19 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
-}
+};
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
 /* ****************** variables for game screens ********************************/
 
 /* common variables */
@@ -77,7 +77,7 @@ let gameTypeSelectionForIfStatements;
 let startButtonPeppa = document.getElementById('start-button-peppa');
 let peppaRestart = document.getElementById('peppa-restart');
 peppaRestart.addEventListener('click', restartGame);
-let peppaquitBtn = document.getElementById('peppa-quit')
+let peppaquitBtn = document.getElementById('peppa-quit');
 peppaquitBtn.addEventListener('click', exitGame);
 let nextButtonPeppa = document.getElementById('next-button-peppa');
 nextButtonPeppa.addEventListener('click', nextButton);
@@ -85,7 +85,7 @@ let peppaContainer = document.getElementById('peppa-game-container');
 let pepQuestion = document.getElementById('pep-questions');
 let answerButtonsElement = document.getElementById('answerButtonsPep');
 let peppaGameEnd = document.getElementById('peppa-end-section');
-let pepBtn = document.getElementById('answerButtonsPep')
+let pepBtn = document.getElementById('answerButtonsPep');
 
 /* *********************************** Love Hate variables ************************************/
 let loveStartButton = document.getElementById('love-start-button');
@@ -140,9 +140,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 musicNextButton.classList.add('hide');
                 
                 }
-        })
+        });
     }   
-})
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByClassName('start-button');
@@ -161,9 +161,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 gameTypeSelected = 'music-game';
                 startNewGame(gameTypeSelected);
             }
-        })
-    }   
-})
+        });
+    }
+});
 
 
 function startNewGame(gameTypeSelected){
@@ -193,29 +193,18 @@ function startNewGame(gameTypeSelected){
         selectedQuestionArea = musicQuestion;
 
     } else {
-        console.log('unknown game type selected')
+        console.log('unknown game type selected');
     }
 
 }
 
 function setNextQuestion(){   
-    resetState()
-    
-    // if(gameTypeSelected === 'peppa'){
-    //     showQuestion(shuffle(peppaQuestions)[currentQuestionIndex])
-    // }
+    resetState();
     showQuestion(shuffledQuestions[currentQuestionIndex]);
-    console.log('end of set next question function')
     console.log(message);
 }
 let message;
-function showQuestion(question){ 
-    // console.log('got here shw q');
-    console.log('question =' + question.question);   
-    // selectedQuestionArea.innerText = question.question;
-    // document.getElementById(currentSelection).innerText = question.question;
-    // let message = question.message; 
-    // console.log('test = ' + gameTypeSelectionForIfStatements);
+function showQuestion(question){
     if (gameTypeSelectionForIfStatements === 'peppa'){                    
         document.getElementById('pep-questions').innerText = question.question;        
     } else if(gameTypeSelectionForIfStatements === 'love'){            
@@ -224,33 +213,30 @@ function showQuestion(question){
         console.log('got inside showquestion music if');           
         document.getElementById('music-questions').innerText = question.question;  
     }  
-    message = question.message; 
-    console.log('this is the message = ' + message);    
+    message = question.message;    
     question.answers.forEach(answer => {
         let button = document.createElement('button');
         button.innerText = answer.text;
-        button.classList.add('answer-btn');
-        console.log('this is the tester for game type' + gameTypeSelectionForIfStatements)       
+        button.classList.add('answer-btn');     
         // if statement to set dataset to button to correct          
         if (answer.correct){
-            button.dataset.correct = answer.correct
-            console.log('button dataset =' + button.dataset.correct);
+            button.dataset.correct = answer.correct;
         }
         // if statement to add event listener and append button to document
         if (gameTypeSelectionForIfStatements === 'peppa'){            
             button.addEventListener('click', selectAnswer);
-            answerButtonsElement.appendChild(button) 
+            answerButtonsElement.appendChild(button); 
         } else if(gameTypeSelectionForIfStatements === 'love'){ 
             console.log('this is the test where it appends button');            
             button.addEventListener('click', selectAnswer);
-            answerButtonsLove.appendChild(button)        
+            answerButtonsLove.appendChild(button);        
         } else if(gameTypeSelectionForIfStatements === 'music'){ 
             console.log('this is the test where it appends button');           
             button.addEventListener('click', selectAnswer);
-            answerButtonsMusic.appendChild(button)  
+            answerButtonsMusic.appendChild(button);  
         }
     });
-    console.log('this is the end of the showquestion function')  
+    console.log('this is the end of the showquestion function');  
 }
 /**
  * function to execute when next button is pressed in game, which calls on the functions of show answerButtons to remove hide
@@ -286,7 +272,7 @@ function resetState(){
         while(answerButtonsMusic.firstChild){
             answerButtonsMusic.removeChild(answerButtonsMusic.firstChild);
         }
-    };    
+    }    
 }
 
 /**
@@ -318,7 +304,7 @@ function selectAnswer(e){
         Array.from(answerButtonsMusic.children).forEach(button => {
             setStatusClass(button, button.dataset.correct);
         });  
-    }; 
+    } 
     /* if statement to end game depending on number of questions asked or to continue asking questions */
     if(usedQuestions.length < 9){ 
         if (gameTypeSelectionForIfStatements === 'peppa'){
@@ -329,7 +315,7 @@ function selectAnswer(e){
 
         } else if(gameTypeSelectionForIfStatements === 'music'){
             musicNextButton.classList.remove('hide'); 
-        };        
+        }        
         usedQuestions.push('1');
 
     } else{
@@ -343,7 +329,7 @@ function selectAnswer(e){
         } else if(gameTypeSelectionForIfStatements === 'music'){
             musicGameEnd.classList.remove('hide');
             musicGameOuter.classList.add('hide');             
-        };        
+        }       
         usedQuestions = [];
         endScoreMessage();
     }
@@ -371,7 +357,7 @@ function selectAnswer(e){
         } else if(gameTypeSelectionForIfStatements === 'music'){ 
             document.getElementById('music-questions').innerText = message; 
         }
-    };
+    }
     
 }
 /* function to hide answer buttons when called */
@@ -382,7 +368,7 @@ function hideAnswerButtons(){
         answerButtonsLove.classList.add('hide'); 
     } else if(gameTypeSelectionForIfStatements === 'music'){
         answerButtonsMusic.classList.add('hide'); 
-    };     
+    }     
 }
 /* function to show answer buttons when called */
 function showAnswerButtons(){
@@ -392,7 +378,7 @@ function showAnswerButtons(){
          answerButtonsLove.classList.remove('hide'); 
      } else if(gameTypeSelectionForIfStatements === 'music'){
          answerButtonsMusic.classList.remove('hide'); 
-     };  
+     }  
 } 
 /* function to add classlist of correct and incorrect to button elements created in showquestion depending on truth result */
 function setStatusClass(element, correct){
@@ -401,7 +387,7 @@ function setStatusClass(element, correct){
         element.classList.add('correct');
     } else {
         element.classList.add('incorrect');
-    }; 
+    } 
 }
 /* function to clear classlists of correc and incorrect to button elements created in showQuestion function */
 function clearStatusClass(element){
@@ -438,17 +424,17 @@ function incrementIncorrectScore(){
 /* function to display message at end of game displaying the users score out of 10 */
 function endScoreMessage(){
     if(gameTypeSelectionForIfStatements === 'peppa'){
-        endScore = document.getElementById('peppa-score')
+        endScore = document.getElementById('peppa-score');
         endResult = parseInt(document.getElementById('correct-score').innerText);
-        endScore.innerText = `Well done you scored ${endResult} out of 10`
+        endScore.innerText = `Well done you scored ${endResult} out of 10`;
     }else if(gameTypeSelectionForIfStatements === 'love'){
-        endScore = document.getElementById('love-score')
+        endScore = document.getElementById('love-score');
         endResult = parseInt(document.getElementById('correct-love-score').innerText);
-        endScore.innerText = `Well done you scored ${endResult} out of 10`
+        endScore.innerText = `Well done you scored ${endResult} out of 10`;
     }else if(gameTypeSelectionForIfStatements === 'music'){
-        endScore = document.getElementById('music-score')
+        endScore = document.getElementById('music-score');
         endResult = parseInt(document.getElementById('correct-music-score').innerText);
-        endScore.innerText = `Well done you scored ${endResult} out of 10`
+        endScore.innerText = `Well done you scored ${endResult} out of 10`;
     }
 }
 /* function to restart game after game has finnished by the user clicking the try again button */
@@ -818,7 +804,7 @@ let peppaQuestions = [
         ],
         message:"Peppa's house is yellow and the roof of the house is red.",
     }
-]
+];
 let loveQuestions = [
     {
         question: 'How many seasons of Love/Hate is there in total?',
@@ -1134,7 +1120,7 @@ let loveQuestions = [
         message:"Nidge was the one who beat Tommy for sleeping with Dano's wife. ",
     }
 
-]
+];
 let musicQuestions = [
     {
         question: 'How many seasons of Love/Hate is there in total?',
@@ -1450,4 +1436,4 @@ let musicQuestions = [
         message:"Nidge was the one who beat Tommy for sleeping with Dano's wife. ",
     }
 
-]
+];
