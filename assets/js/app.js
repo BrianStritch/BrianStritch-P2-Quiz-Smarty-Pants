@@ -9,9 +9,6 @@ rulesBtn.addEventListener('click', rules);
 
 let rulesList = document.getElementById('rules-screen');
 
-let rulesExit = document.getElementById('rules-close');
-rulesExit.addEventListener('click', exitRules);
-
 /* selector screen */
 let selectionScreen = document.getElementById('selection-screen');
     
