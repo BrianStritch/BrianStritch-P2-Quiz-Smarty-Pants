@@ -35,6 +35,9 @@ p{
     width: fit-content;
     
   }
+  button{
+      cursor: pointer;
+  }
 /******************************* styling for entry screen ***************************************/
 
 .entry-zone{
@@ -186,6 +189,10 @@ p{
     background: #000000d1; 
     color: white;
 }
+.selector-btn:hover{
+    padding: 18px 45px;
+    box-shadow: 10px 10px 40px 10px rgb(47, 235, 0);
+}
 #peppa{
     color:rgba(216, 38, 216, 0.685)
 }
@@ -217,6 +224,7 @@ p{
     box-shadow: 10px 10px 31px 0px hsl(185,94%,80%) ;
     border: 1px solid black;
     color: black;
+
 }
 /***************************** peppa pig game styling *******************************/
 
@@ -359,8 +367,11 @@ p{
     font-size: 28px;
     color: #ffffff;
     border-radius: 27px/35px;
-    outline: none; 
-    
+    outline: none;     
+}
+.love-game-container button:hover{
+    background: rgba(199, 160, 32, 28%);
+    color:rgb(0, 0, 0) ;
 }
 .love-correct{
     position: absolute;
@@ -426,6 +437,11 @@ p{
     outline: none; 
     min-width: 130px;
 }
+.love-restart:hover ,.love-leave:hover{
+    background: rgba(199, 160, 32, 28%);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
 .love-end{ 
     margin: 0rem 5rem 0 5rem;
     background-color: rgba(0, 0, 0, 82%);
@@ -484,7 +500,7 @@ p{
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;    
     font-size: 28px;
-    color: rgba(250, 82, 11, 51%);
+    color: rgb(250, 82, 11);
 
 }
 .music-incorrect{
@@ -496,7 +512,7 @@ p{
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;    
     font-size: 28px;
-    color: rgba(250, 82, 11, 51%);
+    color: rgb(250, 82, 11);
 }
 /* love/hate end score page */
 .music-end-outer{
@@ -659,22 +675,27 @@ p{
         text-align: center;        
     }
     .peppa-end{
-        min-width: 200px;
-    } 
+        padding-top: 25px;
+        min-width: 258px;
+    }    
+    .pep-restart{
+        margin: 49px 0px -12px 0px;
+        min-width: 130px;
+        font-size: 17px;
+    }
+     
     .love-end, .music-end{
         min-width: 280px;
-    }
-    .pep-end-btn, .love-end-btn, .music-restart, .music-leave{
-        font-size: 15px;
-        width: 90%;
-    }
+    }    
     .love-end-praise, .music-end-praise {
         font-size: 20px;        
     }
     .love-end-score, .music-end-score{
         font-size: 15px;
     }
-    .love-restart, .love-leave, .music-restart, .music-leave{
+    .pep-end-btn, .love-end-btn,.love-restart, .love-leave, .music-restart, .music-leave{
         width: auto;
+        font-size: 13px;
+        margin: -1px 7px 20px 7px;
     }
 }
