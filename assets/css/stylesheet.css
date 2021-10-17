@@ -23,6 +23,18 @@ h1, .quest{
 p{
     font-family: Montserrat;
 }
+#logo-div {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    right: 45%;
+    background: #466368;
+    background: linear-gradient(to right, rgb(216, 38, 216, 67%), #0eca0e 85%, hsl(185,94%,72%));
+    border-radius: 90px/35px;   
+    padding: 16px;
+    width: fit-content;
+    
+  }
 /******************************* styling for entry screen ***************************************/
 
 .entry-zone{
