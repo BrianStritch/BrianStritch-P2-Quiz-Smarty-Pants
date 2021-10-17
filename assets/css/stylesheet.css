@@ -436,8 +436,7 @@ p{
 .music-question{
     padding: 3vh;
     margin: 7vh auto;
-    width: 75%;
-    height: 15vh;
+    width: 75%;    
     background-color: rgb(163, 199, 252);
     border: 1px solid white;
     border-radius: 20px;
