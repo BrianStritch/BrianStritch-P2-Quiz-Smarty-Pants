@@ -130,7 +130,7 @@ p{
     width: 100vw;
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 30px 0 0 0;
 }
 
 .choose-game{
@@ -170,6 +170,7 @@ p{
     height: 51vh;
     border-radius: 30px;
     min-width: 300px;
+    border-radius: 60px;
 }
 .selector-btn{    
     padding: 13px 38px;
@@ -200,6 +201,22 @@ p{
 .answer-btn.incorrect,.pep-btn.incorrect{
     background-color: red;
     color: white;
+}
+.emergency-exit-btn{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    background: transparent;
+    border-radius: 27px/35px;
+    outline: none;
+    padding: 5px;
+    border: none;
+}
+.emergency-exit-btn:hover{
+    background: linear-gradient(to right, rgb(216, 38, 216, 80%) , hsl(185,94%,80%));
+    box-shadow: 10px 10px 31px 0px hsl(185,94%,80%) ;
+    border: 1px solid black;
+    color: black;
 }
 /***************************** peppa pig game styling *******************************/
 
@@ -248,7 +265,7 @@ p{
 }
 .peppa-correct{
     position: absolute;
-    bottom: 5vh;
+    bottom: 7vh;
     right: 5vw;
     padding: 20px;
     background-color: rgba(38, 142, 216, 80%);
@@ -260,7 +277,7 @@ p{
 }
 .peppa-incorrect{
     position: absolute;
-    bottom: 5vh;
+    bottom: 7vh;
     left: 5vw;
     padding: 20px;
     background-color: rgba(38, 142, 216, 80%);
@@ -347,7 +364,7 @@ p{
 }
 .love-correct{
     position: absolute;
-    bottom: 5vh;
+    bottom: 7vh;
     right: 5vw;
     padding: 20px;
     background-color: rgba(1, 2, 2, 65%);
@@ -359,7 +376,7 @@ p{
 }
 .love-incorrect{
     position: absolute;
-    bottom: 5vh;
+    bottom: 7vh;
     left: 5vw;
     padding: 20px;
     background-color: rgba(1, 2, 2, 65%);
@@ -460,7 +477,7 @@ p{
 }
 .music-correct{
     position: absolute;
-    bottom: 5vh;
+    bottom: 7vh;
     right: 5vw;
     padding: 20px;
     background-color: rgb(0, 0, 0);
@@ -472,7 +489,7 @@ p{
 }
 .music-incorrect{
     position: absolute;
-    bottom: 5vh;
+    bottom: 7vh;
     left: 5vw;
     padding: 20px;
     background-color: #000000;
@@ -529,7 +546,27 @@ p{
 }
 
 
-
+@media screen and (max-width:1200px){
+    .card img {
+        width: 15rem;
+        height: 12rem;
+        min-width: 26vw;
+    }
+    .selectors {        
+        width: 20vw;
+        height: 28vh;
+        min-width: 240px;
+    }
+    .selector-btn {        
+        font-size: 20px;
+        margin-left: 9vw;
+        margin-top: 10px;
+        max-width: 150px;
+    }
+    .game-selector{
+        padding: 30px 0 0 0;
+    }
+}
 
 
 
