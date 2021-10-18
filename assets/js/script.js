@@ -540,7 +540,7 @@ let peppaQuestions = [
             {text: 'Pedro Pony', correct:false},
             {text: 'Edmund Elephant', correct:false},
         ],
-        message:"George and Richard both have toy dinosaurs, but do not like to share them.",
+        message:"Richard Rabbit. George and Richard both have toy dinosaurs, but do not like to share them.",
     },
     {
         question: "What is the name of Peppa's cousin?",
@@ -571,7 +571,7 @@ let peppaQuestions = [
             {text: 'Zoe Zebra', correct:false},
             {text: 'Gerard Giraffe', correct:false},
         ],
-        message:"Peppa likes the pretty French song Delphine sings for her.",
+        message:"Delphine Donkey is peppas pen-pal. Peppa likes the pretty French song Delphine sings for her.",
     },
     {
         question: "What colour car does Daddy Pig drive?",
@@ -584,14 +584,14 @@ let peppaQuestions = [
         message:"Daddy Pig loves to bring the family out for a drive in his car. They always drive to grandma and grandpa's house.",
     },
     {
-        question: "What is the name of Peppa's pet parrot?",
+        question: "What is the name of Grandpa pigs pet parrot?",
         answers:[
             {text: 'Sally', correct:false},
             {text: 'Billy', correct:false},
             {text: 'Harry', correct:false},
             {text: 'Polly', correct:true},
         ],
-        message:"Peppa's parrot name is Polly! Polly loves to copy others, and is a master escape artist.",
+        message:"Grandpa pigs parrot's name is Polly! Polly loves to copy others, and is a master escape artist.",
     },
     {
         question: "What colour is Daddy Pig's shirt?",
@@ -629,9 +629,9 @@ let peppaQuestions = [
             {text: 'Richard Rabbit', correct:true},
             {text: 'Danny Dragon ', correct:false},
             {text: 'Suzie Snake ', correct:false},
-            {text: 'Simon Spider', correct:false},
+            {text: 'Freddie fox', correct:false},
         ],
-        message:"Danny Dragon, Simon Spider and Suzie Snake don't exist and Freddy is a lot older than George, so they aren't best friends.",
+        message:"Richard rabbit is Georges best friend. Danny Dragon and Suzie Snake don't exist and Freddie is a lot older than George, so they aren't best friends.",
 
     },
     {
@@ -642,7 +642,7 @@ let peppaQuestions = [
             {text: 'Ms Zebra', correct:false},
             {text: 'Madame Gazelle', correct:true},
         ],
-        message:"Madame Gazelle plays guitar and sings for the children.",
+        message:"Madame Gazelle is peppas teacher and plays guitar and sings for the children.",
     },
     {
         question: "What is Peppa's favourite cake?",
@@ -672,7 +672,7 @@ let peppaQuestions = [
             {text: 'Tommy Tiger', correct:false},
             {text: 'Dominic Donkey', correct:false},
         ],
-        message:"Suzy says Leo prefers chocolate cake but will try a little slice of fruitcake.",
+        message:"Loe Lion. Suzy says Leo prefers chocolate cake but will try a little slice of fruitcake.",
     },
     {
         question: 'Who is referred to as a "clever clogs" in a few episodes?',
@@ -692,14 +692,14 @@ let peppaQuestions = [
             {text: 'Mr Turnip', correct:false},
             {text: 'Mr Potato', correct:true},
         ],
-        message:'He always says: "Welcoming, your friend and mine, Mr Potato!"',
+        message:'Mr Potato. He always says: "Welcoming, your friend and mine, Mr Potato!"',
     },
     {
         question: "Which character's father has nearly everything in his van?",
         answers:[
-            {text: 'Ferdinand Fox ', correct:false},
+            {text: 'Richard rabbit ', correct:false},
             {text: 'Freddy Fox ', correct:true},
-            {text: 'Frank Fox ', correct:false},
+            {text: 'Suzy sheep ', correct:false},
             {text: 'Pedro Pony ', correct:false},
         ],
         message:"Mr Fox says he has everything in his van, except petrol.",
@@ -722,7 +722,7 @@ let peppaQuestions = [
             {text: 'Dog', correct:false},
             {text: 'Horse', correct:false},
         ],
-        message:"Candy's mummy works with Daddy Pig.",
+        message:"Candy is a cat. Candy's mummy works with Daddy Pig.",
 
     },
     {
@@ -743,7 +743,7 @@ let peppaQuestions = [
             {text: 'Mr Bull', correct:false},
             {text: 'Mr Elephant', correct:false},
         ],
-        message:"Even though they do argue they are best friends.",
+        message:"Even though they do argue Grandpa pig and Grandad dog are best friends.",
     },
     {
         question: 'Which character brings Peppa\'s teddy home when she leaves him behind in the episode "Teddy\'s Day Out"?',
@@ -773,7 +773,7 @@ let peppaQuestions = [
             {text: 'Blue', correct:false},
             {text: 'Red', correct:false},
         ],
-        message:"She is Peppa's best friend so you will see her a lot in the show.",
+        message:"Suzy sheeps dress is pink. She is Peppa's best friend so you will see her a lot in the show.",
     },
     {
         question: "Peppa has a baby cousin; what is his name?",
@@ -783,7 +783,7 @@ let peppaQuestions = [
             {text: 'Billy', correct:false},
             {text: 'Alexander', correct:true},
         ],
-        message:"Baby Alexander is Chloe's baby brother.",
+        message:"Baby Alexander is cousin Chloe's baby brother.",
     },
     {
         question: "What colour is Peppa pig's house?",
