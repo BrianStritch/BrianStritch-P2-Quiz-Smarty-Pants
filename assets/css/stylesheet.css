@@ -38,6 +38,28 @@ p{
   button{
       cursor: pointer;
   }
+  footer{
+      position: fixed;
+      bottom: 0;
+      background: black;
+      color: blue;
+      width: 100%;
+      /* height: 20px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  footer p{
+      margin-left: 23vw;
+  }
+  footer i{
+      font-size: 35px;
+      margin: 5px;
+  }
+  #linked-in{
+      margin-left: 40vw;
+      margin-right: 10vw;
+  }
 /******************************* styling for entry screen ***************************************/
 
 .entry-zone{
@@ -212,7 +234,7 @@ p{
 .emergency-exit-btn{
     color: white;
     position: absolute;
-    bottom: 10px;
+    bottom: 7vh;
     background: transparent;
     border-radius: 27px/35px;
     outline: none;
@@ -273,7 +295,7 @@ p{
 }
 .peppa-correct{
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     right: 5vw;
     padding: 20px;
     background-color: rgba(38, 142, 216, 80%);
@@ -285,7 +307,7 @@ p{
 }
 .peppa-incorrect{
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     left: 5vw;
     padding: 20px;
     background-color: rgba(38, 142, 216, 80%);
@@ -369,13 +391,13 @@ p{
     border-radius: 27px/35px;
     outline: none;     
 }
-.love-game-container button:hover{
+/* .love-game-container button:hover{
     background: rgba(199, 160, 32, 28%);
     color:rgb(0, 0, 0) ;
-}
+} */
 .love-correct{
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     right: 5vw;
     padding: 20px;
     background-color: rgba(1, 2, 2, 65%);
@@ -387,7 +409,7 @@ p{
 }
 .love-incorrect{
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     left: 5vw;
     padding: 20px;
     background-color: rgba(1, 2, 2, 65%);
@@ -493,7 +515,7 @@ p{
 }
 .music-correct{
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     right: 5vw;
     padding: 20px;
     background-color: rgb(0, 0, 0);
@@ -505,7 +527,7 @@ p{
 }
 .music-incorrect{
     position: absolute;
-    bottom: 7vh;
+    bottom: 10vh;
     left: 5vw;
     padding: 20px;
     background-color: #000000;
@@ -595,6 +617,15 @@ p{
 @media screen and (max-width:600px){
     p{
         font-size: 10px;        
+    }
+    footer{
+        width: 100%;
+        display:initial;
+        position: fixed;
+        bottom: 0;
+    }
+    footer p{
+        float: right;
     }
     .modal-content{
         width: 60%;
@@ -698,4 +729,12 @@ p{
         font-size: 13px;
         margin: -1px 7px 20px 7px;
     }
+}
+@media screen and (max-width:320px){
+    footer{
+        width: 115%;
+        position: fixed;
+        bottom: 0;
+    }
+
 }

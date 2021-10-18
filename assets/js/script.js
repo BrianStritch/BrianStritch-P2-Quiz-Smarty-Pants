@@ -41,7 +41,7 @@ window.onclick = function(event) {
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByClassName('emergency-exit-btn');
     for (let button of buttons){
-        button.addEventListener('click', exitGame)
+        button.addEventListener('click', exitGame);
     }
 });
         
