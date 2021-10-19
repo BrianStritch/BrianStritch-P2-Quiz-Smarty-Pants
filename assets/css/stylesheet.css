@@ -12,6 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family:Montserrat;
+    background-color: black;
 }
 .hide{
     display: none;
@@ -39,8 +40,8 @@ p{
   footer{
       position: fixed;
       bottom: 0;
-      background: black;
-      color: blue;
+      background: linear-gradient(to right, rgb(216, 38, 216, 80%) , hsl(185,94%,80%));
+      color: black;
       width: 100%;
       display: flex;
       justify-content: center;
@@ -56,6 +57,9 @@ p{
   #linked-in{
       margin-left: 40vw;
       margin-right: 10vw;
+  }
+  #linked-in:hover, #github:hover{
+      box-shadow: hsl(185,94%,80%);
   }
 /******************************* styling for entry screen ***************************************/
 
@@ -145,8 +149,8 @@ p{
 /******************************** game selectors page styling *******************************/
 
 .game-selector{
-    background: url(../images/light-bulb.JPG) no-repeat center center;
-    background-size: cover;
+    background: url(../images/selectors-page.JPG) no-repeat center center , black;
+    background-size: 100vw 95vh;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -159,9 +163,10 @@ p{
     font-size: 20px;
     padding: 10px;
     margin: 0 auto;
-    background-color: #000000d1;
+    background: linear-gradient(to right, rgb(216, 38, 216, 80%) , hsl(185,94%,80%));
+    box-shadow: 10px 0px 21px 8px rgb(216, 38, 216, 80%);
     border-radius: 90px / 35px;
-    color: yellow;
+    color: black;
 }
 
 .selectors-outer{
@@ -177,7 +182,7 @@ p{
     justify-content: space-around;
     width: 25vw;
     height: 50vh;
-    background-color: turquoise;
+    background-color: black;
     align-items: flex-end;
     border-radius: 60px;
     margin: 50px 50px 0px 50px;
@@ -186,8 +191,8 @@ p{
 }
 .card img{
     display: flex;
-    width: 25vw;
-    height: 51vh;
+    width: 100%;
+    height: 50vh;
     border-radius: 30px;
     min-width: 300px;
     border-radius: 60px;
@@ -195,7 +200,7 @@ p{
 .selector-btn{    
     padding: 13px 38px;
     background-color: 	white;    
-    box-shadow: 0 8px 13px 0px rgba(199, 160, 32, 0.685); 
+    box-shadow: 0 4px 29px -4px hsl(185,94%,80%); 
     font-size: 28px;
     color: black;
     border-radius: 27px/35px;
@@ -208,13 +213,13 @@ p{
 }
 .selector-btn:hover{
     padding: 18px 45px;
-    box-shadow: 10px 10px 40px 10px rgb(47, 235, 0);
+    box-shadow: 10px 10px 40px 10px rgba(216, 38, 216, 0.685);
 }
 #peppa{
     color:rgba(216, 38, 216, 0.685)
 }
 #music{
-    color:yellow;
+    color:#008ac4;
 }
 /* *************************** communal game styling *********************************/
 
@@ -242,6 +247,10 @@ p{
     border: 1px solid black;
     color: black;
 
+}
+.selector-exit{
+    left: 45vw;
+    right: 45vw;
 }
 /***************************** peppa pig game styling *******************************/
 
@@ -497,7 +506,7 @@ p{
     padding: 2% 5%;
     margin: 0 20px 15px 37px;    
     background-color: rgb(37, 172, 155);    
-    box-shadow: 0 8px 13px 0px  rgba(199, 160, 32, 28%); 
+    box-shadow: 0 8px 13px 0px  orangered; 
     font-size: 28px;
     color: #ffffff;
     border-radius: 27px/35px;
@@ -575,15 +584,38 @@ p{
 }
 
 
+
+/***************************** media queries ******************************/
+
+
+@media screen and (max-width: 2200px){
+    .selectors {    
+    min-width: 400px;
+    height: 30vh;
+    }
+    .card img{
+    height: 30vh;
+    }
+    #pep-img{
+        width: 40vw;
+        margin-left: -4vw;
+        min-width: 30vw;
+    }
+}
 @media screen and (max-width:1200px){
     .card img {
-        width: 15rem;
-        height: 12rem;
-        min-width: 26vw;
+        min-width: 240px;
+        width: 35vw;
+        height: 20vh;
     }
-    .selectors {        
-        width: 20vw;
-        height: 28vh;
+    #pep-img {
+        width: 150%;
+        margin-left: -4vw;
+    }
+    .selectors {  
+        margin-top: 7vh;
+        width: 35vw;
+        height: 20vh;
         min-width: 240px;
     }
     .selector-btn {        
@@ -594,6 +626,10 @@ p{
     }
     .game-selector{
         padding: 30px 0 0 0;
+        background-size: 100vw 106vh;
+    }
+    #music{
+        margin-bottom: 10vh;
     }
 }
 
@@ -640,14 +676,13 @@ p{
         padding-top: 10px;
         padding-left: 3%;
         width:100%;
-        height:100%;
-        background: black;
+        height:100%;        
 
     }
     .selectors{
         width: 190px;
         height: 190px;
-        box-shadow:10px 0px 21px 8px #ffeb3b69;
+        box-shadow:10px 0px 21px 8px hsl(185,94%,80%);
     }
     .selectors-outer{
         margin: 0 auto 20px auto;
@@ -655,15 +690,18 @@ p{
     .selector-btn{
         margin: 8px auto 0 auto;
     } 
+    #music{
+        margin-bottom: 10vh;
+    }
     .choose-game{
         width: 250px;
         font-size: 20px;
         padding: 10px;
         margin: 0 auto;
-        background-color: #000000d1;
+        background: linear-gradient(to right, rgb(216, 38, 216, 80%) , hsl(185,94%,80%));
         border-radius: 90px / 35px;
-        color: orangered;
-        box-shadow: 10px 0px 21px 8px #ffeb3b69;
+        color: black;
+        box-shadow: 10px 0px 21px 8px rgb(216, 38, 216, 80%);
     }
     
     .card, .card img{
@@ -720,7 +758,13 @@ p{
         font-size: 13px;
         margin: -1px 7px 20px 7px;
     }
+    .selector-exit{
+        display:none;
+    }
 }
+
+
+
 @media screen and (max-width:320px){
     footer{
         width: 115%;
