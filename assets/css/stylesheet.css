@@ -221,6 +221,12 @@ p{
 #music{
     color:#008ac4;
 }
+#music-img{
+    min-width: 28vw;
+}
+#pep-img{
+    min-width: 28vw;
+}
 /* *************************** communal game styling *********************************/
 
 .answer-btn.correct,.pep-btn.correct{
@@ -601,6 +607,9 @@ p{
         margin-left: -4vw;
         min-width: 30vw;
     }
+    #music-img {
+        min-width: 33vw;
+    }
 }
 @media screen and (max-width:1200px){
     .card img {
@@ -609,8 +618,10 @@ p{
         height: 20vh;
     }
     #pep-img {
-        width: 150%;
-        margin-left: -4vw;
+        min-width: 44vw;
+    }
+    #music-img {
+        min-width: 40vw;
     }
     .selectors {  
         margin-top: 7vh;
@@ -630,6 +641,10 @@ p{
     }
     #music{
         margin-bottom: 10vh;
+    }
+    #music-img {
+        /* width: 102%; */
+        min-width: 28vw;
     }
 }
 
@@ -677,8 +692,8 @@ p{
         padding-left: 3%;
         width:100%;
         height:100%;        
-
-    }
+        background-size: 100vw 145vh;
+    }    
     .selectors{
         width: 190px;
         height: 190px;
@@ -690,6 +705,9 @@ p{
     .selector-btn{
         margin: 8px auto 0 auto;
     } 
+    #pep-img {
+        min-width: 280px
+    }
     #music{
         margin-bottom: 10vh;
     }
