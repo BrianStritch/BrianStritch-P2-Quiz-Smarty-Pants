@@ -449,6 +449,7 @@ function restartGame(){
         musicGameOuter.classList.remove('hide');
         musicNextButton.classList.add('hide'); 
     }
+    /* code to reset the value of the variables as to not carry into the next games */
     selectedQuestion = 'reset';
     gameTypeSelected = 'reset';
     usedQuestions = [];
