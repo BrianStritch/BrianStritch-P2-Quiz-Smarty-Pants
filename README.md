@@ -6,7 +6,7 @@ The first selection within the game contains content from the popular children's
 
 The second selection within the game contains content relating to the hit RTE Crime Drama Love/Hate which is aimed towards the more mature users and allows the user to challenge their knowledge about their favourite crime drama.
 
-The third selection within the game is a general music trivia quiz aimed towards all ages which allows the user to challenge their musical trivia knowledge and musical related general knowlegdge.
+The third selection within the game is a general music trivia quiz aimed towards all ages which allows the user to challenge their musical trivia knowledge and musical related general knowledge.
 
 ## __Table of Contents__
 
@@ -24,7 +24,7 @@ The third selection within the game is a general music trivia quiz aimed towards
 * [Validator testing](#validator-testing)
 	* [W3C HTML Code validator](#w3c-html-code-validator)
 	* [W3C CSS Jigsaw validator](#w3c-css-jigsaw-validator)
-	* [Accesibility Lighthouse](#accesibility-lighthouse)
+	* [Accessibility Lighthouse](#accessibility-lighthouse)
   * [JSHint](#jshint)
 * [Unfixed Bugs](#unfixed-bugs)
 * [Deployment](#deployment)
@@ -47,11 +47,11 @@ The third selection within the game is a general music trivia quiz aimed towards
 ## __Features__ 
 1. The User is greeted with a sleek modern Quiz game entry page where the user can view the rules of the game and can progress into the game selection screen.
 
-2. The game selection screen offers the user the choice of three games, a beginner level Peppa Pig quiz, which allows the users to test their knowledge about their favourite characters in the poular children's animated television series Peppa Pig, an intermediate level quiz based on the hit RTE Crime Drama Love/Hate, and is aimed at the more mature users and allows the user to test their knowledge relating to their favourite television show. The last game is an intermediate level music related trivia quiz, which would be suited for all ages, and allows the user to test their music trivia knowledge.
+2. The game selection screen offers the user the choice of three games, a beginner level Peppa Pig quiz, which allows the users to test their knowledge about their favourite characters in the popular children's animated television series Peppa Pig, an intermediate level quiz based on the hit RTE Crime Drama Love/Hate, and is aimed at the more mature users and allows the user to test their knowledge relating to their favourite television show. The last game is an intermediate level music related trivia quiz, which would be suited for all ages, and allows the user to test their music trivia knowledge.
 
-3. On entering the game of choice the backdrop is chosen to reflect the game choice, and the choice of colors used in the design of the quiz game area is complimented by the colours within the backdrop, without distracting the users focus from the game. 
+3. On entering the game of choice the backdrop is chosen to reflect the game choice, and the choice of colours used in the design of the quiz game area is complimented by the colours within the backdrop, without distracting the users focus from the game. 
 
-4. when the user selects the start game button, the questions are prompted in a random order and the user is never prompted with the same lineup of questions should they have played the quiz previously. The user is asked the randomly chosen question and is prompted with a choice of four possible answers.
+4. when the user selects the start game button, the questions are prompted in a random order and the user is never prompted with the same line-up of questions should they have played the quiz previously. The user is asked the randomly chosen question and is prompted with a choice of four possible answers.
 
 5. On selecting their answer the user is immediately notified of their result as the correct answer button changes to green and the incorrect answer buttons change to red, and an informative message is displayed to the user which relates to the question and the correct answer.
 
@@ -121,7 +121,7 @@ The third selection within the game is a general music trivia quiz aimed towards
   - No errors or warnings were returned when passing through the official w3 CSS validator.
 - ![Smarty Pants Quiz game](/assets/readme/readme-images/css-validator-results.JPG)
 
-#### __Accesibility lighthouse:__
+#### __Accessibility lighthouse:__
   - The game site was entered tested using lighthouse in chrome developer tools and passed with 100% in all areas.
 - ![Smarty Pants Quiz game](/assets/readme/readme-images/lighthouse-test-results.JPG)
 
@@ -135,7 +135,7 @@ The third selection within the game is a general music trivia quiz aimed towards
 
 While many bugs have been found during the development phase, such as layout issues,
 font size issues, and links not working when committed to GitHub. Numerous bugs were noted when writing the JavaScript file however these bugs have been eradicated and no bugs appear to remain. 
- - During the testing phase of the game it was noted that one such bug was evident, which required a funtion to be written to delay the next button following the user answering the question, as this would cause the function to execute prior to its predecessor function completing and thus causing the answer buttons of the next question to disappear, leaving the user on a screen with no buttons to progress. 
+ - During the testing phase of the game it was noted that one such bug was evident, which required a function to be written to delay the next button following the user answering the question, as this would cause the function to execute prior to its predecessor function completing and thus causing the answer buttons of the next question to disappear, leaving the user on a screen with no buttons to progress. 
  - During the course of writing the javascript file numerous small bugs were found and the issues resolved and no further issues appear to be evident in the current version of the game. 
 
 - In relation to the CSS styling of the game application some minor issues were noted with responsiveness on different size devices and a happy medium had to be achieved as I could not get the site to appear uniform on all different types of media devices due to the time constraints of submitting this project and these issues have not been fully addressed and could be addressed in a future update of the game.
@@ -158,7 +158,7 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
 ### __Content__ 
 
-- The questions used for the peppa pig quiz game were obtained from an online quiz found at the link below:
+- The questions used for the Peppa Pig quiz game were obtained from an online quiz found at the link below:
   - https://www.funtrivia.com/en/ForChildren/Peppa-Pig-21189.html.
 - The questions used for the Love/Hate quiz game were obtained from an online quiz found at the link below:
   - https://www.joe.ie/quiz/quiz-how-well-do-you-remember-lovehate-658499
