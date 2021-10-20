@@ -1,4 +1,4 @@
-# Smarty Pants Quiz Game - Brian Stritch 2021 Project-2
+# __Smarty Pants Quiz Game - Brian Stritch 2021 Project-2__
 
 Smarty Pants is a quizz game tailored for multiple age groups and is intended to be an entertaining and informative quizz game.The quiz is a 10 question multiple choice game where the user is asked a question and offered four possible answers to choose from. There are three game types to choose from to allow the user a variety of choice.
 
@@ -8,7 +8,7 @@ The second selection within the game contains content relating to the hit RTE Cr
 
 The third selection within the game is a general music trivial quiz aimed towards all ages which allows the user to challenge their musical trivia knoledge and musical related general knolegdge.
 
-## Table of Contents
+## __Table of Contents__
 
 <!-- Table of contents -->
 
@@ -40,11 +40,11 @@ The third selection within the game is a general music trivial quiz aimed toward
 
 <!-- End table of contents -->
 
-## What does it look like
+## __What does it look like__
 ![Responsive Mockup](assets/readme/readme-images/am-i-responsive.JPG )
 <a href="https://brianstritch.github.io/BrianStritch-P2-QuizzGame/" target="_blank">Click Here</a> to access the site.
 
-## Features 
+## __Features__ 
 1. The User is greeted with a sleek modern Quiz game entry page where the user can view the rules of the game and can progress into the game selection screen.
 
 2. The game selection screen offers the user the choice of three games, a beginner level peppa-pig quiz, which allows the users to test their knoledge about their favourite charachters in the poular childrens animated television series Peppa Pig, an intermediate level quiz based on the hit RTE Crime Drama Love/Hate, and is aimed at the more mature users and allows the user to test their knoledge relating to their favourite televiosion show. The last game is an intermediate level music related trivia quiz, which would be suited for all ages, and allows the user to test their music trivial knoledge.
@@ -61,42 +61,41 @@ The third selection within the game is a general music trivial quiz aimed toward
 
 8. At the end game screen the user has the option to restart the current game or can exit the current game choice and is redirected to the game selection screen.
 
-## Technologies
+## __Technologies__
+### __Languages used__
+  The following languages were used to create the website:
+  1. HTML
+  2. CSS
+  3. JavaScript
 
-The following languages were used to create the website:
+### __Other technologies__
 
-1. HTML
-2. CSS
-3. JavaScript
+  1. Balsamiq Wireframes
+    * To create the personas, journey maps, storyboard wireframes and mock ups.
+  2. Gitpod
+    * Platform used to develop and test site.
+  3. Github
+    * Platform used to host repository and deployed site.
+  4. Google Fonts
+    * Used for typography
+  5. Font Awesome
+    * Used for Icons
+  6. Microsoft Powerpoint
+    * Used to design a visual verion of the game in order to quicky establish the layout and styling of the game.
 
-Other technologies:
+### __Existing Features__
 
-1. Balsamiq Wireframes
- 	* To create the personas, journey maps, storyboard wireframes and mock ups.
-2. Gitpod
-	* Platform used to develop and test site.
-3. Github
-	* Platform used to host repository and deployed site.
-4. Google Fonts
-	* Used for typography
-5. Font Awesome
-	* Used for Icons
-6. Microsoft Powerpoint
-  * Used to design a visual verion of the game in order to quicky establish the layout and styling of the game.
-
-### Existing Features
-
-- __Social Media__
+#### __Social Media__
 
   - I have added links in the footer of the game which allows the user to follow me on github and linked in should they wish to do so. 
 
 
-### Features Left to Implement
+### __Features Left to Implement__
 
 - Addition of new game types
 - Username and high score logging  
 
-## Testing 
+## __Testing__ 
 
  - All aspects of the game have been tested and appear to be working as intended. The user should be able to achieve their goal as the site intends, depending on whatever game they choose to play when they visit. 
 
@@ -110,7 +109,7 @@ Other technologies:
         - click on Gitpod icon and verify that the correct page opens in a new tab
     
 
-### Validator Testing 
+### __Validator Testing__ 
 ##### __W3C HTML Code Validator:__
   - The code for the html page was entered into the validator and all aspects of the page passed.
   - No errors or warnings were returned when passing through the official W3 HTML validator.
@@ -131,7 +130,7 @@ Other technologies:
 - ![Smarty Pants Quiz game](/assets/readme/readme-images/jshint-results.JPG)
 
 
-### Unfixed Bugs
+### __Unfixed Bugs__
 
 While many bugs have been found during the development phase, such as layout issues,
 font size issues, and links not working when commited to GitHub. Numerous bugs were noted when writing the JavaScript file however these bugs have been erradicated and no bugs appear to remain. 
@@ -140,7 +139,7 @@ font size issues, and links not working when commited to GitHub. Numerous bugs w
 
 - In relation to the CSS styling of the game application some minor issues were noted with responsiveness on different size devices and a happy medium had to be achieved as i could not get the site to appear uniform on all different types of media devices due to the time constraints of submitting this project and these issues have not been fully addressed and could be addressed in a future update of the game.
 
-## Deployment
+## __Deployment__
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab 
@@ -151,12 +150,12 @@ font size issues, and links not working when commited to GitHub. Numerous bugs w
 The live link can be found <a href="https://brianstritch.github.io/BrianStritch-P2-QuizzGame/" target="_blank">here</a>.
 
 
-## Credits 
+## __Credits__ 
 - I would like to thank my mentor Spencer Barriball for the guidance throughout the project.
 - I would like to thank all my family and friends for the help in testing the game searching for errors and bugs.
 
 
-### Content 
+### __Content__ 
 
 - The questions used for the peppa pig quiz game were obtained from an online quiz found at the link below:
   - https://www.funtrivia.com/en/ForChildren/Peppa-Pig-21189.html.
@@ -166,7 +165,7 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 - The Modal on the Entry screen was obtained from W3Schools website.
 
-### Media
+### __Media__
 
 - The images used in the Initial game entry screen and game selector screen backgrounds were obtained from Pexels.com and are to the best of my knoledge unlicenced free images.
 - The image used in the peppa pig game selector was obtained from an internet search and sourced from Twitter via The Guardian.
