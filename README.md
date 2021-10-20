@@ -1,12 +1,12 @@
 # __Smarty Pants Quiz Game - Brian Stritch 2021 Project-2__
 
-Smarty Pants is a quizz game tailored for multiple age groups and is intended to be an entertaining and informative quizz game.The quiz is a 10 question multiple choice game where the user is asked a question and offered four possible answers to choose from. There are three game types to choose from to allow the user a variety of choice.
+Smarty Pants is a quiz game tailored for multiple age groups and is intended to be an entertaining and informative quiz game. The quiz is a 10 question multiple choice game where the user is asked a question and offered four possible answers to choose from. There are three game types to choose from to allow the user a variety of choice.
 
-The first selection within the game conatins content from the popular childrens animated show, Peppa Pig, which caters for the younger users which allows them to challenge their knoledge about all their favourite charachters of the show. 
+The first selection within the game contains content from the popular children's animated show, Peppa Pig, which caters for the younger users and allows them to challenge their knowledge about all their favourite characters of the show. 
 
-The second selection within the game contains content relating to the hit RTE Crime Drama Love/Hate which is aimed towards the more mature users and allows the user to challenge their knoledge about their favourite crime drama.
+The second selection within the game contains content relating to the hit RTE Crime Drama Love/Hate which is aimed towards the more mature users and allows the user to challenge their knowledge about their favourite crime drama.
 
-The third selection within the game is a general music trivial quiz aimed towards all ages which allows the user to challenge their musical trivia knoledge and musical related general knolegdge.
+The third selection within the game is a general music trivia quiz aimed towards all ages which allows the user to challenge their musical trivia knowledge and musical related general knowlegdge.
 
 ## __Table of Contents__
 
@@ -47,19 +47,19 @@ The third selection within the game is a general music trivial quiz aimed toward
 ## __Features__ 
 1. The User is greeted with a sleek modern Quiz game entry page where the user can view the rules of the game and can progress into the game selection screen.
 
-2. The game selection screen offers the user the choice of three games, a beginner level peppa-pig quiz, which allows the users to test their knoledge about their favourite charachters in the poular childrens animated television series Peppa Pig, an intermediate level quiz based on the hit RTE Crime Drama Love/Hate, and is aimed at the more mature users and allows the user to test their knoledge relating to their favourite televiosion show. The last game is an intermediate level music related trivia quiz, which would be suited for all ages, and allows the user to test their music trivial knoledge.
+2. The game selection screen offers the user the choice of three games, a beginner level Peppa Pig quiz, which allows the users to test their knowledge about their favourite characters in the poular children's animated television series Peppa Pig, an intermediate level quiz based on the hit RTE Crime Drama Love/Hate, and is aimed at the more mature users and allows the user to test their knowledge relating to their favourite television show. The last game is an intermediate level music related trivia quiz, which would be suited for all ages, and allows the user to test their music trivia knowledge.
 
-3. On entering the game of choice the backdrop is chosen to reflect the game choice, and the choice of colors used in the design of the quiz game area is complimented by the colours within the backdrop, without distracting th users focus from the game. 
+3. On entering the game of choice the backdrop is chosen to reflect the game choice, and the choice of colors used in the design of the quiz game area is complimented by the colours within the backdrop, without distracting the users focus from the game. 
 
-4. when the user selects the start game button, a random questions order is chosen and the user is never prompted with the same lineup of questions should they have played the quiz previously. The user is asked the randomly chosen question and is prompted with a choice of four possible answers.
+4. when the user selects the start game button, the questions are prompted in a random order and the user is never prompted with the same lineup of questions should they have played the quiz previously. The user is asked the randomly chosen question and is prompted with a choice of four possible answers.
 
 5. On selecting their answer the user is immediately notified of their result as the correct answer button changes to green and the incorrect answer buttons change to red, and an informative message is displayed to the user which relates to the question and the correct answer.
 
 6. The user is displayed their current correct and incorrect answer scores during the game at the lower left and right of the screen.
 
-7. At the end of the ten questions the user is directed to an end game screen with a new backdrop to differentiate the game screen from the end screen, and the user is congratulated and a message is displayed to the user indicting their score out of ten.
+7. At the end of the ten questions the user is directed to an end game screen with a new backdrop to differentiate the game screen from the end of game screen, and the user is congratulated and a message is displayed to the user notifying them of their score out of ten.
 
-8. At the end game screen the user has the option to restart the current game or can exit the current game choice and is redirected to the game selection screen.
+8. At the end game screen the user has the option to restart the current game or can exit and is redirected to the game selection screen.
 
 ## __Technologies__
 ### __Languages used__
@@ -71,17 +71,17 @@ The third selection within the game is a general music trivial quiz aimed toward
 ### __Other technologies__
 
   1. Balsamiq Wireframes
-    * To create the personas, journey maps, storyboard wireframes and mock ups.
+    * To create the wireframes and mock ups.
   2. Gitpod
     * Platform used to develop and test site.
   3. Github
     * Platform used to host repository and deployed site.
   4. Google Fonts
-    * Used for typography
+    * Used for text choice for the game.
   5. Font Awesome
-    * Used for Icons
+    * Used for social media Icons in the footer
   6. Microsoft Powerpoint
-    * Used to design a visual verion of the game in order to quicky establish the layout and styling of the game.
+    * Used to design a visual version of the game in order to quicky establish the layout and styling of the game.
 
 ### __Existing Features__
 
@@ -93,11 +93,12 @@ The third selection within the game is a general music trivial quiz aimed toward
 ### __Features Left to Implement__
 
 - Addition of new game types
-- Username and high score logging  
+- Username entry
+- High score logging  
 
 ## __Testing__ 
 
- - All aspects of the game have been tested and appear to be working as intended. The user should be able to achieve their goal as the site intends, depending on whatever game they choose to play when they visit. 
+ - All aspects of the game have been tested and appear to be working as intended. The user should be able to achieve their goal as the game intends, depending on whichever game they choose to play when they visit. 
 
  - I have used Developer tools in Google Chrome to test the responsiveness of the site on different devices small and large and the site appears to render well on different screen sizes, however some issues were noted. see bugs below.
 
@@ -105,13 +106,13 @@ The third selection within the game is a general music trivial quiz aimed toward
 
  - Social Media
     - social media link testing    
-        - click on Linked-in icon and verify that the correct page opens in a new tab
-        - click on Gitpod icon and verify that the correct page opens in a new tab
+        - click on Linked-in icon and verify that the correct page opens in a new tab.
+        - click on Gitpod icon and verify that the correct page opens in a new tab.
     
 
 ### __Validator Testing__ 
 ##### __W3C HTML Code Validator:__
-  - The code for the html page was entered into the validator and all aspects of the page passed.
+  - The code for the html index.html page was entered into the validator and all aspects of the page passed.
   - No errors or warnings were returned when passing through the official W3 HTML validator.
 - ![Smarty Pants Quiz game](/assets/readme/readme-images/html-validator-results.JPG)
 
@@ -126,18 +127,18 @@ The third selection within the game is a general music trivial quiz aimed toward
 
 #### __JSHint:__
   - The code for the script.js file was entered into the JSHint validator and passed.
-  - Some minor warnings were noted relating to functions which were declared within loops referencing outer scoped variables, however this was the intention of declaring said variables, that they could be manipulated by functions to alter the stored values in order to influence the outcome of other functions depending on the values stored when the variables are passed into the functions. some notifications were prompted relating to unused variables, however the variables which have been noted directly relate to the statements above where the variables are designed to be manipulated by functions in order for the game to operate effetively. No errors were returned when passing through the JSHint validator.
+  - Some minor warnings were noted relating to functions which were declared within loops referencing outer scoped variables, however this was the intention of declaring said variables, that they could be manipulated by functions to alter the stored values in order to influence the outcome of other functions depending on the values stored when the variables are passed into the functions. some notifications were prompted relating to unused variables, however the variables which have been noted directly relate to the statements above where the variables are designed to be manipulated by functions in order for the game to operate effectively. No errors were returned when passing through the JSHint validator.
 - ![Smarty Pants Quiz game](/assets/readme/readme-images/jshint-results.JPG)
 
 
 ### __Unfixed Bugs__
 
 While many bugs have been found during the development phase, such as layout issues,
-font size issues, and links not working when commited to GitHub. Numerous bugs were noted when writing the JavaScript file however these bugs have been erradicated and no bugs appear to remain. 
- - During the testing phase of the game it was noted that one such bug was evident, which required a funtion to be written to delay the next button following the user   answering the question, as this would cause the function to execute prior to its predecessor function completing and thus causing the anser buttons of the next question to disappear. 
+font size issues, and links not working when committed to GitHub. Numerous bugs were noted when writing the JavaScript file however these bugs have been eradicated and no bugs appear to remain. 
+ - During the testing phase of the game it was noted that one such bug was evident, which required a funtion to be written to delay the next button following the user answering the question, as this would cause the function to execute prior to its predecessor function completing and thus causing the answer buttons of the next question to disappear, leaving the user on a screen with no buttons to progress. 
  - During the course of writing the javascript file numerous small bugs were found and the issues resolved and no further issues appear to be evident in the current version of the game. 
 
-- In relation to the CSS styling of the game application some minor issues were noted with responsiveness on different size devices and a happy medium had to be achieved as i could not get the site to appear uniform on all different types of media devices due to the time constraints of submitting this project and these issues have not been fully addressed and could be addressed in a future update of the game.
+- In relation to the CSS styling of the game application some minor issues were noted with responsiveness on different size devices and a happy medium had to be achieved as I could not get the site to appear uniform on all different types of media devices due to the time constraints of submitting this project and these issues have not been fully addressed and could be addressed in a future update of the game.
 
 ## __Deployment__
 
@@ -152,7 +153,7 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
 ## __Credits__ 
 - I would like to thank my mentor Spencer Barriball for the guidance throughout the project.
-- I would like to thank all my family and friends for the help in testing the game searching for errors and bugs.
+- I would like to thank all my family and friends for the help in testing the game and searching for errors and bugs.
 
 
 ### __Content__ 
@@ -161,16 +162,16 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
   - https://www.funtrivia.com/en/ForChildren/Peppa-Pig-21189.html.
 - The questions used for the Love/Hate quiz game were obtained from an online quiz found at the link below:
   - https://www.joe.ie/quiz/quiz-how-well-do-you-remember-lovehate-658499
-- The questions for the Music quiz game were obtained from an android application Trivial music, available for download frr on the APP store.
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The questions for the Music quiz game were obtained from an android application "Trivial music", available for download for on the Google APP store.
+- The icons in the footer were obtained from [Font Awesome](https://fontawesome.com/)
 - The Modal on the Entry screen was obtained from W3Schools website.
 
 ### __Media__
 
-- The images used in the Initial game entry screen and game selector screen backgrounds were obtained from Pexels.com and are to the best of my knoledge unlicenced free images.
-- The image used in the peppa pig game selector was obtained from an internet search and sourced from Twitter via The Guardian.
+- The images used in the Initial game entry screen and game selector screen backgrounds were obtained from Pexels.com and are to the best of my knowledge unlicenced free images.
+- The image used in the Peppa Pig game selector was obtained from an internet search and sourced from Twitter via The Guardian.
 - The image used in the Love/Hate game selector was obtained from the RTE One official website.
-- The image used in the Music game selector was obtained from an internet search and appears across numerous social media platforms and the source of which is unknown. the source that this image was obatined from for this game was from Online tech tips.
+- The image used in the Music game selector was obtained from an internet search and appears across numerous social media platforms and the source of which is unknown. the source that this image was obtained from for this game was from "Online tech tips".
 - The images used in the Peppa Pig game and end screen were obtained from the official Peppa Pig Twitter account.
 - The Images used in the Love/Hate game screen and end screens were obtained from the RTE One official website .
 - The images used in the Music game screen and end screens were obtained from an internet search and the game screen image was obtained from the New Yorker Website and the end screen image was from "Dothill Primary School" and appears to have been drawn by a student.
@@ -197,7 +198,6 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
   - #### __Features and Content__
      - Example: A user wishes pass time and enjoy an entertaining quiz game. 
-
     - ![scope Diagram](/assets/readme/readme-images/scope.JPG)
     
 
