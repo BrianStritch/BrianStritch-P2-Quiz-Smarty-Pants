@@ -10,9 +10,8 @@ The third selection within the game is a general music trivial quiz aimed toward
 
 ## Table of Contents
 
-<!-- Start Document Outline -->
+<!-- Table of contents -->
 
-* 
 * [What does it look like](#what-does-it-look-like)           
 * [Features](#features)
 * [Technologies](#technologies)
@@ -39,7 +38,7 @@ The third selection within the game is a general music trivial quiz aimed toward
 	* [Skeleton](#skeleton)
 
 
-<!-- End Document Outline -->
+<!-- End table of contents -->
 
 ## What does it look like
 ![Responsive Mockup](assets/readme/readme-images/am-i-responsive.JPG )
