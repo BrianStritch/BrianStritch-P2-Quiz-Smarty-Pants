@@ -114,21 +114,22 @@ The third selection within the game is a general music trivia quiz aimed towards
 ##### __W3C HTML Code Validator:__
   - The code for the html index.html page was entered into the validator and all aspects of the page passed.
   - No errors or warnings were returned when passing through the official W3 HTML validator.
-- ![Smarty Pants Quiz game](/assets/readme/readme-images/html-validator-results.JPG)
+     ![Smarty Pants Quiz game](/assets/readme/readme-images/html-validator-results.JPG)
 
 ##### __W3C CSS Jigsaw Validator:__
   - The code for the stylesheet.css was entered into the validator and passed.
   - No errors or warnings were returned when passing through the official w3 CSS validator.
-- ![Smarty Pants Quiz game](/assets/readme/readme-images/css-validator-results.JPG)
+     ![Smarty Pants Quiz game](/assets/readme/readme-images/css-validator-results.JPG)
 
 #### __Accessibility lighthouse:__
   - The game site was entered tested using lighthouse in chrome developer tools and passed with 100% in all areas.
-- ![Smarty Pants Quiz game](/assets/readme/readme-images/lighthouse-test-results.JPG)
+     ![Smarty Pants Quiz game](/assets/readme/readme-images/lighthouse-test-results.JPG)
 
 #### __JSHint:__
   - The code for the script.js file was entered into the JSHint validator and passed.
   - Some minor warnings were noted relating to functions which were declared within loops referencing outer scoped variables, however this was the intention of declaring said variables, that they could be manipulated by functions to alter the stored values in order to influence the outcome of other functions depending on the values stored when the variables are passed into the functions. some notifications were prompted relating to unused variables, however the variables which have been noted directly relate to the statements above where the variables are designed to be manipulated by functions in order for the game to operate effectively. No errors were returned when passing through the JSHint validator.
-- ![Smarty Pants Quiz game](/assets/readme/readme-images/jshint-results.JPG)
+  
+    ![Smarty Pants Quiz game](/assets/readme/readme-images/jshint-results.JPG)
 
 
 ### __Unfixed Bugs__
@@ -198,7 +199,7 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
   - #### __Features and Content__
      - Example: A user wishes pass time and enjoy an entertaining quiz game. 
-    - ![scope Diagram](/assets/readme/readme-images/scope.JPG)
+        ![scope Diagram](/assets/readme/readme-images/scope.JPG)
     
 
 - ### __Strategy__
@@ -240,8 +241,8 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 - ### __Structure__ 
   
   #### __Information Architecture (IA)__ 
-    - A basic tree structure layout . 
-    - ![Structure layout](/assets/readme/readme-images/structure.JPG)
+    ##### A basic tree structure layout . 
+     ![Structure layout](/assets/readme/readme-images/structure.JPG)
 
     - __Interaction Design (IXD)__ 
       - The first area the user will encounter is the quiz Entry screen, where an enter button and rules button are located at the lower central area of the page. On clicking the enter button the user will be displayed a choice of game types. On clicking the rules button, a modal is displayed containing the rules of the game.
@@ -261,21 +262,21 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
     - Below is a set of wireframes created on balsamiq illustrating the Entry screen, game selection screen, Peppa pig game screen, Peppa Pig game end screen, Love/Hate game screen, Love/Hate game end screen, Music game screen, and Music game end screen.
       - The Initial Game Entry screen
-      - ![Entry Screen Wireframe from Balsamiq](/assets/readme/wireframe/entry-screen.JPG)
+         ![Entry Screen Wireframe from Balsamiq](/assets/readme/wireframe/entry-screen.JPG)
       - The Game selection screen
-      - ![Selectors screen Wireframe from Balsamiq](/assets/readme/wireframe/selectors-screen.JPG)
+         ![Selectors screen Wireframe from Balsamiq](/assets/readme/wireframe/selectors-screen.JPG)
       - The Peppa Pig Game Screen
-      - ![Peppa Pig Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/peppa-game-screen.JPG)
+         ![Peppa Pig Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/peppa-game-screen.JPG)
       - The Peppa Pig Game End Screen
-      - ![Peppa Pig End Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/peppa-game-end-screen.JPG)
+         ![Peppa Pig End Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/peppa-game-end-screen.JPG)
       - The Love/Hate Game Screen
-      - ![Love/Hate Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/love-hate-game-screen.JPG)
+         ![Love/Hate Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/love-hate-game-screen.JPG)
       - The Love/Hate Game End Screen
-      - ![Love/Hate Game End Screen Wireframe from Balsamiq](/assets/readme/wireframe/love-hate-game-end-screen.JPG)
+         ![Love/Hate Game End Screen Wireframe from Balsamiq](/assets/readme/wireframe/love-hate-game-end-screen.JPG)
       - The Music Game Screen
-      - ![Music Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/music-game-screen.JPG)
+         ![Music Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/music-game-screen.JPG)
       - The Music Game End Screen
-      - ![Music Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/music-game-end-screen.JPG)
+         ![Music Game Screen Wireframe from Balsamiq](/assets/readme/wireframe/music-game-end-screen.JPG)
  
 
 
