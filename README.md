@@ -51,7 +51,7 @@ The third selection within the game is a general music trivia quiz aimed towards
 
 3. On entering the game of choice the backdrop is chosen to reflect the game choice, and the choice of colours used in the design of the quiz game area is complimented by the colours within the backdrop, without distracting the users focus from the game. 
 
-4. when the user selects the start game button, the questions are prompted in a random order and the user is never prompted with the same line-up of questions should they have played the quiz previously. The user is asked the randomly chosen question and is prompted with a choice of four possible answers.
+4. When the user selects the start game button, the questions are prompted in a random order and the user is never prompted with the same line-up of questions should they have played the quiz previously. The user is asked the randomly chosen question and is prompted with a choice of four possible answers.
 
 5. On selecting their answer the user is immediately notified of their result as the correct answer button changes to green and the incorrect answer buttons change to red, and an informative message is displayed to the user which relates to the question and the correct answer.
 
@@ -105,31 +105,31 @@ The third selection within the game is a general music trivia quiz aimed towards
  - I have tested the site out on Google Chrome and Android, Edge, Safari however it has not been tested on IOS.
 
  - Social Media
-    - social media link testing    
-        - click on Linked-in icon and verify that the correct page opens in a new tab.
-        - click on Gitpod icon and verify that the correct page opens in a new tab.
+    - Social media link testing    
+        - Click on Linked-in icon and verify that the correct page opens in a new tab.
+        - Click on Gitpod icon and verify that the correct page opens in a new tab.
     
 
 ### __Validator Testing__ 
 ##### __W3C HTML Code Validator:__
   - The code for the html index.html page was entered into the validator and all aspects of the page passed.
   - No errors or warnings were returned when passing through the official W3 HTML validator.
-     ![Smarty Pants Quiz game](/assets/readme/readme-images/html-validator-results.JPG)
+     ![Smarty Pants Quiz game HTML validator results](/assets/readme/readme-images/html-validator-results.JPG)
 
 ##### __W3C CSS Jigsaw Validator:__
   - The code for the stylesheet.css was entered into the validator and passed.
   - No errors or warnings were returned when passing through the official w3 CSS validator.
-     ![Smarty Pants Quiz game](/assets/readme/readme-images/css-validator-results.JPG)
+     ![Smarty Pants Quiz game CSS validator results](/assets/readme/readme-images/css-validator-results.JPG)
 
 #### __Accessibility lighthouse:__
   - The game site was entered tested using lighthouse in chrome developer tools and passed with 100% in all areas.
-     ![Smarty Pants Quiz game](/assets/readme/readme-images/lighthouse-test-results.JPG)
+     ![Smarty Pants Quiz game Lighthouse test results](/assets/readme/readme-images/lighthouse-test-results.JPG)
 
 #### __JSHint:__
   - The code for the script.js file was entered into the JSHint validator and passed.
-  - Some minor warnings were noted relating to functions which were declared within loops referencing outer scoped variables, however this was the intention of declaring said variables, that they could be manipulated by functions to alter the stored values in order to influence the outcome of other functions depending on the values stored when the variables are passed into the functions. some notifications were prompted relating to unused variables, however the variables which have been noted directly relate to the statements above where the variables are designed to be manipulated by functions in order for the game to operate effectively. No errors were returned when passing through the JSHint validator.
+  - Some minor warnings were noted relating to functions which were declared within loops referencing outer scoped variables, however this was the intention of declaring said variables, that they could be manipulated by functions to alter the stored values in order to influence the outcome of other functions depending on the values stored when the variables are passed into the functions. Some notifications were prompted relating to unused variables, however the variables which have been noted directly relate to the statements above where the variables are designed to be manipulated by functions in order for the game to operate effectively. No errors were returned when passing through the JSHint validator.
   
-    ![Smarty Pants Quiz game](/assets/readme/readme-images/jshint-results.JPG)
+    ![Smarty Pants Quiz game JSHint results](/assets/readme/readme-images/jshint-results.JPG)
 
 
 ### __Unfixed Bugs__
@@ -145,8 +145,8 @@ font size issues, and links not working when committed to GitHub. Numerous bugs 
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab 
-  - in settings select pages on the menu along left hand side.
-  - select branch in the source section and change setting to main
+  - In settings select pages on the menu along left hand side.
+  - Select branch in the source section and change setting to main
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
 The live link can be found <a href="https://brianstritch.github.io/BrianStritch-P2-QuizzGame/" target="_blank">here</a>.
@@ -169,10 +169,10 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
 ### __Media__
 
-- The images used in the Initial game entry screen and game selector screen backgrounds were obtained from Pexels.com and are to the best of my knowledge unlicenced free images.
+- The images used in the initial game entry screen and game selector screen backgrounds were obtained from Pexels.com and are to the best of my knowledge unlicenced free images.
 - The image used in the Peppa Pig game selector was obtained from an internet search and sourced from Twitter via The Guardian.
 - The image used in the Love/Hate game selector was obtained from the RTE One official website.
-- The image used in the Music game selector was obtained from an internet search and appears across numerous social media platforms and the source of which is unknown. the source that this image was obtained from for this game was from "Online tech tips".
+- The image used in the Music game selector was obtained from an internet search and appears across numerous social media platforms and the source of which is unknown. The source that this image was obtained from for this game was from "Online tech tips".
 - The images used in the Peppa Pig game and end screen were obtained from the official Peppa Pig Twitter account.
 - The Images used in the Love/Hate game screen and end screens were obtained from the RTE One official website .
 - The images used in the Music game screen and end screens were obtained from an internet search and the game screen image was obtained from the New Yorker Website and the end screen image was from "Dothill Primary School" and appears to have been drawn by a student.
@@ -183,7 +183,7 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
    - #### __From Why to What!__
      - ##### __What they say they need:__
         -	A fun and educational quiz game.
-        -	A quiz with differing levels of difficulty.
+        -	A quiz with a variety of levels of difficulty.
         -	A quiz that tracks and displays the users score.
 
       - ##### __What they actually need:__
@@ -198,21 +198,21 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 
 
   - #### __Features and Content__
-     - Example: A user wishes pass time and enjoy an entertaining quiz game. 
-        ![scope Diagram](/assets/readme/readme-images/scope.JPG)
+    - __Example__: A user wishes pass time and enjoy an entertaining quiz game. 
+      - ![scope Diagram](/assets/readme/readme-images/scope.JPG)
     
 
 - ### __Strategy__
     -	To create an entertaining quiz game for the user.
     - The ability to select different game types depending on interests and age.
     - The aim is to offer an entertaining and informative quiz game that caters for a multitude of user types.
-    - To offer an enticing Peppa Pig quiz game for young children with an interest in Peppa pig.
+    - To offer an enticing Peppa Pig quiz game for young children with an interest in Peppa Pig.
     - To offer an interesting quiz game based on the hit RTE crime drama Love/Hate for adolescents and adults with an interest in   the Love/Hate crime drama.
     - To offer an enticing Music trivia quiz game for all ages of users with an interest in Music.
     - To provide the users with facts relating to the relevant questions asked and the correct answers for these questions.
 
   - #### __Relevance of Content__
-      - The content will be relevant, as the game types offered to the user are directly related to the game types. The game will be easy to navigate, it will be click and go to where you want to get to. The majority of the website will be structured on the one page with the content required being showed and the unused content hidden, until required by the user or at differing intervals of the relevant game types.
+      - The content will be relevant, as the game types offered to the user are directly related to the game types. The game will be easy to navigate, it will be click and go to where you want to get to. The majority of the game will be structured on the one page with the content required being showed and the unused content hidden, until required by the user or at differing intervals of the relevant game types.
 
   - #### __Why is it special?__    
       - This quiz game is special in that it offers an easy-to-use platform which is easy to navigate through and is both entertaining and educational.
@@ -221,13 +221,13 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
     - As the game content is limited the user may grow tired of the available questions or the content available and the addition of new content in future updates will help to keep the content relevant to the user and may keep the user interacting with the game. 
 
   - #### __What makes a great experience__
-    1.	The ability to view all your favourite games in the one place. 
-    2.	Having the personal choice of which game you want to play. 
-    3.	The ability to view the current scores as you play the game. 
-    4.	Having the correct answer highlighting and an informative message displaying content relative data pertaining to the questions asked. 
-    5.	The ability to add more game types in future updates of the game to offer the user more content and keep the quiz game relevant to the user. 
+    -	The ability to view all your favourite games in the one place. 
+    -	Having the personal choice of which game you want to play. 
+    -	The ability to view the current scores as you play the game. 
+    -	Having the correct answer highlighting and an informative message displaying content relative data pertaining to the questions asked. 
+    -	The ability to add more game types in future updates of the game to offer the user more content and keep the quiz game relevant to the user. 
   
-    - #### __What can a user expect?__
+  - #### __What can a user expect?__
       - __Does it offer me what I want__
             - Yes, to have the ability to view all your favourite games on offer.  
       - __As a user I expect to see__
