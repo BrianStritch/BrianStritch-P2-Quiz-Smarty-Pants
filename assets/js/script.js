@@ -41,7 +41,7 @@ window.onclick = function(event) {
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByClassName('emergency-exit-btn');
     for (let button of buttons){
-        button.addEventListener('click', exitGame);
+        button.addEventListener('click', exitGame );
     }
 });
         
@@ -470,15 +470,8 @@ function shuffle(array) {
     return array;
 }
 /* function to exit game to beggining entry screen when called */
-function exitGame(){
-    outerZone.classList.remove('hide');
-    selectionScreen.classList.add('hide');
-    peppaGameEnd.classList.add('hide');
-    peppaGameOuter.classList.add('hide');
-    loveGameEnd.classList.add('hide');
-    loveGameOuter.classList.add('hide');
-    musicGameEnd.classList.add('hide');
-    musicGameOuter.classList.add('hide');
+function exitGame(){    
+    window.location.reload();    
 }
 
 /****************questions arrays************ */
@@ -673,7 +666,7 @@ let peppaQuestions = [
             {text: 'Tommy Tiger', correct:false},
             {text: 'Dominic Donkey', correct:false},
         ],
-        message:"Loe Lion. Suzy says Leo prefers chocolate cake but will try a little slice of fruitcake.",
+        message:"Leo Lion. Suzy says Leo prefers chocolate cake but will try a little slice of fruitcake.",
     },
     {
         question: 'Who is referred to as a "clever clogs" in a few episodes?',

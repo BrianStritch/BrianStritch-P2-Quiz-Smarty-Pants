@@ -650,15 +650,16 @@ p{
         /* width: 102%; */
         min-width: 28vw;
     }
+    .pep-restart{
+        margin: 28px 0 10px 0;
+        font-size: 16px;
+        height: auto;
+    }
+    .pep-leave{
+        margin: 0 0 10px 0;
+        font-size: 16px;
+    }
 }
-
-
-
-
-
-
-
-
 
 @media screen and (max-width:600px){
     p{
@@ -741,6 +742,7 @@ p{
     .peppa-questions, .loves-questions, .music-question{
         font-size: 20px;
         width: 90%;
+        margin: 10px auto;
     }
     .peppa-game-container button, .love-game-container button, .music-container button{
         font-size: 15px;
@@ -748,43 +750,43 @@ p{
     }
     .peppa-correct, .peppa-incorrect, .love-correct, .love-incorrect, .music-correct, .music-incorrect{
         font-size: 10px;
-        padding: 20px;
+        padding: 15px;
     }
     .peppa-end, .love-end, .music-end{
         background-size: 150vw 100vh;
-        width: 83vw;
-        height: 90vh;        
-        text-align: center;        
-    }
-    .peppa-end{
-        padding-top: 25px;
+        width: 83vw;              
+        text-align: center;
         min-width: 258px;
-    }    
-    .pep-restart{
-        margin: 49px 0px -12px 0px;
-        min-width: 130px;
-        font-size: 17px;
+        height: auto;
+        margin: -3rem 5rem 0 5rem;       
     }
-     
-    .love-end, .music-end{
-        min-width: 280px;
-    }    
     .love-end-praise, .music-end-praise {
-        font-size: 20px;        
+        font-size: 16px;        
     }
     .love-end-score, .music-end-score{
         font-size: 15px;
     }
-    .pep-end-btn, .love-end-btn,.love-restart, .love-leave, .music-restart, .music-leave{
-        width: auto;
-        font-size: 13px;
-        margin: -1px 7px 20px 7px;
+    .pep-end-btn, .love-end-btn,.love-restart,  .music-restart,.pep-restart {        
+        margin: 28px 0 10px 0;
+        font-size: 16px;
+        height: auto;
     }
     .selector-exit{
         display:none;
+    }    
+    .pep-leave,.music-leave,.love-leave{
+        margin: 0 0 10px 0;
+        font-size: 16px;
+    }
+    .emergency-exit-btn{
+        bottom: unset;
+        top: 5px;
+        background:  rgb(216, 38, 216, 80%);
+    }
+    #peppa-praise,#peppa-score{
+        margin-left: 10px;
     }
 }
-
 
 
 @media screen and (max-width:320px){
