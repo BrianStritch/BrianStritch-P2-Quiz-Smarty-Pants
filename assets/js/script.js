@@ -21,7 +21,7 @@ function rules(){
 function exitRules(){
     rulesList.classList.add('hide');
 }
-
+/* modal example obtained from w3 schools and ammended to work with this game */
 let modal = document.getElementById("myModal");
 let modalBtn = document.getElementById("modal-Btn");
 let span = document.getElementsByClassName("close")[0];

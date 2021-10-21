@@ -157,7 +157,7 @@ The live link can be found <a href="https://brianstritch.github.io/BrianStritch-
 - I would like to thank all my family and friends for the help in testing the game and searching for errors and bugs.
 
 
-### __Content__ 
+### __Content__
 
 - The questions used for the Peppa Pig quiz game were obtained from an online quiz found at the link below:
   - https://www.funtrivia.com/en/ForChildren/Peppa-Pig-21189.html.
