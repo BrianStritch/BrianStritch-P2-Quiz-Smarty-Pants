@@ -42,7 +42,7 @@ The third selection within the game is a general music trivia quiz aimed towards
 
 ## __What does it look like__
 ![Responsive Mockup](assets/readme/readme-images/am-i-responsive.JPG )
-<a href="https://brianstritch.github.io/BrianStritch-P2-QuizzGame/" target="_blank">Click Here</a> to access the site.
+<a href="https://brianstritch.github.io/BrianStritch-P2-Quiz-Smarty-Pants/" target="_blank">Click Here</a> to access the site.
 
 ## __Features__ 
 1. The User is greeted with a sleek modern Quiz game entry page where the user can view the rules of the game and can progress into the game selection screen.
@@ -149,7 +149,7 @@ font size issues, and links not working when committed to GitHub. Numerous bugs 
   - Select branch in the source section and change setting to main
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
-The live link can be found <a href="https://brianstritch.github.io/BrianStritch-P2-QuizzGame/" target="_blank">here</a>.
+The live link can be found <a href="https://brianstritch.github.io/BrianStritch-P2-Quiz-Smarty-Pants/" target="_blank">here</a>.
 
 
 ## __Credits__ 
